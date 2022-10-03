@@ -81,14 +81,14 @@
     map.setView([47.366989, 8.545079], 10);
 
     var overlayMaps = {
-        'Test WMS': L.tileLayer.wms('http://ows.mundialis.de/services/service?', {
+        /*'Test WMS': L.tileLayer.wms('http://ows.mundialis.de/services/service?', {
             layers: 'TOPO-OSM-WMS'
+        }),*/
+        'Fields': L.tileLayer.wms('https://qgis.demo.opengis.ch/ows/bees', {
+            layers: 'Fields'
         }),
-        'area': L.tileLayer.wms('https://qgis.demo.opengis.ch/ows/bees', {
-            layers: 'area'
-        }),
-        'apiary': L.tileLayer.wms('https://qgis.demo.opengis.ch/ows/bees', {
-            layers: 'apiary'
+        'Apiary': L.tileLayer.wms('https://qgis.demo.opengis.ch/ows/bees', {
+            layers: 'Apiary'
         })
     }
 
