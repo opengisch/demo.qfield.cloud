@@ -84,16 +84,19 @@
         /*'Test WMS': L.tileLayer.wms('http://ows.mundialis.de/services/service?', {
             layers: 'TOPO-OSM-WMS'
         }),*/
-        'Fields': L.tileLayer.wms('https://qgis.demo.opengis.ch/ows/bees', {
-            layers: 'Fields'
+        'Fields': L.tileLayer.wms('https://qgis.demo.opengis.ch/ows/bees/', {
+            layers: 'Fields',
+            format: 'image/png',
+            transparent: true,
         }),
-        'Apiary': L.tileLayer.wms('https://qgis.demo.opengis.ch/ows/bees', {
-            layers: 'Apiary'
+        'Apiary': L.tileLayer.wms('https://qgis.demo.opengis.ch/ows/bees/', {
+            layers: 'Apiary',
+            format: 'image/png',
+            transparent: true,
         })
     }
 
     var layerControl = L.control.layers(basemaps, overlayMaps).addTo(map);
-
 
 
 </script>
