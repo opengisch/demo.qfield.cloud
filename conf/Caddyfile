@@ -1,0 +1,42 @@
+{
+    # use the staging let's encrypt certs
+    acme_ca https://acme-staging-v02.api.letsencrypt.org/directory
+    email login@opengis.ch
+    local_certs
+}
+
+# domain name.
+demo.qfield.cloud
+
+# Set this path to your site's directory.
+root * /io/www
+
+# Enable the static file server.
+file_server
+
+@ows {
+    path_regexp map_file ^/ows/(.*)
+}
+
+@wfs3 {
+    path_regexp wfs_matcher ^/wfs3/(.*)/
+}
+
+#redir @ows /demos.html?{query}&map=/io/data/{http.regexp.map_file.1}.qgs
+
+# https://localhost/ows/bees?SERVICE=WMS&REQUEST=GetCapabilities
+# directly call QGIS via fcgi
+reverse_proxy @ows qgisserver:9993 {
+    transport fastcgi {
+        env QUERY_STRING {query}&map=/io/data/{http.regexp.map_file.1}.qgs
+    }
+}
+
+
+# https://localhost/wfs3/bees/collections
+reverse_proxy @wfs3 qgisserver:9993 {
+    transport fastcgi {
+        #env QGIS_PROJECT_FILE /io/data/{http.regexp.wfs_matcher.1}.qgs
+        env QUERY_STRING {query}&map=/io/data/{http.regexp.wfs_matcher.1}.qgs
+    }
+}
