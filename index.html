@@ -84,8 +84,11 @@
         'Test WMS': L.tileLayer.wms('http://ows.mundialis.de/services/service?', {
             layers: 'TOPO-OSM-WMS'
         }),
-        'Bees': L.tileLayer.wms('https://qgis.demo.opengis.ch/ows/bees/', {
-            layers: 'Bees'
+        'area': L.tileLayer.wms('https://qgis.demo.opengis.ch/ows/bees', {
+            layers: 'area'
+        }),
+        'apiary': L.tileLayer.wms('https://qgis.demo.opengis.ch/ows/bees', {
+            layers: 'apiary'
         })
     }
 
