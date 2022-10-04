@@ -23,6 +23,9 @@
     <script src="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol@0.76.1/dist/L.Control.Locate.min.js"
             charset="utf-8"></script>
 
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <script src="L.TileLayer.BetterWMS.js"></script>
+
 </head>
 <body>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -78,18 +81,19 @@
 
     var layer = basemaps["Landeskarten"];
     map.addLayer(layer);
-    map.setView([47.366989, 8.545079], 10);
+    //map.setView([47.366989, 8.545079], 10); // center of switzerland
+    map.setView([46.8045200, 9.2578700], 8)
 
     var overlayMaps = {
         /*'Test WMS': L.tileLayer.wms('http://ows.mundialis.de/services/service?', {
             layers: 'TOPO-OSM-WMS'
         }),*/
-        'Fields': L.tileLayer.wms('https://qgis.demo.opengis.ch/ows/bees/', {
+        'Fields': L.tileLayer.betterWms('https://qgis.demo.opengis.ch/ows/bees/', {
             layers: 'Fields',
             format: 'image/png',
             transparent: true,
         }),
-        'Apiary': L.tileLayer.wms('https://qgis.demo.opengis.ch/ows/bees/', {
+        'Apiary': L.tileLayer.betterWms('https://qgis.demo.opengis.ch/ows/bees/', {
             layers: 'Apiary',
             format: 'image/png',
             transparent: true,
