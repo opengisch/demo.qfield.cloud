@@ -24,7 +24,7 @@
             charset="utf-8"></script>
 
     <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
-    <script src="L.TileLayer.BetterWMS.js"></script>
+    <script src="leaflet.wms.js"></script>
 
 </head>
 <body>
@@ -82,24 +82,25 @@
     var layer = basemaps["Landeskarten"];
     map.addLayer(layer);
     //map.setView([47.366989, 8.545079], 10); // center of switzerland
-    map.setView([46.8045200, 9.2578700], 8)
+    map.setView([46.8045200, 9.2578700], 16)
 
-    var overlayMaps = {
-        /*'Test WMS': L.tileLayer.wms('http://ows.mundialis.de/services/service?', {
-            layers: 'TOPO-OSM-WMS'
-        }),*/
-        'Fields': L.tileLayer.betterWms('https://qgis.demo.opengis.ch/ows/bees/', {
-            layers: 'Fields',
-            format: 'image/png',
-            transparent: true,
-        }),
-        'Apiary': L.tileLayer.betterWms('https://qgis.demo.opengis.ch/ows/bees/', {
-            layers: 'Apiary',
-            format: 'image/png',
-            transparent: true,
-        })
+
+
+    var options = {'transparent': true, format: 'image/png',};
+    var source = L.WMS.source("https://qgis.demo.opengis.ch/ows/bees/", options);
+    var layer1 = source.getLayer('Fields');
+    var layer2 = source.getLayer('Apiary');
+    overlayMaps = {
+        'Fields': layer1,
+        'Apiary': layer2
     }
-
+    /*
+    var control = L.control.layers({}, {
+        'Fields': layer1,
+        'Apiary': layer2
+    })
+    control.addTo(map);
+    */
     var layerControl = L.control.layers(basemaps, overlayMaps).addTo(map);
 
 
