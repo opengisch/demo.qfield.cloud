@@ -23,6 +23,7 @@
     <script src="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol@0.76.1/dist/L.Control.Locate.min.js"
             charset="utf-8"></script>
 
+    <!-- https://github.com/heigeo/leaflet.wms -->
     <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
     <script src="leaflet.wms.js"></script>
 
@@ -83,7 +84,7 @@
     map.addLayer(layer);
     //map.setView([47.366989, 8.545079], 10); // center of switzerland
     map.setView([46.8045200, 9.2578700], 16) // Laax for debugging
-    
+
 
     var options = {'transparent': true, format: 'image/png', info_format: 'text/plain', 'WITH_MAPTIP': 'TRUE'};
     var source = L.WMS.source("https://qgis.demo.opengis.ch/ows/bees/", options);
@@ -94,6 +95,7 @@
         'Apiary': layer2
     }
     /*
+    // Possibility to add second menu to select the layers
     var control = L.control.layers({}, {
         'Fields': layer1,
         'Apiary': layer2
