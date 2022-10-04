@@ -82,11 +82,10 @@
     var layer = basemaps["Landeskarten"];
     map.addLayer(layer);
     //map.setView([47.366989, 8.545079], 10); // center of switzerland
-    map.setView([46.8045200, 9.2578700], 16)
+    map.setView([46.8045200, 9.2578700], 16) // Laax for debugging
+    
 
-
-
-    var options = {'transparent': true, format: 'image/png',};
+    var options = {'transparent': true, format: 'image/png', info_format: 'text/plain', 'WITH_MAPTIP': 'TRUE'};
     var source = L.WMS.source("https://qgis.demo.opengis.ch/ows/bees/", options);
     var layer1 = source.getLayer('Fields');
     var layer2 = source.getLayer('Apiary');
