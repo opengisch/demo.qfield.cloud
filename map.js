@@ -14,6 +14,9 @@ strings: {
 }
 }).addTo(map);
 
+var url = 'https://wmts.geo.admin.ch/1.0.0/ch.swisstopo.swisstlm3d-karte-grau/default/current/3857/{z}/{x}/{y}.png';
+var tilelayer = new L.tileLayer(url);
+
 var geoadminUrl = 'https://wms.geo.admin.ch/?';
 var basemaps = {
 'Landeskarten TLM grau': L.tileLayer.wms(geoadminUrl, {
@@ -56,7 +59,7 @@ var apiaryLayer = source.getLayer('Apiary');
 map.setView([46.8045200, 9.2578700], 16) // Laax for debugging
 
 var defaultBasemap = basemaps["Landeskarten TLM grau"];
-map.addLayer(defaultBasemap);
+map.addLayer(tilelayer);
 map.addLayer(fieldsLayer);
 map.addLayer(apiaryLayer);
 
