@@ -73,12 +73,11 @@ var CustomWMSSource = L.WMS.Source.extend({
     'showFeatureInfo': function (latlng, info) {
 
         var layers = info.split('\n\n');
-
         var new_info = '';
         for (const layer of layers) {
             console.log(layer);
             if (layer.includes("maptip = '")) {
-                var layer_info = layer.split('\n')[0];
+                var layer_info = layer.split('\n')[0].replace("Layer '", '<i>Layer <b>').replace("'", '</b></i>');
                 var html_map_tip = layer.split("maptip = '")[1].replace("'", '');
                 if (new_info !== '') {
                     new_info += '<hr>';
