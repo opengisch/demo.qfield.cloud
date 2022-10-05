@@ -5,8 +5,8 @@ const LAYER_CONFIG = [
     layers: ["Fields", "Apiary"],
   },
   {
-    source: 'https://qgis.demo.opengis.ch/ows/wastewater/',
-    layers: ['Reaches', 'Waterwaste structures']
+    source: "https://qgis.demo.opengis.ch/ows/wastewater/",
+    layers: ["Reaches", "Waterwaste structures"],
   },
 ];
 const BASEMAPS = {
