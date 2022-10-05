@@ -4,6 +4,10 @@ const LAYER_CONFIG = [
     source: "https://qgis.demo.opengis.ch/ows/bees/",
     layers: ["Fields", "Apiary"],
   },
+  {
+    source: 'https://qgis.demo.opengis.ch/ows/wastewater/',
+    layers: ['Reaches', 'Waterwaste structures']
+  },
 ];
 const BASEMAPS = {
   "Swisstopo TLM gray": L.tileLayer(
