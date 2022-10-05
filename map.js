@@ -11,8 +11,8 @@ strings: {
 }).addTo(map);
 
 
-var geoadminUrl = 'https://wms.geo.admin.ch/?';
 
+var geoadminUrl = 'https://wms.geo.admin.ch/?';
 var basemaps = {
 'Landeskarten': L.tileLayer.wms(geoadminUrl, {
     layers: 'ch.swisstopo.pixelkarte-farbe',
@@ -36,27 +36,25 @@ var basemaps = {
 }),
 };
 
+// get qgis layers
+var options = {'transparent': true, format: 'image/png', info_format: 'text/plain', 'WITH_MAPTIP': 'TRUE'};
+var source = L.WMS.source("https://qgis.demo.opengis.ch/ows/bees/", options);
+var fieldsLayer = source.getLayer('Fields');
+var apiaryLayer = source.getLayer('Apiary');
 
-var layer = basemaps["Landeskarten"];
-map.addLayer(layer);
+// setup map
 //map.setView([47.366989, 8.545079], 10); // center of switzerland
 map.setView([46.8045200, 9.2578700], 16) // Laax for debugging
 
 
-var options = {'transparent': true, format: 'image/png', info_format: 'text/plain', 'WITH_MAPTIP': 'TRUE'};
-var source = L.WMS.source("https://qgis.demo.opengis.ch/ows/bees/", options);
-var layer1 = source.getLayer('Fields');
-var layer2 = source.getLayer('Apiary');
-overlayMaps = {
-'Fields': layer1,
-'Apiary': layer2
+var defaultBasemap = basemaps["Landeskarten"];
+map.addLayer(defaultBasemap);
+
+// setup controls
+var overlayMaps = {
+    'Fields': fieldsLayer,
+    'Apiary': apiaryLayer
 }
-/*
-// Possibility to add second menu to select the layers
-var control = L.control.layers({}, {
-'Fields': layer1,
-'Apiary': layer2
-})
-control.addTo(map);
-*/
-var layerControl = L.control.layers(basemaps, overlayMaps).addTo(map);
+
+var layerControl = L.control.layers({}, overlayMaps, {collapsed: false}).addTo(map);
+var basemapControl = L.control.layers(basemaps).addTo(map);
