@@ -56,10 +56,34 @@ const map = new L.Map("map", {
 map.setView([46.80452, 9.25787], 16); // Laax for debugging
 map.addLayer(BASEMAPS[DEFAULT_BASEMAP]);
 
+// custom WMS Class to display only the html map tip --> https://github.com/heigeo/leaflet.wms#identify-getfeatureinfo
+var CustomWMSSource = L.WMS.Source.extend({
+    'showFeatureInfo': function (latlng, info) {
+
+        var layers = info.split('\n\n');
+
+        var new_info = '';
+        for (const layer of layers) {
+
+            if (layer.includes("maptip = '")) {
+                var layer_info = layer.split('\n')[0];
+                var html_map_tip = layer.split("maptip = '")[1].replace("'", '');
+                if (new_info !== '') {
+                    new_info += '<hr>';
+                }
+                new_info += layer_info;
+                new_info += html_map_tip;
+            }
+        }
+        if (new_info !== '') {
+            this._map.openPopup(new_info, latlng);
+        }
+    }
+});
 
 const overlayMaps = {};
 for (const layerConfig of LAYER_CONFIG) {
-    const layerSource = L.WMS.source(layerConfig["source"], {
+    const layerSource = new CustomWMSSource(layerConfig["source"], {
         transparent: true,
         format: "image/png",
         info_format: "text/plain",
