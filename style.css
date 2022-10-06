@@ -3,3 +3,16 @@ html, body {
     margin: 0;
     align-content: center;
 }
+div.leaflet-popup-content table {
+    border: 0;
+    border-bottom: 1px solid #bbbbbb;
+}
+div.leaflet-popup-content th {
+    width: 120px !important;
+    border: 0;
+    color: #80cc28;
+    font-weight: bold;
+}
+div.leaflet-popup-content td {
+    border: 0;
+}
