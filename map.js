@@ -9,8 +9,8 @@ const LAYER_CONFIG = [
   {
     source: "https://qgis.demo.opengis.ch/ows/wastewater/",
     layers: ["Reaches", "Waterwaste structures"],
-    with_maptip: true,
-    info_format: "text/plain",
+    with_maptip: false,
+    info_format: "text/html",
   },
 ];
 const BASEMAPS = {
@@ -98,12 +98,15 @@ var CustomWMSSource = L.WMS.Source.extend({
 
 const overlayMaps = {};
 for (const layerConfig of LAYER_CONFIG) {
-  const layerSource = new CustomWMSSource(layerConfig["source"], {
+  var layerOptions = {
     transparent: true,
     format: "image/png",
     info_format: layerConfig["info_format"],
     WITH_MAPTIP: layerConfig["with_maptip"],
-  });
+  };
+  const layerSource = layerConfig["with_maptip"]
+                      ? new CustomWMSSource(layerConfig["source"], layerOptions)
+                      : new L.WMS.Source(layerConfig["source"], layerOptions);
 
   for (const layerName of layerConfig.layers) {
     layer = layerSource.getLayer(layerName);
