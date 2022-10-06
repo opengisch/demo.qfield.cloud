@@ -3,10 +3,14 @@ const LAYER_CONFIG = [
   {
     source: "https://qgis.demo.opengis.ch/ows/bees/",
     layers: ["Fields", "Apiary"],
+    with_maptip: true,
+    info_format: "text/plain",
   },
   {
     source: "https://qgis.demo.opengis.ch/ows/wastewater/",
     layers: ["Reaches", "Waterwaste structures"],
+    with_maptip: true,
+    info_format: "text/plain",
   },
 ];
 const BASEMAPS = {
@@ -28,14 +32,12 @@ const BASEMAPS = {
     }
   ),
   Openstreetmap: L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
-    maxZoom: 19,
     attribution:
       '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
   }),
   "Openstreetmap Topo": L.tileLayer(
     "https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png",
     {
-      maxZoom: 17,
       attribution:
         'Map data: &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, <a href="http://viewfinderpanoramas.org">SRTM</a> | Map style: &copy; <a href="https://opentopomap.org">OpenTopoMap</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a>)',
     }
@@ -99,8 +101,8 @@ for (const layerConfig of LAYER_CONFIG) {
   const layerSource = new CustomWMSSource(layerConfig["source"], {
     transparent: true,
     format: "image/png",
-    info_format: "text/plain",
-    WITH_MAPTIP: "TRUE",
+    info_format: layerConfig["info_format"],
+    WITH_MAPTIP: layerConfig["with_maptip"],
   });
 
   for (const layerName of layerConfig.layers) {
