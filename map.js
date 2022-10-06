@@ -8,7 +8,7 @@ const LAYER_CONFIG = [
   },
   {
     source: "https://qgis.demo.opengis.ch/ows/wastewater/",
-    layers: ["Reaches", "Waterwaste structures"],
+    layers: ["Reaches", "Wastewater structures"],
     with_maptip: false,
     info_format: "text/html",
   },
