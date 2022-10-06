@@ -3,6 +3,10 @@ html, body {
     margin: 0;
     align-content: center;
 }
+div.leaflet-popup-content {
+  max-height: 80vh;
+  overflow-y: auto;
+}
 div.leaflet-popup-content table {
     border: 0;
     border-bottom: 1px solid #bbbbbb;
