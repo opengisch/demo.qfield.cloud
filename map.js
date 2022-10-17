@@ -48,7 +48,7 @@ const DEFAULT_BASEMAP = "Swisstopo TLM gray";
 // initialize Leaflet.js
 const map = new L.Map("map", {
   crs: L.CRS.EPSG3857,
-  center: [46.801111, 8.226667],
+  center: [47.51467, 9.42933],
   continuousWorld: true,
   worldCopyJump: false,
 });
