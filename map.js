@@ -46,13 +46,6 @@ const BASEMAPS = {
 const DEFAULT_BASEMAP = "Swisstopo TLM gray";
 
 // initialize Leaflet.js
-const map = new L.Map("map", {
-  crs: L.CRS.EPSG3857,
-  center: [47.51467, 9.42933],
-  continuousWorld: true,
-  worldCopyJump: false,
-});
-
 const locLaax = {
   lat: 46.80852,
   lng: 9.25787,
@@ -65,9 +58,16 @@ const locArbon = {
   zoom: 15,
 };
 
+const map = new L.Map("map", {
+  crs: L.CRS.EPSG3857,
+  center: [locArbon.lat, locArbon.lng],
+  continuousWorld: true,
+  worldCopyJump: false,
+});
+
+
 // setup map
-//map.setView([47.366989, 8.545079], 10); // center of switzerland
-map.setView([locLaax.lat, locLaax.lng], locLaax.zoom); // Laax for debugging
+map.setView([locArbon.lat, locArbon.lng], locArbon.zoom); // Arbon
 map.addLayer(BASEMAPS[DEFAULT_BASEMAP]);
 
 // custom WMS Class to display only the html map tip --> https://github.com/heigeo/leaflet.wms#identify-getfeatureinfo
