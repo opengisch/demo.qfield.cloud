@@ -11,6 +11,11 @@ const LAYER_CONFIG = [
     layers: ["Reaches", "Wastewater structures"],
     with_maptip: false,
     info_format: "text/html",
+  },{
+    source: "https://qgis.demo.opengis.ch/ows/qgep_db/",
+    layers: ["reaches", "structures"],
+    with_maptip: false,
+    info_format: "text/html",
   },
 ];
 const BASEMAPS = {
