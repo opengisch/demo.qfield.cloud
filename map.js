@@ -43,7 +43,6 @@ const BASEMAPS = {
     }
   ),
 };
-const DEFAULT_BASEMAP = "Swisstopo TLM gray";
 
 // initialize Leaflet.js
 const locLaax = {
@@ -58,16 +57,26 @@ const locArbon = {
   zoom: 15,
 };
 
+const locBerlin = {
+  lat: 52.5038,
+  lng: 13.2714,
+  zoom: 16,
+};
+
+const DEFAULT_LOCATION = locBerlin;
+const DEFAULT_BASEMAP = "Openstreetmap";
+
+
 const map = new L.Map("map", {
   crs: L.CRS.EPSG3857,
-  center: [locArbon.lat, locArbon.lng],
+  center: [DEFAULT_LOCATION.lat, DEFAULT_LOCATION.lng],
   continuousWorld: true,
   worldCopyJump: false,
 });
 
 
 // setup map
-map.setView([locArbon.lat, locArbon.lng], locArbon.zoom); // Arbon
+map.setView([DEFAULT_LOCATION.lat, DEFAULT_LOCATION.lng], DEFAULT_LOCATION.zoom);
 map.addLayer(BASEMAPS[DEFAULT_BASEMAP]);
 
 // custom WMS Class to display only the html map tip --> https://github.com/heigeo/leaflet.wms#identify-getfeatureinfo
@@ -107,7 +116,7 @@ for (const layerConfig of LAYER_CONFIG) {
   const layerSource = layerConfig["with_maptip"]
                       ? new CustomWMSSource(layerConfig["source"], layerOptions)
                       : new L.WMS.Source(layerConfig["source"], layerOptions);
-
+                      locArbon
   for (const layerName of layerConfig.layers) {
     layer = layerSource.getLayer(layerName);
     map.addLayer(layer);
@@ -134,6 +143,11 @@ const basemapControl = L.control
 // make a bar with the buttons to navigate between laax and arbon
 var zoomBar = L.easyBar([
   L.easyButton(
+    '<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Coat_of_arms_of_Berlin.svg/292px-Coat_of_arms_of_Berlin.svg.png" width="18px" style="padding-top: 3px;"/>',
+    function (control, map) {
+      map.setView([locBerlin.lat, locBerlin.lng], locBerlin.zoom);
+    }
+  ),L.easyButton(
     '<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Laax_wappen.svg/180px-Laax_wappen.svg.png" width="18px" style="padding-top: 3px;"/>',
     function (control, map) {
       map.setView([locLaax.lat, locLaax.lng], locLaax.zoom);
