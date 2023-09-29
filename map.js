@@ -121,7 +121,7 @@ for (const layerConfig of LAYER_CONFIG) {
   const layerSource = layerConfig["with_maptip"]
                       ? new CustomWMSSource(layerConfig["source"], layerOptions)
                       : new L.WMS.Source(layerConfig["source"], layerOptions);
-                      locArbon
+                      
   for (const layerName of layerConfig.layers) {
     layer = layerSource.getLayer(layerName);
     map.addLayer(layer);
