@@ -5,17 +5,42 @@ const LAYER_CONFIG = [
     layers: ["Fields", "Apiary"],
     with_maptip: true,
     info_format: "text/plain",
+    locations: {
+      laax: {
+        iconUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Laax_wappen.svg/180px-Laax_wappen.svg.png',
+        lat: 46.80852,
+        lng: 9.25787,
+        zoom: 16,
+      },
+    },
   },
   {
     source: "https://qgis.demo.opengis.ch/ows/wastewater/",
     layers: ["Reaches", "Wastewater structures"],
     with_maptip: false,
     info_format: "text/html",
-  },{
+    locations: {
+      arbon: {
+        iconUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Arbon_Wappen.jpg/180px-Arbon_Wappen.jpg',
+        lat: 47.51467,
+        lng: 9.42933,
+        zoom: 15,
+      },
+    },
+  },
+  {
     source: "https://qgis.demo.opengis.ch/ows/qgep_db/",
     layers: ["reaches", "structures"],
     with_maptip: false,
     info_format: "text/html",
+    locations: {
+      berlin: {
+        iconUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Coat_of_arms_of_Berlin.svg/292px-Coat_of_arms_of_Berlin.svg.png',
+        lat: 52.5038,
+        lng: 13.2714,
+        zoom: 16,
+      }
+    },
   },
 ];
 const BASEMAPS = {
@@ -49,26 +74,8 @@ const BASEMAPS = {
   ),
 };
 
-// initialize Leaflet.js
-const locLaax = {
-  lat: 46.80852,
-  lng: 9.25787,
-  zoom: 16,
-};
-
-const locArbon = {
-  lat: 47.51467,
-  lng: 9.42933,
-  zoom: 15,
-};
-
-const locBerlin = {
-  lat: 52.5038,
-  lng: 13.2714,
-  zoom: 16,
-};
-
-const DEFAULT_LOCATION = locBerlin;
+const DEFAULT_PROJECT = LAYER_CONFIG[2];
+const DEFAULT_LOCATION = DEFAULT_PROJECT.locations["berlin"];
 const DEFAULT_BASEMAP = "Openstreetmap";
 
 
@@ -85,46 +92,47 @@ map.setView([DEFAULT_LOCATION.lat, DEFAULT_LOCATION.lng], DEFAULT_LOCATION.zoom)
 map.addLayer(BASEMAPS[DEFAULT_BASEMAP]);
 
 // custom WMS Class to display only the html map tip --> https://github.com/heigeo/leaflet.wms#identify-getfeatureinfo
-var CustomWMSSource = L.WMS.Source.extend({
+const CustomWMSSource = L.WMS.Source.extend({
   showFeatureInfo: function (latlng, info) {
-    var layers = info.split("\n\n");
-    var new_info = "";
-    for (const layer of layers) {
-      console.log(layer);
-      if (layer.includes("maptip = '")) {
-        var layer_info = layer
+    const layersInfo = info.split("\n\n");
+    let newInfo = "";
+    for (const layerInfo of layersInfo) {
+      if (layerInfo.includes("maptip = '")) {
+        const layer_info = layerInfo
           .split("\n")[0]
           .replace("Layer '", "<i>Layer <b>")
           .replace("'", "</b></i>");
-        var html_map_tip = layer.split("maptip = '")[1].replace("'", "");
-        if (new_info !== "") {
-          new_info += "<hr>";
+        const htmlMapTip = layerInfo.split("maptip = '")[1].replace("'", "");
+        if (newInfo !== "") {
+          newInfo += "<hr>";
         }
-        new_info += layer_info;
-        new_info += html_map_tip;
+        newInfo += layer_info;
+        newInfo += htmlMapTip;
+      } else {
+        newInfo = layerInfo;
       }
     }
-    if (new_info !== "") {
-      this._map.openPopup(new_info, latlng);
+    if (newInfo !== "") {
+      this._map.openPopup(newInfo, latlng, {
+        minWidth: 200,
+        maxWidth: window.screen.width * 0.8,
+      });
     }
   },
 });
 
 const overlayMaps = {};
 for (const layerConfig of LAYER_CONFIG) {
-  var layerOptions = {
+  const layerOptions = {
     transparent: true,
     format: "image/png",
     info_format: layerConfig["info_format"],
     WITH_MAPTIP: layerConfig["with_maptip"],
   };
-  const layerSource = layerConfig["with_maptip"]
-                      ? new CustomWMSSource(layerConfig["source"], layerOptions)
-                      : new L.WMS.Source(layerConfig["source"], layerOptions);
-                      
+  const layerSource = new CustomWMSSource(layerConfig["source"], layerOptions);
+
   for (const layerName of layerConfig.layers) {
     layer = layerSource.getLayer(layerName);
-    map.addLayer(layer);
     overlayMaps[layerName] = layer;
   }
 }
@@ -139,32 +147,46 @@ const locateControl = L.control
   })
   .addTo(map);
 const layerControl = L.control
-  .layers({}, overlayMaps, { collapsed: false })
+  .layers({}, {}, { collapsed: false })
   .addTo(map);
 const basemapControl = L.control
   .layers(BASEMAPS, {}, { position: "bottomright" })
   .addTo(map);
 
+
+const setLocation = (config, location, control, map) => {
+  map.setView([location.lat, location.lng], location.zoom);
+
+  for( const layer of Object.values(overlayMaps)) {
+    map.removeLayer(layer);
+    layerControl.removeLayer(layer);
+  }
+
+  for( const layerName of config.layers) {
+    map.addLayer(overlayMaps[layerName]);
+    layerControl.addOverlay(overlayMaps[layerName], layerName);
+  }
+};
+const projects = [];
+
+for (const config of LAYER_CONFIG) {
+  for (const [locationName, location] of Object.entries(config.locations)) {
+    const projectControl = L.easyButton(
+      `<img src="${location.iconUrl}" width="18px" style="padding-top: 3px;" title="${locationName}" />`,
+      function (control, map) {
+        setLocation(config, location, control, map)
+      },
+    );
+    projects.push(projectControl)
+  }
+}
+
 // make a bar with the buttons to navigate between laax and arbon
-var zoomBar = L.easyBar([
-  L.easyButton(
-    '<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Coat_of_arms_of_Berlin.svg/292px-Coat_of_arms_of_Berlin.svg.png" width="18px" style="padding-top: 3px;"/>',
-    function (control, map) {
-      map.setView([locBerlin.lat, locBerlin.lng], locBerlin.zoom);
-    }
-  ),L.easyButton(
-    '<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Laax_wappen.svg/180px-Laax_wappen.svg.png" width="18px" style="padding-top: 3px;"/>',
-    function (control, map) {
-      map.setView([locLaax.lat, locLaax.lng], locLaax.zoom);
-    }
-  ),
-  L.easyButton(
-    '<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Arbon_Wappen.jpg/180px-Arbon_Wappen.jpg" width="18px" style="padding-top: 4px;"/>',
-    function (control, map) {
-      map.setView([locArbon.lat, locArbon.lng], locArbon.zoom);
-    }
-  ),
-]);
+const zoomBar = L.easyBar(projects);
+
 
 // add it to the map
 zoomBar.addTo(map);
+
+
+setLocation(DEFAULT_PROJECT, DEFAULT_LOCATION, layerControl, map);
