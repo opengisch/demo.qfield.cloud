@@ -6,12 +6,19 @@ const LAYER_CONFIG = [
     with_maptip: true,
     info_format: "text/plain",
     locations: {
-      laax: {
+      laax_bees: {
         iconUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Laax_wappen.svg/180px-Laax_wappen.svg.png',
         lat: 46.80852,
         lng: 9.25787,
         zoom: 16,
         basemap: "Swisstopo",
+      },
+      berlin_bees: {
+        iconUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Coat_of_arms_of_Berlin.svg/292px-Coat_of_arms_of_Berlin.svg.png',
+        lat: 52.5038,
+        lng: 13.2714,
+        zoom: 16,
+        basemap: "geobasis-bb.de",
       },
     },
   },
@@ -38,10 +45,10 @@ const LAYER_CONFIG = [
     locations: {
       berlin: {
         iconUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Coat_of_arms_of_Berlin.svg/292px-Coat_of_arms_of_Berlin.svg.png',
-        lat: 52.5038,
-        lng: 13.2714,
-        zoom: 16,
-        basemap: "geobasis-bb.de",
+        lat: 52.503,
+        lng: 13.270,
+        zoom: 18,
+        basemap: "geodatenzentrum.de",
       },
     },
   },
@@ -193,7 +200,9 @@ const setLocation = (config, location, control, map) => {
 const projects = [];
 
 for (const config of LAYER_CONFIG) {
-  for (const [locationName, location] of Object.entries(config.locations)) {
+  for (let [locationName, location] of Object.entries(config.locations)) {
+    locationName = locationName.replace("_", " ");
+    locationName = locationName.charAt(0).toUpperCase() + locationName.slice(1).toLowerCase();
     const projectControl = L.easyButton(
       `<img src="${location.iconUrl}" width="18px" style="padding-top: 3px;" title="${locationName}" />`,
       function (control, map) {
