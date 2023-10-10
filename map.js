@@ -11,6 +11,7 @@ const LAYER_CONFIG = [
         lat: 46.80852,
         lng: 9.25787,
         zoom: 16,
+        basemap: "Swisstopo",
       },
     },
   },
@@ -25,6 +26,7 @@ const LAYER_CONFIG = [
         lat: 47.51467,
         lng: 9.42933,
         zoom: 15,
+        basemap: "Swisstopo TLM gray",
       },
     },
   },
@@ -39,7 +41,8 @@ const LAYER_CONFIG = [
         lat: 52.5038,
         lng: 13.2714,
         zoom: 16,
-      }
+        basemap: "geobasis-bb.de",
+      },
     },
   },
 ];
@@ -52,7 +55,7 @@ const BASEMAPS = {
         "Maps by <a href='https://www.swisstopo.admin.ch/en/home.html'>swisstopo</a>",
     }
   ),
-  Swisstopo: L.tileLayer(
+  "Swisstopo": L.tileLayer(
     "https://wmts.geo.admin.ch/1.0.0/ch.swisstopo.pixelkarte-farbe/default/current/3857/{z}/{x}/{y}.jpeg",
     {
       layers: "ch.swisstopo.pixelkarte-farbe",
@@ -61,7 +64,7 @@ const BASEMAPS = {
         "Maps by <a href='https://www.swisstopo.admin.ch/en/home.html'>swisstopo</a>",
     }
   ),
-  Openstreetmap: L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+  "Openstreetmap": L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
     attribution:
       '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
   }),
@@ -70,6 +73,18 @@ const BASEMAPS = {
     {
       attribution:
         'Map data: &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, <a href="http://viewfinderpanoramas.org">SRTM</a> | Map style: &copy; <a href="https://opentopomap.org">OpenTopoMap</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a>)',
+    }
+  ),
+  "geodatenzentrum.de": L.tileLayer.wms(
+    "https://sgx.geodatenzentrum.de/wms_basemapde",
+    {
+      layers: "de_basemapde_web_raster_farbe",
+    }
+  ),
+  "geobasis-bb.de": new L.tileLayer.wms(
+    "https://isk.geobasis-bb.de/mapproxy/dop20c_wmts/service",
+    {
+      layers: "bebb_dop20c"
     }
   ),
 };
@@ -157,15 +172,23 @@ const basemapControl = L.control
 const setLocation = (config, location, control, map) => {
   map.setView([location.lat, location.lng], location.zoom);
 
-  for( const layer of Object.values(overlayMaps)) {
+  for (const layer of Object.values(overlayMaps)) {
     map.removeLayer(layer);
     layerControl.removeLayer(layer);
   }
 
-  for( const layerName of config.layers) {
+  for (const layerName of config.layers) {
     map.addLayer(overlayMaps[layerName]);
     layerControl.addOverlay(overlayMaps[layerName], layerName);
   }
+
+  // set current basemap
+  const basemapName = location.basemap || DEFAULT_BASEMAP;
+
+  for (const basemapLayer of Object.values(BASEMAPS)) {
+    map.removeLayer(basemapLayer)
+  }
+  map.addLayer(BASEMAPS[location.basemap])
 };
 const projects = [];
 
