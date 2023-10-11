@@ -3,7 +3,7 @@ const LAYER_CONFIG = [
   {
     source: "https://qgis.demo.opengis.ch/ows/bees/",
     layers: ["Fields", "Apiary"],
-    with_maptip: true,
+    with_maptip: false,
     info_format: "text/plain",
     locations: {
       laax_bees: {
@@ -96,8 +96,8 @@ const BASEMAPS = {
   ),
 };
 
-const DEFAULT_PROJECT = LAYER_CONFIG[2];
-const DEFAULT_LOCATION = DEFAULT_PROJECT.locations["berlin"];
+const DEFAULT_PROJECT = LAYER_CONFIG[0];
+const DEFAULT_LOCATION = DEFAULT_PROJECT.locations["berlin_bees"];
 const DEFAULT_BASEMAP = "Openstreetmap";
 
 
