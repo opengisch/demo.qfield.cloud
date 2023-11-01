@@ -1,42 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Demo Viewer</title>
-    <link rel="stylesheet" href="style.css">
-    <!-- Base Leaflet Plugin-->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.1/dist/leaflet.css"
-          integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14=" crossorigin=""/>
-    <script src="https://unpkg.com/leaflet@1.9.1/dist/leaflet.js"
-            integrity="sha256-NDI0K41gVbWqfkkaHj15IzU7PtMoelkzyKp8TOaFQ3s=" crossorigin=""></script>
-    <!-- Locating the User Plugin-->
-    <link rel="stylesheet"
-          href="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol@0.76.1/dist/L.Control.Locate.min.css"/>
-    <script src="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol@0.76.1/dist/L.Control.Locate.min.js"
-            charset="utf-8"></script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="GeoGirafe is an flexible application to build online geoportals.">
 
-    <!-- https://github.com/heigeo/leaflet.wms -->
-    <script src="https://code.jquery.com/jquery-1.10.1.min.js"></script>
-    <script src="leaflet.wms.js"></script>
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="manifest" href="site.webmanifest">
 
-    <!-- leaflet-easybutton -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-easybutton@2/src/easy-button.css">
-    <script src="https://cdn.jsdelivr.net/npm/leaflet-easybutton@2/src/easy-button.js"></script>
+    <link rel="stylesheet" media="screen" href="data:text/css;base64,KiB7CiAgbWFyZ2luOiAwOwogIHBhZGRpbmc6IDA7CiAgZm9udC1mYW1pbHk6IEFyaWFsLCBzYW5zLXNlcmlmOwogIGZvbnQtc2l6ZTogLjlyZW07Cn0KCmhlYWRlciB7CiAgcG9zaXRpb246IGZpeGVkOwogIHRvcDogMDsKICBsZWZ0OiAwOwogIHJpZ2h0OiAwOwogIGJvcmRlci1ib3R0b206IHNvbGlkIDFweCAjZGRkOwogIGJhY2tncm91bmQ6ICNmZmY7CiAgaGVpZ2h0OiA0LjVyZW07CiAgei1pbmRleDogMTAwOwogIGp1c3RpZnktY29udGVudDogc3BhY2UtYmV0d2VlbjsKICBib3gtc2hhZG93OiAwIDFweCAycHggcmdiYSg2MCwgNjQsIDY3LCAwLjMpLCAwIDFweCAzcHggMXB4IHJnYmEoNjAsIDY0LCA2NywgMC4xNSk7Cn0KCmdpcmFmZS10aGVtZS1zZWxlY3QgewogIHBvc2l0aW9uOiBhYnNvbHV0ZTsKICB0b3A6IDA7CiAgbGVmdDogMDsKICB3aWR0aDogNC41cmVtOwogIGhlaWdodDogNC41cmVtOwogIHotaW5kZXg6IDEwMDsKfQoKI2xvZ28gewogIHBvc2l0aW9uOiBhYnNvbHV0ZTsKICBsZWZ0OiA0LjVyZW07CiAgYm90dG9tOiAwOwogIG1hcmdpbi1ib3R0b206IDAuNXJlbTsKICBoZWlnaHQ6IDQ1cHg7CiAgbWFyZ2luLWxlZnQ6IDFyZW07Cn0KCmdpcmFmZS1zZWFyY2ggewogIG1hcmdpbjogMXJlbSBhdXRvOwogIGRpc3BsYXk6IGJsb2NrOwogIHdpZHRoOiAzNnJlbTsKfQoKI2J1dHRvbmJhciB7CiAgcG9zaXRpb246IGFic29sdXRlOwogIHJpZ2h0OiAwOwogIHRvcDogMDsKICB0ZXh0LWFsaWduOiByaWdodDsKICBjb2xvcjogI2ZmZjsKICBiYWNrZ3JvdW5kLWNvbG9yOiAjNDQ0OwogIGZvbnQtc2l6ZTogMDsKICBwYWRkaW5nOiAwOwogIGRpc3BsYXk6IGZsZXg7CiAgaGVpZ2h0OiA0LjZyZW07CiAgb3ZlcmZsb3c6IHZpc2libGU7Cn0KCiNjb250ZW50IHsKICBwb3NpdGlvbjogYWJzb2x1dGU7CiAgZGlzcGxheTogZmxleDsKICBmbGV4LWRpcmVjdGlvbjogY29sdW1uOwogIHRvcDogNC41cmVtOwogIGJvdHRvbTogMDsKICBsZWZ0OiAwOwogIHJpZ2h0OiAwOwp9CgojY29udGVudC1tYXAgewogIHBvc2l0aW9uOiByZWxhdGl2ZTsKICBmbGV4OiAxOwp9CgojY29udGVudC1ib3R0b20gewogIHBvc2l0aW9uOiByZWxhdGl2ZTsKICBmbGV4OiAwOwp9CgojY29udGVudC1tYXAgc2VjdGlvbiB7CiAgcG9zaXRpb246IGFic29sdXRlOwogIGRpc3BsYXk6IGZsZXg7CiAgdG9wOiAwOwogIGJvdHRvbTogMDsKICBsZWZ0OiAwOwogIHJpZ2h0OiAwOwp9CgpnaXJhZmUtbWFwIHsKICBwb3NpdGlvbjogYWJzb2x1dGU7CiAgdG9wOiAwOwogIGxlZnQ6IDA7CiAgcmlnaHQ6IDA7CiAgYm90dG9tOiAwCn0KCmdpcmFmZS10cmVlLXZpZXcgewogIHBvc2l0aW9uOiByZWxhdGl2ZTsKICB3aWR0aDogMjVyZW07CiAgei1pbmRleDogOTA7CiAgYmFja2dyb3VuZDogI2ZmZjsKICBvdmVyZmxvdzogYXV0bzsKICBib3gtc2hhZG93OiAwIDFweCAycHggcmdiYSg2MCwgNjQsIDY3LCAwLjMpLCAwIDFweCAzcHggMXB4IHJnYmEoNjAsIDY0LCA2NywgMC4xNSk7Cn0KCmZvb3RlciB7CiAgZmxleDogMDsKICBhbGlnbi1zZWxmOiBmbGV4LWVuZDsKICBib3JkZXI6IG5vbmU7CiAgei1pbmRleDogMTA7CiAgZGlzcGxheTogZmxleDsKICBmbGV4LWRpcmVjdGlvbjogcm93Owp9CgpnaXJhZmUtc2VsZWN0aW9uLWdyaWQgewogIHBvc2l0aW9uOiByZWxhdGl2ZTsKICBkaXNwbGF5OiBibG9jazsKfQoKZ2lyYWZlLXJlZGxpbmluZywgZ2lyYWZlLXByaW50IHsKICBwb3NpdGlvbjogYWJzb2x1dGU7CiAgcmlnaHQ6IDA7CiAgdG9wOiAwOwogIGJvdHRvbTogMDsKICB3aWR0aDogMjByZW07CiAgei1pbmRleDogOTA7CiAgYm9yZGVyLWxlZnQ6IHNvbGlkIDFweCAjZGRkOwogIGJhY2tncm91bmQ6ICNmZmY7CiAgb3ZlcmZsb3c6IHZpc2libGU7CiAgZGlzcGxheTogbm9uZTsKICBib3gtc2hhZG93OiAwIDFweCAycHggcmdiYSg2MCwgNjQsIDY3LCAwLjMpLCAwIDFweCAzcHggMXB4IHJnYmEoNjAsIDY0LCA2NywgMC4xNSk7Cn0KCmdpcmFmZS1zZWxlY3Rpb24td2luZG93IHsKICBwb3NpdGlvbjogYWJzb2x1dGU7CiAgei1pbmRleDogMTAwOwogIGJhY2tncm91bmQ6ICNmZmY7CiAgZGlzcGxheTogbm9uZTsKfQoKZ2lyYWZlLWFib3V0IHsKICBwb3NpdGlvbjogYWJzb2x1dGU7CiAgei1pbmRleDogMTAwOwogIGJhY2tncm91bmQ6ICNmZmY7CiAgZGlzcGxheTogbm9uZTsKICB0b3A6IDUwJTsgCiAgbGVmdDogNTAlOwogIHRyYW5zZm9ybTogdHJhbnNsYXRlKC01MCUsIC01MCUpOwp9CgouYm9yZGVyLXRvcCB7CiAgYm9yZGVyLXRvcDogc29saWQgMXB4ICNmZmY7Cn0K" />
+    <link rel="stylesheet" media="screen" href="data:text/css;base64,QG1lZGlhIHNjcmVlbiBhbmQgKG1heC13aWR0aDoxMDI0cHgpIHsKICBnaXJhZmUtc2VhcmNoIHsKICAgIHdpZHRoOiAyNHJlbTsKICAgIG1hcmdpbi1yaWdodDogMTByZW07CiAgfQp9CgpAbWVkaWEgc2NyZWVuIGFuZCAobWF4LXdpZHRoOjc2OHB4KSB7CiAgZ2lyYWZlLXNlYXJjaCB7CiAgICB3aWR0aDogMTAwJTsKICAgIG1hcmdpbi10b3A6IDQuNXJlbTsKICAgIGJvcmRlci1yYWRpdXM6IDA7CiAgfQoKICBnaXJhZmUtY29vcmRpbmF0ZSB7CiAgICBkaXNwbGF5OiBub25lOwogIH0KfQ==" />
 
-</head>
-<body>
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="lib/fontawesome/css/all.min.css" />
+    <noscript><link rel="stylesheet" href="lib/fontawesome/css/all.min.css"></noscript>
+    <link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="lib/font-gis/css/font-gis.css" />
+    <noscript><link rel="stylesheet" href="lib/font-gis/css/font-gis.css"></noscript>
+    <link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="lib/tippy.js/tippy.min.css" />
+    <noscript><link rel="stylesheet" href="lib/tippy.js/tippy.min.css"></noscript>
 
-<div id="map"
-     style="position: absolute; left: 0px; top: 0px; height: 100%; width: 100%; outline: currentcolor none medium;"
-     class="leaflet-container leaflet-touch leaflet-retina leaflet-fade-anim leaflet-grab leaflet-touch-drag leaflet-touch-zoom"
-     tabindex="0">
+    <link rel="preload" as="font" type="font/woff2" href="lib/fontawesome/webfonts/fa-solid-900.woff2" crossorigin="anonymous">
+    <link rel="preload" as="font" type="font/woff2" href="lib/fontawesome/webfonts/fa-regular-400.woff2" crossorigin="anonymous">
+    <link rel="preload" as="font" type="font/woff2" href="lib/font-gis/fonts/font-gis.woff2?t=1634903189298" crossorigin="anonymous">
 
-</div>
+    
+    <title>GeoGirafe</title>
+    <script type="module" crossorigin src="./assets/index-23b178a5.js"></script>
+    <link rel="modulepreload" crossorigin href="./assets/lazy-af36d162.js">
+    <link rel="modulepreload" crossorigin href="./assets/cesium-f12835f2.js">
+  </head>
+  <body>
+    <header>
+      <girafe-theme-select></girafe-theme-select>
+      <img id="logo" alt="geogirafe-logo" src="images/logo_small.webp" />
+      <girafe-search id="search"></girafe-search>
+      <div id="buttonbar">
+        <girafe-button icon-style="fa-2xl fa-solid fa-user"></girafe-button>
+        <girafe-button icon-style="fa-2xl fa-solid fa-circle-question"
+                       onclick="document.state.interface.helpVisible = true">
+        </girafe-button>
+        <girafe-menu-button icon-style="fa-2xl fa-solid fa-ellipsis-vertical">
+          <div slot="menu-content">
+            <girafe-button icon-style="fa-xl fa-regular fa-pen-to-square" text="Draw" 
+                           onclick="document.state.interface.redliningPanelVisible = !document.state.interface.redliningPanelVisible">
+            </girafe-button>
+            <girafe-button icon-style="fa-xl fa-solid fa-print" text="Print"
+                           onclick="document.state.interface.printPanelVisible = !document.state.interface.printPanelVisible">
+            </girafe-button>
+            <girafe-proj-select></girafe-proj-select>
+            <girafe-language-select></girafe-language-select>
+            <girafe-button icon-style="fa-xl fa-solid fa-moon" text="Dark"
+                           onclick="document.state.interface.darkMode = !document.state.interface.darkMode">
+            </girafe-button>
+            <girafe-globe-select></girafe-globe-select>
+            <girafe-button icon-style="fa-xl fa-solid fa-circle-info" class="border-top" text="about"
+                           onclick="document.state.interface.aboutVisible = true">
+            </girafe-button>
+          </div>
+        </girafe-menu-button>
+      </div>
+    </header>
 
-<script type="text/javascript" src="map.js"></script>
+    <div id="content">
 
-</body>
+      <div id="content-map">
+        <section>
+          <girafe-tree-view dock="left"></girafe-tree-view>
+          <girafe-map></girafe-map>
+          <footer>
+            <girafe-scale></girafe-scale>
+            <girafe-coordinate></girafe-coordinate>
+          </footer>
+        </section>
+        <girafe-redlining dock="right"></girafe-redlining>
+        <girafe-print dock="right"></girafe-print>
+        <girafe-about></girafe-about>
+        <!-- <girafe-selection-window></girafe-selection-window> -->
+        <girafe-help></girafe-help>
+      </div>
 
+      <div id="content-bottom">
+        <girafe-selection-grid dock="bottom"></girafe-selection-grid>
+      </div>
 
+    </div>
+
+    
+
+  </body>
 </html>
