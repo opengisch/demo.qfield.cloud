@@ -2580,7 +2580,48 @@
           }
         }
       }
-    }
+    },
+     "WMS geodatenzentrum.de": {
+            "url": "https://sgx.geodatenzentrum.de/wms_basemapde",
+            "urlWfs": "https://sgx.geodatenzentrum.de/wms_basemapde",
+            "type": "mapserver",
+            "credential": true,
+            "imageType": "image/png",
+            "wfsSupport": true,
+            "isSingleTile": false,
+            "namespace": "http://mapserver.gis.umn.edu/mapserver",
+            "attributes": {
+                "de_basemapde_web_raster_farbe": {
+                    "//msGeometry": {
+                        "type": "GeometryPropertyType",
+                        "namespace": "http://www.opengis.net/gml",
+                        "minOccurs": "0",
+                        "maxOccurs": "1"
+                    }
+                },
+                "//BS_Bodenbedeckung_500_1000_farbig": {
+                    "msGeometry": {
+                        "type": "GeometryPropertyType",
+                        "namespace": "http://www.opengis.net/gml",
+                        "minOccurs": "0",
+                        "maxOccurs": "1"
+                    }
+                },
+                "//AF_AbfuhrzoneGemeindeBasel": {
+                    "the_geom": {
+                        "type": "PolygonPropertyType",
+                        "namespace": "http://www.opengis.net/gml",
+                        "minOccurs": "0",
+                        "maxOccurs": "1"
+                    },
+                    "af_zone": {
+                        "type": "string",
+                        "namespace": "http://www.w3.org/2001/XMLSchema",
+                        "minOccurs": "0"
+                    }
+                }
+            }
+        }
   },
   "themes": [
     {
@@ -3546,6 +3587,31 @@
       "style": "default",
       "matrixSet": "GLOBAL_WEBMERCATOR",
       "layer": "de_basemapde_web_raster_farbe",
+      "imageType": "image/png"
+    },
+
+    {
+      "id": 777,
+      "name": "Swisstopo TLM gray WMTS",
+      "metadata": {},
+      "dimensions": {},
+      "type": "WMTS",
+      "url": "https://wmts.geo.admin.ch/EPSG/2056/1.0.0/WMTSCapabilities.xml",
+      "style": "default",
+      "//matrixSet": "GLOBAL_WEBMERCATOR",
+      "layer": "ch.swisstopo.swisstlm3d-karte-grau",
+      "imageType": "image/png"
+    },
+    {
+      "id": 778,
+      "name": "Swisstopo WMTS",
+      "metadata": {},
+      "dimensions": {},
+      "type": "WMTS",
+      "url": "https://wmts.geo.admin.ch/EPSG/2056/1.0.0/WMTSCapabilities.xml",
+      "style": "default",
+      "//matrixSet": "GLOBAL_WEBMERCATOR",
+      "layer": "ch.swisstopo.pixelkarte-farbe",
       "imageType": "image/png"
     }
   ],

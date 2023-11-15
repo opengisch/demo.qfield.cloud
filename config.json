@@ -24,7 +24,7 @@
     "//comment1": "Display the Basemap control or not",
     "show" : true,
     "//comment2": "Name of the default basemap.",
-    "defaultBasemap": "OSM map",
+    "defaultBasemap": "OpenStreetMap",
     "//comment3" : "special basemaps that can be activated or not",
     "OSM": true,
     "SwissTopoVectorTiles": true
