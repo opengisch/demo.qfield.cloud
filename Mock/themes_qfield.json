@@ -136,9 +136,31 @@
       "namespace": null,
       "attributes": null
     },
-    "QGIS server": {
+    "QGIS server bees": {
       "url": "https://qgis.demo.opengis.ch/ows/bees/",
       "urlWfs": "https://qgis.demo.opengis.ch/ows/bees/",
+      "type": "qgisserver",
+      "credential": true,
+      "imageType": "image/png",
+      "wfsSupport": true,
+      "isSingleTile": false,
+      "namespace": "http://www.qgis.org/gml",
+      "attributes": null
+    },
+    "QGIS server berlin ww": {
+      "url": "https://qgis.demo.opengis.ch/ows/qgep_db/",
+      "urlWfs": "https://qgis.demo.opengis.ch/ows/qgep_db/",
+      "type": "qgisserver",
+      "credential": true,
+      "imageType": "image/png",
+      "wfsSupport": true,
+      "isSingleTile": false,
+      "namespace": "http://www.qgis.org/gml",
+      "attributes": null
+    },
+    "QGIS server arbon ww": {
+      "url": "https://qgis.demo.opengis.ch/ows/wastewater/",
+      "urlWfs": "https://qgis.demo.opengis.ch/ows/wastewater/",
       "type": "qgisserver",
       "credential": true,
       "imageType": "image/png",
@@ -2562,458 +2584,20 @@
   },
   "themes": [
     {
-      "id": 0,
-      "name": "Cadestre red",
-      "icon": "https://geomapfish-demo-2-8.camptocamp.com/static/38ae74c3322d4d82b3b35f8d45e5e685/img/cadastre.jpeg",
-      "children": [
-        {
-          "id": 2,
-          "name": "Cadestre red",
-          "children": [
-            {
-              "id": 111,
-              "name": "asitvd.fond_pourortho2",
-              "metadata": {
-                "disclaimer": "\u00a9 <a href='http://asitvd.ch'>ASIT VD</a>, Contributeurs d\u2019<a href='http://www.openstreetmap.org/copyright'>OpenStreetMap</a>",
-                "isChecked": true,
-                "//legend": false,
-                "maxResolution": 100.0,
-                "minResolution": 1.0
-              },
-              "dimensions": {},
-              "type": "WMS",
-              "url": "https://ows.asitvd.ch/wms/1.0.0/WMSCapabilities.xml",
-              "matrixSet": "2056",
-              "layer": "asitvd.fond_pourortho",
-              "imageType": "image/jpeg"
-            }
-          ],
-          "metadata": {
-            "exclusiveGroup": true,
-            "isExpanded": true
-          },
-          "mixed": true
-        }
-      ]
-    },
-    {
-      "id": 29,
-      "name": "Cadastre",
-      "icon": "https://geomapfish-demo-2-8.camptocamp.com/static/38ae74c3322d4d82b3b35f8d45e5e685/img/cadastre.jpeg",
-      "children": [
-        {
-          "id": 30,
-          "name": "Cadastre",
-          "children": [
-            {
-              "id": 125,
-              "name": "asitvd.fond_pourortho",
-              "metadata": {
-                "disclaimer": "\u00a9 <a href='http://asitvd.ch'>ASIT VD</a>, Contributeurs d\u2019<a href='http://www.openstreetmap.org/copyright'>OpenStreetMap</a>",
-                "isChecked": true,
-                "legend": true,
-                "maxResolution": 100.0,
-                "minResolution": 1.0
-              },
-              "dimensions": {},
-              "type": "WMTS",
-              "url": "https://ows.asitvd.ch/wmts/1.0.0/WMTSCapabilities.xml",
-              "matrixSet": "2056",
-              "layer": "asitvd.fond_pourortho",
-              "imageType": "image/jpeg"
-            },
-            {
-              "id": 119,
-              "name": "ch.are.alpenkonvention",
-              "metadata": {
-                "copyable": true,
-                "disclaimer": "<a href=\"http://www.geo.admin.ch/\">Donn\u00e9es publiques de l'infrastructure f\u00e9d\u00e9rale de donn\u00e9es g\u00e9ographiques (IFDG)</a>",
-                "legend": true,
-                "maxResolution": 50.0,
-                "minQueryResolution": 5.0,
-                "minResolution": 10.0,
-                "ogcServer": "WMS CH topo fr",
-                "wmsLayers": "ch.are.alpenkonvention"
-              },
-              "dimensions": {},
-              "type": "WMTS",
-              "url": "https://wmts.geo.admin.ch/EPSG/2056/1.0.0/WMTSCapabilities.xml?lang=fr",
-              "matrixSet": "2056_26",
-              "layer": "ch.are.alpenkonvention",
-              "imageType": "image/jpeg"
-            },
-            {
-              "id": 120,
-              "name": "ch.astra.hauptstrassennetz",
-              "metadata": {
-                "disclaimer": "<a href=\"http://www.geo.admin.ch/\">Donn\u00e9es publiques de l'infrastructure f\u00e9d\u00e9rale de donn\u00e9es g\u00e9ographiques (IFDG)</a>",
-                "legend": true,
-                "legendImage": "https://geomapfish-demo-2-8.camptocamp.com/static/38ae74c3322d4d82b3b35f8d45e5e685/images/railways.png",
-                "opacity": 0.8,
-                "queryLayers": "ch.astra.ausnahmetransportrouten"
-              },
-              "dimensions": {},
-              "type": "WMTS",
-              "url": "https://wmts.geo.admin.ch/EPSG/2056/1.0.0/WMTSCapabilities.xml?lang=fr",
-              "matrixSet": "2056_26",
-              "layer": "ch.astra.hauptstrassennetz",
-              "imageType": "image/jpeg"
-            },
-            {
-              "id": 260,
-              "name": "Sub group",
-              "children": [
-                {
-                  "id": 115,
-                  "name": "ch.swisstopo.dreiecksvermaschung",
-                  "metadata": {
-                    "disclaimer": "<a href=\"http://www.geo.admin.ch/\">Donn\u00e9es publiques de l'infrastructure f\u00e9d\u00e9rale de donn\u00e9es g\u00e9ographiques (IFDG)</a>",
-                    "legend": true
-                  },
-                  "dimensions": {},
-                  "type": "WMS",
-                  "layers": "ch.swisstopo.dreiecksvermaschung",
-                  "imageType": "image/png",
-                  "childLayers": [
-                    {
-                      "name": "ch.swisstopo.dreiecksvermaschung",
-                      "minResolutionHint": 0.0,
-                      "maxResolutionHint": 999999999.0,
-                      "queryable": true
-                    }
-                  ],
-                  "minResolutionHint": 0.0,
-                  "maxResolutionHint": 999999999.0,
-                  "ogcServer": "WMS CH topo fr"
-                },
-                {
-                  "id": 118,
-                  "name": "ch.swisstopo.geologie-geotechnik-gk500-gesteinsklassierung",
-                  "metadata": {
-                    "directedFilterAttributes": [
-                      "Classification_des_roches"
-                    ],
-                    "disclaimer": "<a href=\"http://www.geo.admin.ch/\">Donn\u00e9es publiques de l'infrastructure f\u00e9d\u00e9rale de donn\u00e9es g\u00e9ographiques (IFDG)</a>",
-                    "legend": true,
-                    "opacity": 0.25
-                  },
-                  "dimensions": {},
-                  "type": "WMS",
-                  "layers": "ch.swisstopo.geologie-geotechnik-gk500-gesteinsklassierung",
-                  "imageType": "image/png",
-                  "childLayers": [
-                    {
-                      "name": "ch.swisstopo.geologie-geotechnik-gk500-gesteinsklassierung",
-                      "minResolutionHint": 0.0,
-                      "maxResolutionHint": 999999999.0,
-                      "queryable": true
-                    }
-                  ],
-                  "minResolutionHint": 0.0,
-                  "maxResolutionHint": 999999999.0,
-                  "ogcServer": "WMS CH topo fr"
-                },
-                {
-                  "id": 117,
-                  "name": "ch.swisstopo.geologie-geotechnik-gk500-lithologie_hauptgruppen",
-                  "metadata": {
-                    "disclaimer": "<a href=\"http://www.geo.admin.ch/\">Donn\u00e9es publiques de l'infrastructure f\u00e9d\u00e9rale de donn\u00e9es g\u00e9ographiques (IFDG)</a>",
-                    "legend": true
-                  },
-                  "dimensions": {},
-                  "type": "WMS",
-                  "layers": "ch.swisstopo.geologie-geotechnik-gk500-lithologie_hauptgruppen",
-                  "imageType": "image/png",
-                  "childLayers": [
-                    {
-                      "name": "ch.swisstopo.geologie-geotechnik-gk500-lithologie_hauptgruppen",
-                      "minResolutionHint": 0.0,
-                      "maxResolutionHint": 999999999.0,
-                      "queryable": true
-                    }
-                  ],
-                  "minResolutionHint": 0.0,
-                  "maxResolutionHint": 999999999.0,
-                  "ogcServer": "WMS CH topo fr"
-                },
-                {
-                  "id": 116,
-                  "name": "ch.swisstopo.geologie-gravimetrischer_atlas",
-                  "metadata": {
-                    "disclaimer": "<a href=\"http://www.geo.admin.ch/\">Donn\u00e9es publiques de l'infrastructure f\u00e9d\u00e9rale de donn\u00e9es g\u00e9ographiques (IFDG)</a>",
-                    "legend": true
-                  },
-                  "dimensions": {},
-                  "type": "WMS",
-                  "layers": "ch.swisstopo.geologie-gravimetrischer_atlas",
-                  "imageType": "image/png",
-                  "childLayers": [
-                    {
-                      "name": "ch.swisstopo.geologie-gravimetrischer_atlas",
-                      "minResolutionHint": 0.0,
-                      "maxResolutionHint": 999999999.0,
-                      "queryable": false
-                    }
-                  ],
-                  "minResolutionHint": 0.0,
-                  "maxResolutionHint": 999999999.0,
-                  "ogcServer": "WMS CH topo fr"
-                }
-              ],
-              "metadata": {
-                "isExpanded": true
-              },
-              "mixed": true
-            }
-          ],
-          "metadata": {
-            "exclusiveGroup": true,
-            "isExpanded": true
-          },
-          "mixed": true
-        },
-        {
-          "id": 686,
-          "name": "BS WMTS",
-          "children": [
-            {
-              "id": 684,
-              "name": "BS Offizieller Stadtplan farbig 1:12'500",
-              "metadata": {},
-              "dimensions": {},
-              "type": "WMTS",
-              "url": "https://wmts.geo.bs.ch/1.0.0/WMTSCapabilities.xml",
-              "layer": "SP_StadtplanFarbig_12500",
-              "imageType": "image/png"
-            },
-            {
-              "id": 665,
-              "name": "BS Orthofoto 1990",
-              "metadata": {},
-              "dimensions": {},
-              "type": "WMTS",
-              "url": "https://wmts.geo.bs.ch/1.0.0/WMTSCapabilities.xml",
-              "layer": "OF_Orthofoto1990",
-              "imageType": "image/png"
-            },
-            {
-              "id": 666,
-              "name": "BS Orthofoto 1995 M\u00e4rz",
-              "metadata": {},
-              "dimensions": {},
-              "type": "WMTS",
-              "url": "https://wmts.geo.bs.ch/1.0.0/WMTSCapabilities.xml",
-              "layer": "OF_Orthofoto1995Maerz",
-              "imageType": "image/png"
-            },
-            {
-              "id": 667,
-              "name": "BS Orthofoto 1999 M\u00e4rz",
-              "metadata": {},
-              "dimensions": {},
-              "type": "WMTS",
-              "url": "https://wmts.geo.bs.ch/1.0.0/WMTSCapabilities.xml",
-              "layer": "OF_Orthofoto1999Maerz",
-              "imageType": "image/png"
-            },
-            {
-              "id": 668,
-              "name": "BS Orthofoto 2001 Juli",
-              "metadata": {},
-              "dimensions": {},
-              "type": "WMTS",
-              "url": "https://wmts.geo.bs.ch/1.0.0/WMTSCapabilities.xml",
-              "layer": "OF_Orthofoto2001Juli",
-              "imageType": "image/png"
-            },
-            {
-              "id": 669,
-              "name": "BS Orthofoto 2002 M\u00e4rz",
-              "metadata": {},
-              "dimensions": {},
-              "type": "WMTS",
-              "url": "https://wmts.geo.bs.ch/1.0.0/WMTSCapabilities.xml",
-              "layer": "OF_Orthofoto2002Maerz",
-              "imageType": "image/png"
-            },
-            {
-              "id": 670,
-              "name": "BS Orthofoto 2005 April",
-              "metadata": {},
-              "dimensions": {},
-              "type": "WMTS",
-              "url": "https://wmts.geo.bs.ch/1.0.0/WMTSCapabilities.xml",
-              "layer": "OF_Orthofoto2005April",
-              "imageType": "image/png"
-            },
-            {
-              "id": 671,
-              "name": "BS Orthofoto 2008 April",
-              "metadata": {},
-              "dimensions": {},
-              "type": "WMTS",
-              "url": "https://wmts.geo.bs.ch/1.0.0/WMTSCapabilities.xml",
-              "layer": "OF_Orthofoto2008April",
-              "imageType": "image/png"
-            },
-            {
-              "id": 672,
-              "name": "BS Orthofoto 2010 April",
-              "metadata": {},
-              "dimensions": {},
-              "type": "WMTS",
-              "url": "https://wmts.geo.bs.ch/1.0.0/WMTSCapabilities.xml",
-              "layer": "OF_Orthofoto2010April",
-              "imageType": "image/png"
-            },
-            {
-              "id": 673,
-              "name": "BS Orthofoto 2012 M\u00e4rz",
-              "metadata": {},
-              "dimensions": {},
-              "type": "WMTS",
-              "url": "https://wmts.geo.bs.ch/1.0.0/WMTSCapabilities.xml",
-              "layer": "OF_Orthofoto2012Maerz",
-              "imageType": "image/png"
-            },
-            {
-              "id": 674,
-              "name": "BS Orthofoto 2012 Juli",
-              "metadata": {},
-              "dimensions": {},
-              "type": "WMTS",
-              "url": "https://wmts.geo.bs.ch/1.0.0/WMTSCapabilities.xml",
-              "layer": "OF_Orthofoto2012Juli",
-              "imageType": "image/png"
-            },
-            {
-              "id": 675,
-              "name": "BS Orthofoto 2015 April",
-              "metadata": {},
-              "dimensions": {},
-              "type": "WMTS",
-              "url": "https://wmts.geo.bs.ch/1.0.0/WMTSCapabilities.xml",
-              "layer": "OF_Orthofoto2015April",
-              "imageType": "image/png"
-            },
-            {
-              "id": 676,
-              "name": "BS Orthofoto 2017 M\u00e4rz",
-              "metadata": {},
-              "dimensions": {},
-              "type": "WMTS",
-              "url": "https://wmts.geo.bs.ch/1.0.0/WMTSCapabilities.xml",
-              "layer": "OF_Orthofoto2017Maerz",
-              "imageType": "image/png"
-            },
-            {
-              "id": 677,
-              "name": "BS True Orthofoto 2017 M\u00e4rz",
-              "metadata": {},
-              "dimensions": {},
-              "type": "WMTS",
-              "url": "https://wmts.geo.bs.ch/1.0.0/WMTSCapabilities.xml",
-              "layer": "OF_TrueOrthofoto2017Maerz",
-              "imageType": "image/png"
-            },
-            {
-              "id": 678,
-              "name": "BS True Orthofoto 2020 M\u00e4rz",
-              "metadata": {},
-              "dimensions": {},
-              "type": "WMTS",
-              "url": "https://wmts.geo.bs.ch/1.0.0/WMTSCapabilities.xml",
-              "layer": "OF_TrueOrthofoto2020Maerz",
-              "imageType": "image/png"
-            },
-            {
-              "id": 679,
-              "name": "BS Orthofoto 2020 M\u00e4rz",
-              "metadata": {},
-              "dimensions": {},
-              "type": "WMTS",
-              "url": "https://wmts.geo.bs.ch/1.0.0/WMTSCapabilities.xml",
-              "layer": "OF_Orthofoto2020Maerz",
-              "imageType": "image/png"
-            },
-            {
-              "id": 680,
-              "name": "BS Orthofoto Aktuell",
-              "metadata": {},
-              "dimensions": {},
-              "type": "WMTS",
-              "url": "https://wmts.geo.bs.ch/1.0.0/WMTSCapabilities.xml",
-              "layer": "OF_OrthofotoAktuell",
-              "imageType": "image/png"
-            },
-            {
-              "id": 681,
-              "name": "BS Parzellenplan farbig",
-              "metadata": {},
-              "dimensions": {},
-              "type": "WMTS",
-              "url": "https://wmts.geo.bs.ch/1.0.0/WMTSCapabilities.xml",
-              "layer": "Parzellenplan_Bodenbedeckung_farbig",
-              "imageType": "image/png"
-            },
-            {
-              "id": 682,
-              "name": "BS Parzellenplan grau",
-              "metadata": {},
-              "dimensions": {},
-              "type": "WMTS",
-              "url": "https://wmts.geo.bs.ch/1.0.0/WMTSCapabilities.xml",
-              "layer": "Parzellenplan_Bodenbedeckung_grau",
-              "imageType": "image/png"
-            },
-            {
-              "id": 683,
-              "name": "BS Parzellenplan schwarz-weiss",
-              "metadata": {},
-              "dimensions": {},
-              "type": "WMTS",
-              "url": "https://wmts.geo.bs.ch/1.0.0/WMTSCapabilities.xml",
-              "layer": "Parzellenplan_Bodenbedeckung_sw",
-              "imageType": "image/png"
-            },
-            {
-              "id": 685,
-              "name": "BS \u00dcbersichtskarte farbig 1:40'000",
-              "metadata": {},
-              "dimensions": {},
-              "type": "WMTS",
-              "url": "https://wmts.geo.bs.ch/1.0.0/WMTSCapabilities.xml",
-              "layer": "SU_UebersichtskarteFarbig_40",
-              "imageType": "image/png"
-            }
-          ],
-          "metadata": {
-            "isExpanded": true
-          },
-          "mixed": true
-        }
-      ],
-      "functionalities": {
-        "default_basemap": [
-          "blank"
-        ]
-      },
-      "metadata": {}
-    },
-    {
       "id": 221,
       "name": "Bees QGIS server",
       "icon": "/images/a flatart bees icon.jpeg",
       "children": [
         {
           "id": 235,
-          "name": "QGIS server",
+          "name": "Laax Bees",
           "children": [
             {
               "id": 223,
               "name": "Fields",
               "metadata": {
                 "legend": false,
+                "isChecked": true,
                 "//legendRule": "Fields",
                 "//snappingConfig": {}
               },
@@ -3036,6 +2620,7 @@
               "name": "Apiary",
               "metadata": {
                 "legend": false,
+                "isChecked": true,
                 "//legendRule": "Fields",
                 "//snappingConfig": {}
               },
@@ -3056,7 +2641,202 @@
           ],
           "metadata": {},
           "mixed": false,
-          "ogcServer": "QGIS server",
+          "ogcServer": "QGIS server bees",
+          "dimensions": {}
+        }
+      ],
+      "functionalities": {},
+      "metadata": {}
+    },
+    {
+      "id": 555,
+      "name": "Berlin Bees",
+      "icon": "/images/a flatart bees icon.jpeg",
+      "children": [
+        {
+          "id": 556,
+          "name": "Berlin Bees",
+          "children": [
+            {
+              "id": 557,
+              "name": "Fields",
+              "metadata": {
+                "legend": false,
+                "isChecked": true,
+                "//legendRule": "Fields",
+                "//snappingConfig": {}
+              },
+              "type": "WMS",
+              "layers": "Fields",
+              "imageType": "image/png",
+              "childLayers": [
+                {
+                  "name": "Fields",
+                  "minResolutionHint": 0.0,
+                  "maxResolutionHint": 56.0,
+                  "queryable": true
+                }
+              ],
+              "minResolutionHint": 0.0,
+              "maxResolutionHint": 56.0
+            },
+            {
+              "id": 558,
+              "name": "Apiary",
+              "metadata": {
+                "legend": false,
+                "isChecked": true,
+                "//legendRule": "Fields",
+                "//snappingConfig": {}
+              },
+              "type": "WMS",
+              "layers": "Apiary",
+              "imageType": "image/png",
+              "childLayers": [
+                {
+                  "name": "Apiary",
+                  "minResolutionHint": 0.0,
+                  "maxResolutionHint": 56.0,
+                  "queryable": true
+                }
+              ],
+              "minResolutionHint": 0.0,
+              "maxResolutionHint": 56.0
+            }
+          ],
+          "metadata": {},
+          "mixed": false,
+          "ogcServer": "QGIS server bees",
+          "dimensions": {}
+        }
+      ],
+      "functionalities": {},
+      "metadata": {}
+    },
+    {
+      "id": 560,
+      "name": "Berlin Wastewater",
+      "icon": "/images/a flatart bees icon.jpeg",
+      "children": [
+        {
+          "id": 561,
+          "name": "Berlin Wastewater",
+          "children": [
+            {
+              "id": 562,
+              "name": "reaches",
+              "metadata": {
+                "legend": false,
+                "isChecked": true,
+                "//legendRule": "Fields",
+                "//snappingConfig": {}
+              },
+              "type": "WMS",
+              "layers": "reaches",
+              "imageType": "image/png",
+              "childLayers": [
+                {
+                  "name": "reaches",
+                  "minResolutionHint": 0.0,
+                  "maxResolutionHint": 56.0,
+                  "queryable": true
+                }
+              ],
+              "minResolutionHint": 0.0,
+              "maxResolutionHint": 56.0
+            },
+            {
+              "id": 563,
+              "name": "structures",
+              "metadata": {
+                "legend": false,
+                "isChecked": true,
+                "//legendRule": "Fields",
+                "//snappingConfig": {}
+              },
+              "type": "WMS",
+              "layers": "structures",
+              "imageType": "image/png",
+              "childLayers": [
+                {
+                  "name": "structures",
+                  "minResolutionHint": 0.0,
+                  "maxResolutionHint": 56.0,
+                  "queryable": true
+                }
+              ],
+              "minResolutionHint": 0.0,
+              "maxResolutionHint": 56.0
+            }
+          ],
+          "metadata": {},
+          "mixed": false,
+          "ogcServer": "QGIS server berlin ww",
+          "dimensions": {}
+        }
+      ],
+      "functionalities": {},
+      "metadata": {}
+    },
+    {
+      "id": 570,
+      "name": "Arbon Wastewater",
+      "icon": "/images/a flatart bees icon.jpeg",
+      "children": [
+        {
+          "id": 571,
+          "name": "Arbon Wastewater",
+          "children": [
+            {
+              "id": 572,
+              "name": "Reaches",
+              "metadata": {
+                "legend": false,
+                "isChecked": true,
+                "//legendRule": "Reaches",
+                "//snappingConfig": {}
+              },
+              "type": "WMS",
+              "layers": "Reaches",
+              "imageType": "image/png",
+              "childLayers": [
+                {
+                  "name": "Reaches",
+                  "minResolutionHint": 0.0,
+                  "maxResolutionHint": 56.0,
+                  "queryable": true
+                }
+              ],
+              "minResolutionHint": 0.0,
+              "maxResolutionHint": 56.0
+            },
+            {
+              "id": 573,
+              "name": "Wastewater structures",
+              "metadata": {
+                "legend": false,
+                "isChecked": true,
+                "//legendRule": "Wastewater structures",
+                "//snappingConfig": {}
+              },
+              "type": "WMS",
+              "layers": "Wastewater structures",
+              "imageType": "image/png",
+              "childLayers": [
+                {
+                  "name": "Wastewater structures",
+                  "minResolutionHint": 0.0,
+                  "maxResolutionHint": 56.0,
+                  "queryable": true
+                }
+              ],
+              "minResolutionHint": 0.0,
+              "maxResolutionHint": 56.0
+            }
+          ],
+          "metadata": {},
+          "mixed": false,
+          "ogcServer": "QGIS server arbon ww",
           "dimensions": {}
         }
       ],
