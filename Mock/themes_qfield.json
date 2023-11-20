@@ -2888,7 +2888,8 @@
   "background_layers": [
     {
       "id": 134,
-      "name": "OSM map",
+      "name": "OSM map (CH)",
+      "metadata": {
       "metadata": {
         "directedFilterAttributes": [
           "name",
@@ -2909,7 +2910,7 @@
     },
     {
       "id": 175,
-      "name": "OSM map WMS",
+      "name": "OSM map WMS (CH)",
       "metadata": {
         "thumbnail": "https://geomapfish-demo-2-8.camptocamp.com/static/38ae74c3322d4d82b3b35f8d45e5e685/img/cadastre.jpeg"
       },
@@ -3531,7 +3532,7 @@
     },
     {
       "id": 267,
-      "name": "orthophoto",
+      "name": "orthophoto (CH)",
       "children": [
         {
           "id": 125,
@@ -3566,7 +3567,7 @@
     },
     {
       "id": 620,
-      "name": "osm_landuse",
+      "name": "osm_landuse (CH)",
       "metadata": {
         "maxResolution": 50.0,
         "ogcServer": "Main PNG",
@@ -3579,20 +3580,35 @@
     },
     {
       "id": 793,
-      "name": "Bavaria WMTS",
+      "name": "geodatenzentrum.de (DE)",
       "metadata": {},
       "dimensions": {},
       "type": "WMTS",
-      "url": "https://sgx.geodatenzentrum.de/wmts_basemapde/1.0.0/WMTSCapabilities.xml",
+      "//url": "https://sgx.geodatenzentrum.de/wmts_basemapde/1.0.0/WMTSCapabilities.xml",
+      "url": "https://static.tuko.li/sgx.geodatenzentrum.de.WMTSCapabilities.xml",
       "style": "default",
       "matrixSet": "GLOBAL_WEBMERCATOR",
       "layer": "de_basemapde_web_raster_farbe",
-      "imageType": "image/png"
+      "imageType": "image/png",
+      "projection": "EPSG:3857"
     },
-
+    {
+      "id": 794,
+      "name": "geobasis-bb.de (DE)",
+      "metadata": {},
+      "dimensions": {},
+      "type": "WMTS",
+      "//url": "https://isk.geobasis-bb.de/mapproxy/dop20c_wmts/service?SERVICE=WMTS&REQUEST=GetCapabilities",
+      "url": "https://static.tuko.li/isk.geobasis-bb.de.WMTSCapabilities.xml",
+      "style": "default",
+      "matrixSet": "grid_3857",
+      "layer": "bebb_dop20c",
+      "imageType": "image/png",
+      "projection": "EPSG:3857"
+    },
     {
       "id": 777,
-      "name": "Swisstopo TLM gray WMTS",
+      "name": "Swisstopo TLM gray WMTS (CH)",
       "metadata": {},
       "dimensions": {},
       "type": "WMTS",
@@ -3604,7 +3620,7 @@
     },
     {
       "id": 778,
-      "name": "Swisstopo WMTS",
+      "name": "Swisstopo WMTS (CH)",
       "metadata": {},
       "dimensions": {},
       "type": "WMTS",
