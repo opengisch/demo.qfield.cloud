@@ -2627,7 +2627,7 @@
     {
       "id": 221,
       "name": "Bees QGIS server",
-      "icon": "/images/a flatart bees icon.jpeg",
+      "icon": "/images/laax_bees.png",
       "location": [2740220, 1186640],
       "zoom": 5,
       "favorite": true,
@@ -2695,7 +2695,7 @@
     {
       "id": 555,
       "name": "Berlin Bees",
-      "icon": "/images/a flatart bees icon.jpeg",
+      "icon": "/images/berlin_bees.png",
       "location": [2997603, 1833421],
       "zoom": 7,
       "favorite": true,
@@ -2763,7 +2763,7 @@
     {
       "id": 560,
       "name": "Berlin Wastewater",
-      "icon": "/images/a flatart bees icon.jpeg",
+      "icon": "/images/berlin_ww.png",
       "location": [2997514, 1833324],
       "zoom": 7,
       "favorite": true,
@@ -2831,7 +2831,7 @@
     {
       "id": 570,
       "name": "Arbon Wastewater",
-      "icon": "/images/a flatart bees icon.jpeg",
+      "icon": "/images/arbon_ww.png",
       "location": [2749937, 1264560],
       "zoom": 7,
       "favorite": true,
