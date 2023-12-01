@@ -136,6 +136,17 @@
       "namespace": null,
       "attributes": null
     },
+    "QGIS server ben": {
+      "url": "https://qgis.bko.li/ogc/drones",
+      "urlWfs": "https://qgis.bko.li/ogc/drones",
+      "type": "qgisserver",
+      "credential": false,
+      "imageType": "image/png",
+      "wfsSupport": true,
+      "isSingleTile": false,
+      "namespace": "http://www.qgis.org/gml",
+      "attributes": null
+    },
     "QGIS server bees": {
       "url": "https://qgis.demo.opengis.ch/ows/bees/",
       "urlWfs": "https://qgis.demo.opengis.ch/ows/bees/",
@@ -2624,6 +2635,51 @@
         }
   },
   "themes": [
+    {
+      "id": 111,
+      "name": "Drones QGIS server",
+      "icon": "/images/a flatart drone icon.jpeg",
+      "location": [2740220, 1186640],
+      "zoom": 5,
+      "favorite": true,
+      "children": [
+        {
+          "id": 112,
+          "name": "Drones",
+          "children": [
+            {
+              "id": 113,
+              "name": "drone_restrictions",
+              "metadata": {
+                "legend": false,
+                "isChecked": true,
+                "//legendRule": "drone_restrictions",
+                "//snappingConfig": {}
+              },
+              "type": "WMS",
+              "layers": "drone_restrictions",
+              "imageType": "image/png",
+              "childLayers": [
+                {
+                  "name": "drone_restrictions",
+                  "minResolutionHint": 0.0,
+                  "maxResolutionHint": 56.0,
+                  "queryable": true
+                }
+              ],
+              "minResolutionHint": 0.0,
+              "maxResolutionHint": 56.0
+            }
+          ],
+          "metadata": {},
+          "mixed": false,
+          "ogcServer": "QGIS server ben",
+          "dimensions": {}
+        }
+      ],
+      "functionalities": {},
+      "metadata": {}
+    },
     {
       "id": 221,
       "name": "Bees QGIS server",
