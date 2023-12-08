@@ -56,6 +56,7 @@
     <title>demo.qfield.cloud GeoGirafe</title>
     <script type="module" crossorigin src="./assets/index-3fb1374e.js"></script>
     <link rel="modulepreload" crossorigin href="./assets/lazy-af36d162.js">
+    <script type="module" src="./test_component/initialize.js"></script>
 </head>
 <body>
 <header>
@@ -63,7 +64,10 @@
     <img id="logo" alt="geogirafe-logo" src="images/logo_small.webp"/>
     <girafe-search id="search"></girafe-search>
       <div id="buttonbar">
+         <girafe-testcomponent></girafe-testcomponent>
+          {% if user jklasjdfl %}
         <girafe-theme-favorites></girafe-theme-favorites>
+          {% endif %}
         <girafe-nav-history></girafe-nav-history>
         <girafe-button icon-style="fa-2xl fa-solid fa-user"></girafe-button>
         <girafe-colorswitcher></girafe-colorswitcher>

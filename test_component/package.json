@@ -1,0 +1,12 @@
+{
+  "name": "gg_test_component",
+  "version": "1.0.0",
+  "description": "this is a very simple external js test component",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "ben koch :: opengis.ch",
+  "license": "ISC",
+  "type": "module"
+}
