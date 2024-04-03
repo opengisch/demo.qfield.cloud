@@ -1,0 +1,408 @@
+{
+    "ogcServers": {
+    "QGIS server ben": {
+      "url": "https://qgis.bko.li/ogc/drones",
+      "urlWfs": "https://qgis.bko.li/ogc/drones",
+      "type": "qgisserver",
+      "credential": false,
+      "imageType": "image/png",
+      "wfsSupport": true,
+      "isSingleTile": false,
+      "namespace": "http://www.qgis.org/gml",
+      "attributes": null
+    },
+    "QGIS server bees": {
+      "url": "https://qgis.demo.opengis.ch/ows/bees/",
+      "urlWfs": "https://qgis.demo.opengis.ch/ows/bees/",
+      "type": "qgisserver",
+      "credential": true,
+      "imageType": "image/png",
+      "wfsSupport": true,
+      "isSingleTile": false,
+      "namespace": "http://www.qgis.org/gml",
+      "attributes": null
+    },
+    "QGIS server berlin ww": {
+      "url": "https://qgis.demo.opengis.ch/ows/qgep_db/",
+      "urlWfs": "https://qgis.demo.opengis.ch/ows/qgep_db/",
+      "type": "qgisserver",
+      "credential": true,
+      "imageType": "image/png",
+      "wfsSupport": true,
+      "isSingleTile": false,
+      "namespace": "http://www.qgis.org/gml",
+      "attributes": null
+    },
+    "QGIS server arbon ww": {
+      "url": "https://qgis.demo.opengis.ch/ows/wastewater/",
+      "urlWfs": "https://qgis.demo.opengis.ch/ows/wastewater/",
+      "type": "qgisserver",
+      "credential": true,
+      "imageType": "image/png",
+      "wfsSupport": true,
+      "isSingleTile": false,
+      "namespace": "http://www.qgis.org/gml",
+      "attributes": null
+    }
+  },
+  "themes": [
+    {
+      "id": 111,
+      "name": "Drones QGIS server",
+      "icon": "/images/a flatart drone icon.jpeg",
+      "location": [2740220, 1186640],
+      "zoom": 5,
+      "favorite": true,
+      "children": [
+        {
+          "id": 112,
+          "name": "Drones",
+          "children": [
+            {
+              "id": 113,
+              "name": "drone_restrictions",
+              "metadata": {
+                "legend": false,
+                "isChecked": true,
+                "//legendRule": "drone_restrictions",
+                "//snappingConfig": {}
+              },
+              "type": "WMS",
+              "layers": "drone_restrictions",
+              "imageType": "image/png",
+              "childLayers": [
+                {
+                  "name": "drone_restrictions",
+                  "minResolutionHint": 0.0,
+                  "maxResolutionHint": 56.0,
+                  "queryable": true
+                }
+              ],
+              "minResolutionHint": 0.0,
+              "maxResolutionHint": 56.0
+            }
+          ],
+          "metadata": {},
+          "mixed": false,
+          "ogcServer": "QGIS server ben",
+          "dimensions": {}
+        }
+      ],
+      "functionalities": {},
+      "metadata": {}
+    },
+    {
+      "id": 221,
+      "name": "Bees QGIS server",
+      "icon": "/images/laax_bees.png",
+      "location": [2740220, 1186640],
+      "zoom": 5,
+      "favorite": true,
+      "children": [
+        {
+          "id": 235,
+          "name": "Laax Bees",
+          "children": [
+            {
+              "id": 223,
+              "name": "Fields",
+              "metadata": {
+                "legend": false,
+                "isChecked": true
+              },
+              "type": "WMS",
+              "layers": "Fields",
+              "imageType": "image/png",
+              "childLayers": [
+                {
+                  "name": "Fields",
+                  "minResolutionHint": 0.0,
+                  "maxResolutionHint": 56.0,
+                  "queryable": true
+                }
+              ],
+              "minResolutionHint": 0.0,
+              "maxResolutionHint": 56.0
+            },
+            {
+              "id": 223,
+              "name": "Apiary",
+              "metadata": {
+                "legend": false,
+                "isChecked": true
+              },
+              "type": "WMS",
+              "layers": "Apiary",
+              "imageType": "image/png",
+              "childLayers": [
+                {
+                  "name": "Apiary",
+                  "minResolutionHint": 0.0,
+                  "maxResolutionHint": 56.0,
+                  "queryable": true
+                }
+              ],
+              "minResolutionHint": 0.0,
+              "maxResolutionHint": 56.0
+            }
+          ],
+          "metadata": {},
+          "mixed": false,
+          "ogcServer": "QGIS server bees",
+          "dimensions": {}
+        }
+      ],
+      "functionalities": {},
+      "metadata": {}
+    },
+    {
+      "id": 555,
+      "name": "Berlin Bees",
+      "icon": "/images/berlin_bees.png",
+      "location": [2997603, 1833421],
+      "zoom": 7,
+      "favorite": true,
+      "children": [
+        {
+          "id": 556,
+          "name": "Berlin Bees",
+          "children": [
+            {
+              "id": 557,
+              "name": "Fields",
+              "metadata": {
+                "legend": false,
+                "isChecked": true,
+                "//legendRule": "Fields",
+                "//snappingConfig": {}
+              },
+              "type": "WMS",
+              "layers": "Fields",
+              "imageType": "image/png",
+              "childLayers": [
+                {
+                  "name": "Fields",
+                  "minResolutionHint": 0.0,
+                  "maxResolutionHint": 56.0,
+                  "queryable": true
+                }
+              ],
+              "minResolutionHint": 0.0,
+              "maxResolutionHint": 56.0
+            },
+            {
+              "id": 558,
+              "name": "Apiary",
+              "metadata": {
+                "legend": false,
+                "isChecked": true,
+                "//legendRule": "Fields",
+                "//snappingConfig": {}
+              },
+              "type": "WMS",
+              "layers": "Apiary",
+              "imageType": "image/png",
+              "childLayers": [
+                {
+                  "name": "Apiary",
+                  "minResolutionHint": 0.0,
+                  "maxResolutionHint": 56.0,
+                  "queryable": true
+                }
+              ],
+              "minResolutionHint": 0.0,
+              "maxResolutionHint": 56.0
+            }
+          ],
+          "metadata": {},
+          "mixed": false,
+          "ogcServer": "QGIS server bees",
+          "dimensions": {}
+        }
+      ],
+      "functionalities": {},
+      "metadata": {}
+    },
+    {
+      "id": 560,
+      "name": "Berlin Wastewater",
+      "icon": "/images/berlin_ww.png",
+      "location": [2997514, 1833324],
+      "zoom": 7,
+      "favorite": true,
+      "children": [
+        {
+          "id": 561,
+          "name": "Berlin Wastewater",
+          "children": [
+            {
+              "id": 562,
+              "name": "reaches",
+              "metadata": {
+                "legend": false,
+                "isChecked": true,
+                "//legendRule": "Fields",
+                "//snappingConfig": {}
+              },
+              "type": "WMS",
+              "layers": "reaches",
+              "imageType": "image/png",
+              "childLayers": [
+                {
+                  "name": "reaches",
+                  "minResolutionHint": 0.0,
+                  "maxResolutionHint": 56.0,
+                  "queryable": true
+                }
+              ],
+              "minResolutionHint": 0.0,
+              "maxResolutionHint": 56.0
+            },
+            {
+              "id": 563,
+              "name": "structures",
+              "metadata": {
+                "legend": false,
+                "isChecked": true,
+                "//legendRule": "Fields",
+                "//snappingConfig": {}
+              },
+              "type": "WMS",
+              "layers": "structures",
+              "imageType": "image/png",
+              "childLayers": [
+                {
+                  "name": "structures",
+                  "minResolutionHint": 0.0,
+                  "maxResolutionHint": 56.0,
+                  "queryable": true
+                }
+              ],
+              "minResolutionHint": 0.0,
+              "maxResolutionHint": 56.0
+            }
+          ],
+          "metadata": {},
+          "mixed": false,
+          "ogcServer": "QGIS server berlin ww",
+          "dimensions": {}
+        }
+      ],
+      "functionalities": {},
+      "metadata": {}
+    },
+    {
+      "id": 570,
+      "name": "Arbon Wastewater",
+      "icon": "/images/arbon_ww.png",
+      "location": [2749937, 1264560],
+      "zoom": 7,
+      "favorite": true,
+      "children": [
+        {
+          "id": 571,
+          "name": "Arbon Wastewater",
+          "children": [
+            {
+              "id": 572,
+              "name": "Reaches",
+              "metadata": {
+                "legend": false,
+                "isChecked": true,
+                "//legendRule": "Reaches",
+                "//snappingConfig": {}
+              },
+              "type": "WMS",
+              "layers": "Reaches",
+              "imageType": "image/png",
+              "childLayers": [
+                {
+                  "name": "Reaches",
+                  "minResolutionHint": 0.0,
+                  "maxResolutionHint": 56.0,
+                  "queryable": true
+                }
+              ],
+              "minResolutionHint": 0.0,
+              "maxResolutionHint": 56.0
+            },
+            {
+              "id": 573,
+              "name": "Wastewater structures",
+              "metadata": {
+                "legend": false,
+                "isChecked": true,
+                "//legendRule": "Wastewater structures",
+                "//snappingConfig": {}
+              },
+              "type": "WMS",
+              "layers": "Wastewater structures",
+              "imageType": "image/png",
+              "childLayers": [
+                {
+                  "name": "Wastewater structures",
+                  "minResolutionHint": 0.0,
+                  "maxResolutionHint": 56.0,
+                  "queryable": true
+                }
+              ],
+              "minResolutionHint": 0.0,
+              "maxResolutionHint": 56.0
+            }
+          ],
+          "metadata": {},
+          "mixed": false,
+          "ogcServer": "QGIS server arbon ww",
+          "dimensions": {}
+        }
+      ],
+      "functionalities": {},
+      "metadata": {}
+    }
+  ],
+  "background_layers": [
+    {
+      "id": 134,
+      "name": "OSM map (CH)",
+      "metadata": {
+        "directedFilterAttributes": [
+          "name",
+          "type",
+          "timestamp"
+        ],
+        "disclaimer": "\u00a9 Les contributeurs d\u2019<a href='http://www.openstreetmap.org/copyright'>OpenStreetMap</a>",
+        "ogcServer": "Main PNG",
+        "thumbnail": "https://geomapfish-demo-2-8.camptocamp.com/static/38ae74c3322d4d82b3b35f8d45e5e685/img/cadastre.jpeg",
+        "wmsLayers": "buildings_query"
+      },
+      "dimensions": {},
+      "type": "WMTS",
+      "url": "https://geomapfish-demo-2-8.camptocamp.com/tiles/1.0.0/WMTSCapabilities.xml",
+      "matrixSet": "epsg2056_005",
+      "layer": "map",
+      "imageType": "image/jpeg"
+    },
+    {
+      "id": 777,
+      "name": "Swisstopo TLM gray WMTS (CH)",
+      "metadata": {},
+      "dimensions": {},
+      "type": "WMTS",
+      "url": "https://wmts.geo.admin.ch/EPSG/2056/1.0.0/WMTSCapabilities.xml",
+      "style": "default",
+      "layer": "ch.swisstopo.swisstlm3d-karte-grau",
+      "imageType": "image/png"
+    },
+    {
+      "id": 778,
+      "name": "Swisstopo WMTS (CH)",
+      "metadata": {},
+      "dimensions": {},
+      "type": "WMTS",
+      "url": "https://wmts.geo.admin.ch/EPSG/2056/1.0.0/WMTSCapabilities.xml",
+      "style": "default",
+      "layer": "ch.swisstopo.pixelkarte-farbe",
+      "imageType": "image/png"
+    }
+  ]
+}

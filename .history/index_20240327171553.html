@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="GeoGirafe is an flexible application to build online geoportals." />
+
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+    <link rel="manifest" href="site.webmanifest" />
+
+    <link rel="stylesheet" media="screen" href="./assets/index-OUIbMND8.css" />
+    <link rel="stylesheet" media="screen" href="data:text/css;base64,QG1lZGlhIHNjcmVlbiBhbmQgKG1heC13aWR0aDogMTI0MHB4KSB7CiAgZ2lyYWZlLXNlYXJjaCB7CiAgICB3aWR0aDogMjRyZW07CiAgfQp9CgpAbWVkaWEgc2NyZWVuIGFuZCAobWF4LXdpZHRoOiAxMDAwcHgpIHsKICBnaXJhZmUtc2VhcmNoIHsKICAgIHdpZHRoOiAxMDAlOwogICAgbGVmdDogMHB4OwogICAgYm9yZGVyLXJhZGl1czogMDsKICAgIG1hcmdpbjogNC41cmVtIDAgMCAwOwogICAgYmFja2dyb3VuZC1jb2xvcjogdmFyKC0tYmtnLWNvbG9yKTsKICB9CiAgZ2lyYWZlLXRyZWUtdmlldyB7CiAgICB0b3A6IDIuNXJlbTsKICAgIHdpZHRoOiAxOHJlbTsKICB9CgogIGdpcmFmZS1jb29yZGluYXRlIHsKICAgIGRpc3BsYXk6IG5vbmU7CiAgfQp9Cg==" />
+
+    <link
+      rel="preload"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+      href="lib/fontawesome/css/all.min.css" />
+    <noscript>
+      <link rel="stylesheet" href="lib/fontawesome/css/all.min.css" />
+    </noscript>
+    <link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="lib/font-gis/font-gis.css" />
+    <noscript>
+      <link rel="stylesheet" href="lib/font-gis/font-gis.css" />
+    </noscript>
+    <link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="lib/tippy.js/tippy.css" />
+    <link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="lib/tippy.js/backdrop.css" />
+    <link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="lib/tippy.js/border.css" />
+    <link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="lib/tippy.js/svg-arrow.css" />
+    <noscript>
+      <link rel="stylesheet" href="lib/tippy.js/tippy.css" />
+      <link rel="stylesheet" href="lib/tippy.js/backdrop.css" />
+      <link rel="stylesheet" href="lib/tippy.js/border.css" />
+      <link rel="stylesheet" href="lib/tippy.js/svg-arrow.css" />
+    </noscript>
+
+    <link
+      rel="preload"
+      as="font"
+      type="font/woff2"
+      href="lib/fontawesome/webfonts/fa-solid-900.woff2"
+      crossorigin="anonymous" />
+    <link
+      rel="preload"
+      as="font"
+      type="font/woff2"
+      href="lib/fontawesome/webfonts/fa-regular-400.woff2"
+      crossorigin="anonymous" />
+    <link
+      rel="preload"
+      as="font"
+      type="font/woff2"
+      href="lib/font-gis/font-gis.woff2?t=1634903189298"
+      crossorigin="anonymous" />
+
+    <title>GeoGirafe</title>
+    <script type="module" crossorigin src="./assets/index-cCTOIBwG.js"></script>
+    <link rel="modulepreload" crossorigin href="./assets/lazy-zORy1357.js">
+  </head>
+
+  <body>
+    <header>
+      <girafe-theme-select></girafe-theme-select>
+      <img class="logo logo-light" alt="geogirafe-logo" src="images/logo_small.webp" />
+      <img class="logo logo-dark" alt="geogirafe-logo" src="images/logo_black_small.webp" />
+      <girafe-search id="search"></girafe-search>
+      <div id="buttonbar">
+        <girafe-video-record></girafe-video-record>
+        <girafe-nav-history></girafe-nav-history>
+        <girafe-button icon-style="fa-2xl fa-solid fa-user"></girafe-button>
+        <girafe-colorswitcher></girafe-colorswitcher>
+        <girafe-button
+          icon-style="fa-2xl fa-solid fa-circle-question"
+          onclick="document.geogirafe.state.interface.helpVisible = true">
+        </girafe-button>
+        <girafe-button
+          icon-style="fa-2xl fa-solid fa-share-nodes"
+          onclick="document.geogirafe.state.interface.shareVisible = true">
+        </girafe-button>
+        <girafe-menu-button icon-style="fa-2xl fa-solid fa-ellipsis-vertical">
+          <div slot="menu-content">
+            <girafe-button
+              icon-style="fa-xl fa-regular fa-pen-to-square"
+              text="Draw"
+              onclick="document.geogirafe.state.interface.redliningPanelVisible = !document.geogirafe.state.interface.redliningPanelVisible">
+            </girafe-button>
+            <girafe-button
+              icon-style="fa-xl fa-solid fa-print"
+              text="Print"
+              onclick="document.geogirafe.state.interface.printPanelVisible = !document.geogirafe.state.interface.printPanelVisible">
+            </girafe-button>
+            <girafe-proj-select></girafe-proj-select>
+            <girafe-language-select></girafe-language-select>
+            <girafe-globe-select></girafe-globe-select>
+            <girafe-button
+              icon-style="fa-xl fa-solid fa-circle-info"
+              class="border-top"
+              text="about"
+              onclick="document.geogirafe.state.interface.aboutVisible = true">
+            </girafe-button>
+          </div>
+        </girafe-menu-button>
+      </div>
+    </header>
+
+    <div id="content">
+      <div id="content-map">
+        <section>
+          <girafe-tree-view dock="left"></girafe-tree-view>
+          <girafe-map></girafe-map>
+          <div class="info-area">
+            <girafe-infobox></girafe-infobox>
+            <footer>
+              <girafe-scale></girafe-scale>
+              <girafe-coordinate></girafe-coordinate>
+            </footer>
+          </div>
+        </section>
+        <girafe-redlining dock="right"></girafe-redlining>
+        <girafe-print dock="right"></girafe-print>
+        <girafe-about></girafe-about>
+        <girafe-share></girafe-share>
+        <!-- <girafe-selection-window></girafe-selection-window> -->
+        <girafe-help></girafe-help>
+      </div>
+
+      <div id="content-bottom">
+        <girafe-selection-grid dock="bottom"></girafe-selection-grid>
+      </div>
+    </div>
+  </body>
+</html>
