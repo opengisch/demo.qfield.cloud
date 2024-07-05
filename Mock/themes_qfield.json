@@ -118,7 +118,7 @@
               "id": 223,
               "name": "Fields",
               "metadata": {
-                "legend": false,
+                "legend": true,
                 "isChecked": true
               },
               "type": "WMS",
@@ -139,7 +139,7 @@
               "id": 223,
               "name": "Apiary",
               "metadata": {
-                "legend": false,
+                "legend": true,
                 "isChecked": true
               },
               "type": "WMS",
