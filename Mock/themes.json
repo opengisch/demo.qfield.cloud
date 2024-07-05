@@ -1,0 +1,148 @@
+{
+  "ogcServers": {
+    "QGIS server test": {
+      "url": "http://localhost:8088/ogc/test",
+      "urlWfs": "http://localhost:8088/ogc/test",
+      "type": "qgisserver",
+      "credential": false,
+      "imageType": "image/png",
+      "wfsSupport": true,
+      "isSingleTile": false,
+      "namespace": "http://www.qgis.org/gml"
+    },
+    "QGIS server bees": {
+      "url": "https://qgis.demo.opengis.ch/ows/bees/",
+      "urlWfs": "https://qgis.demo.opengis.ch/ows/bees/",
+      "type": "qgisserver",
+      "credential": true,
+      "imageType": "image/png",
+      "wfsSupport": true,
+      "isSingleTile": false,
+      "namespace": "http://www.qgis.org/gml",
+      "attributes": null
+    }
+  },
+  "themes": [{
+    "id": 111,
+    "name": "Test",
+    "icon": "/images/paper-test-icon-outline.jpg",
+    "favorite": true,
+    "children": [
+      {
+        "id": 112,
+        "name": "Test",
+        "children": [
+          {
+            "id": 113,
+            "name": "kantonsgrenzen",
+            "metadata": {
+              "legend": false,
+              "isChecked": true
+            },
+            "type": "WMS",
+            "layers": "kantonsgrenzen",
+            "imageType": "image/png",
+            "childLayers": [
+              {
+                "name": "kantonsgrenzen",
+                "minResolutionHint": 0.0,
+                "maxResolutionHint": 56.0,
+                "queryable": true
+              }
+            ]
+          }
+        ],
+        "metadata": {},
+        "mixed": false,
+        "ogcServer": "QGIS server test",
+        "dimensions": {}
+      }
+    ],
+    "functionalities": {},
+    "metadata": {}
+  }, {
+    "id": 221,
+    "name": "Bees QGIS server",
+    "icon": "/images/laax_bees.png",
+    "location": [2740220, 1186640],
+    "zoom": 5,
+    "favorite": true,
+    "children": [
+      {
+        "id": 235,
+        "name": "Laax Bees",
+        "children": [
+          {
+            "id": 223,
+            "name": "Fields",
+            "metadata": {
+              "legend": false,
+              "isChecked": true
+            },
+            "type": "WMS",
+            "layers": "Fields",
+            "imageType": "image/png",
+            "childLayers": [
+              {
+                "name": "Fields",
+                "minResolutionHint": 0.0,
+                "maxResolutionHint": 56.0,
+                "queryable": true
+              }
+            ],
+            "minResolutionHint": 0.0,
+            "maxResolutionHint": 56.0
+          },
+          {
+            "id": 223,
+            "name": "Apiary",
+            "metadata": {
+              "legend": false,
+              "isChecked": true
+            },
+            "type": "WMS",
+            "layers": "Apiary",
+            "imageType": "image/png",
+            "childLayers": [
+              {
+                "name": "Apiary",
+                "minResolutionHint": 0.0,
+                "maxResolutionHint": 56.0,
+                "queryable": true
+              }
+            ],
+            "minResolutionHint": 0.0,
+            "maxResolutionHint": 56.0
+          }
+        ],
+        "metadata": {},
+        "mixed": false,
+        "ogcServer": "QGIS server bees",
+        "dimensions": {}
+      }
+    ],
+    "functionalities": {},
+    "metadata": {}
+  }],
+  "background_layers": [
+    {
+      "id": 267,
+      "name": "orthophoto",
+      "children": [
+        {
+          "id": 268,
+          "name": "ch.swisstopo.swissimage",
+          "metadata": {},
+          "dimensions": {},
+          "type": "WMTS",
+          "url": "https://wmts.geo.admin.ch/EPSG/2056/1.0.0/WMTSCapabilities.xml?lang=fr",
+          "layer": "ch.swisstopo.swissimage",
+          "imageType": "image/png"
+        }
+      ],
+      "metadata": {},
+      "mixed": true
+    }
+  ],
+  "errors": []
+}

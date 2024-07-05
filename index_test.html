@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="GeoGirafe is an flexible application to build online geoportals.">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="manifest" href="site.webmanifest">
+
+    <link rel="stylesheet" media="screen" href="data:text/css;base64,KiB7CiAgbWFyZ2luOiAwOwogIHBhZGRpbmc6IDA7CiAgZm9udC1mYW1pbHk6IEFyaWFsLCBzYW5zLXNlcmlmOwogIGZvbnQtc2l6ZTogLjlyZW07Cn0KCmhlYWRlciB7CiAgcG9zaXRpb246IGZpeGVkOwogIHRvcDogMDsKICBsZWZ0OiAwOwogIHJpZ2h0OiAwOwogIGJvcmRlci1ib3R0b206IHNvbGlkIDFweCAjZGRkOwogIGJhY2tncm91bmQ6ICNmZmY7CiAgaGVpZ2h0OiA0LjVyZW07CiAgei1pbmRleDogMTAwOwogIGp1c3RpZnktY29udGVudDogc3BhY2UtYmV0d2VlbjsKICBib3gtc2hhZG93OiAwIDFweCAycHggcmdiYSg2MCwgNjQsIDY3LCAwLjMpLCAwIDFweCAzcHggMXB4IHJnYmEoNjAsIDY0LCA2NywgMC4xNSk7Cn0KCmdpcmFmZS10aGVtZS1zZWxlY3QgewogIHBvc2l0aW9uOiBhYnNvbHV0ZTsKICB0b3A6IDA7CiAgbGVmdDogMDsKICB3aWR0aDogNC41cmVtOwogIGhlaWdodDogNC41cmVtOwogIHotaW5kZXg6IDEwMDsKfQoKI2xvZ28gewogIHBvc2l0aW9uOiBhYnNvbHV0ZTsKICBsZWZ0OiA0LjVyZW07CiAgYm90dG9tOiAwOwogIG1hcmdpbi1ib3R0b206IDAuNXJlbTsKICBoZWlnaHQ6IDQ1cHg7CiAgbWFyZ2luLWxlZnQ6IDFyZW07Cn0KCmdpcmFmZS1zZWFyY2ggewogIC8qIG1hcmdpbjogMXJlbSBhdXRvOyAqLwogIG1hcmdpbjogMXJlbSAxcmVtIGF1dG8gMjUwcHg7CiAgZGlzcGxheTogYmxvY2s7CiAgd2lkdGg6IDM2cmVtOwp9CgojYnV0dG9uYmFyIHsKICBwb3NpdGlvbjogYWJzb2x1dGU7CiAgcmlnaHQ6IDA7CiAgdG9wOiAwOwogIHRleHQtYWxpZ246IHJpZ2h0OwogIGNvbG9yOiAjZmZmOwogIGJhY2tncm91bmQtY29sb3I6ICM0NDQ7CiAgZm9udC1zaXplOiAwOwogIHBhZGRpbmc6IDA7CiAgZGlzcGxheTogZmxleDsKICBoZWlnaHQ6IDQuNnJlbTsKICBvdmVyZmxvdzogdmlzaWJsZTsKfQoKI2NvbnRlbnQgewogIHBvc2l0aW9uOiBhYnNvbHV0ZTsKICBkaXNwbGF5OiBmbGV4OwogIGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47CiAgdG9wOiA0LjVyZW07CiAgYm90dG9tOiAwOwogIGxlZnQ6IDA7CiAgcmlnaHQ6IDA7Cn0KCiNjb250ZW50LW1hcCB7CiAgcG9zaXRpb246IHJlbGF0aXZlOwogIGZsZXg6IDE7Cn0KCiNjb250ZW50LWJvdHRvbSB7CiAgcG9zaXRpb246IHJlbGF0aXZlOwogIGZsZXg6IDA7Cn0KCiNjb250ZW50LW1hcCBzZWN0aW9uIHsKICBwb3NpdGlvbjogYWJzb2x1dGU7CiAgZGlzcGxheTogZmxleDsKICB0b3A6IDA7CiAgYm90dG9tOiAwOwogIGxlZnQ6IDA7CiAgcmlnaHQ6IDA7Cn0KCmdpcmFmZS1tYXAgewogIHBvc2l0aW9uOiBhYnNvbHV0ZTsKICB0b3A6IDA7CiAgbGVmdDogMDsKICByaWdodDogMDsKICBib3R0b206IDAKfQoKZ2lyYWZlLXRyZWUtdmlldyB7CiAgcG9zaXRpb246IHJlbGF0aXZlOwogIHdpZHRoOiAyNXJlbTsKICB6LWluZGV4OiA5MDsKICBiYWNrZ3JvdW5kOiAjZmZmOwogIG92ZXJmbG93OiBhdXRvOwogIGJveC1zaGFkb3c6IDAgMXB4IDJweCByZ2JhKDYwLCA2NCwgNjcsIDAuMyksIDAgMXB4IDNweCAxcHggcmdiYSg2MCwgNjQsIDY3LCAwLjE1KTsKfQoKZm9vdGVyIHsKICBmbGV4OiAwOwogIGFsaWduLXNlbGY6IGZsZXgtZW5kOwogIGJvcmRlcjogbm9uZTsKICB6LWluZGV4OiAxMDsKICBkaXNwbGF5OiBmbGV4OwogIGZsZXgtZGlyZWN0aW9uOiByb3c7Cn0KCmdpcmFmZS1zZWxlY3Rpb24tZ3JpZCB7CiAgcG9zaXRpb246IHJlbGF0aXZlOwogIGRpc3BsYXk6IGJsb2NrOwp9CgpnaXJhZmUtcmVkbGluaW5nLCBnaXJhZmUtcHJpbnQgewogIHBvc2l0aW9uOiBhYnNvbHV0ZTsKICByaWdodDogMDsKICB0b3A6IDA7CiAgYm90dG9tOiAwOwogIHdpZHRoOiAyMHJlbTsKICB6LWluZGV4OiA5MDsKICBib3JkZXItbGVmdDogc29saWQgMXB4ICNkZGQ7CiAgYmFja2dyb3VuZDogI2ZmZjsKICBvdmVyZmxvdzogdmlzaWJsZTsKICBkaXNwbGF5OiBub25lOwogIGJveC1zaGFkb3c6IDAgMXB4IDJweCByZ2JhKDYwLCA2NCwgNjcsIDAuMyksIDAgMXB4IDNweCAxcHggcmdiYSg2MCwgNjQsIDY3LCAwLjE1KTsKfQoKZ2lyYWZlLXNlbGVjdGlvbi13aW5kb3cgewogIHBvc2l0aW9uOiBhYnNvbHV0ZTsKICB6LWluZGV4OiAxMDA7CiAgYmFja2dyb3VuZDogI2ZmZjsKICBkaXNwbGF5OiBub25lOwp9CgpnaXJhZmUtYWJvdXQgewogIHBvc2l0aW9uOiBhYnNvbHV0ZTsKICB6LWluZGV4OiAxMDA7CiAgYmFja2dyb3VuZDogI2ZmZjsKICBkaXNwbGF5OiBub25lOwogIHRvcDogNTAlOyAKICBsZWZ0OiA1MCU7CiAgdHJhbnNmb3JtOiB0cmFuc2xhdGUoLTUwJSwgLTUwJSk7Cn0KCi5ib3JkZXItdG9wIHsKICBib3JkZXItdG9wOiBzb2xpZCAxcHggI2ZmZjsKfQo=" />
+    <link rel="stylesheet" media="screen" href="data:text/css;base64,QG1lZGlhIHNjcmVlbiBhbmQgKG1heC13aWR0aDoxMDI0cHgpIHsKICBnaXJhZmUtc2VhcmNoIHsKICAgIHdpZHRoOiAyNHJlbTsKICAgIG1hcmdpbi1yaWdodDogMTByZW07CiAgfQp9CgpAbWVkaWEgc2NyZWVuIGFuZCAobWF4LXdpZHRoOjc2OHB4KSB7CiAgZ2lyYWZlLXNlYXJjaCB7CiAgICB3aWR0aDogMTAwJTsKICAgIG1hcmdpbi10b3A6IDQuNXJlbTsKICAgIGJvcmRlci1yYWRpdXM6IDA7CiAgfQoKICBnaXJhZmUtY29vcmRpbmF0ZSB7CiAgICBkaXNwbGF5OiBub25lOwogIH0KfQ==" />
+
+    <link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="lib/fontawesome/css/all.min.css" />
+    <noscript><link rel="stylesheet" href="lib/fontawesome/css/all.min.css"></noscript>
+    <link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="lib/font-gis/css/font-gis.css" />
+    <noscript><link rel="stylesheet" href="lib/font-gis/css/font-gis.css"></noscript>
+    <link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="lib/tippy.js/tippy.min.css" />
+    <noscript><link rel="stylesheet" href="lib/tippy.js/tippy.min.css"></noscript>
+
+    <link rel="preload" as="font" type="font/woff2" href="lib/fontawesome/webfonts/fa-solid-900.woff2" crossorigin="anonymous">
+    <link rel="preload" as="font" type="font/woff2" href="lib/fontawesome/webfonts/fa-regular-400.woff2" crossorigin="anonymous">
+    <link rel="preload" as="font" type="font/woff2" href="lib/font-gis/fonts/font-gis.woff2?t=1634903189298" crossorigin="anonymous">
+
+    
+    <title>GeoGirafe</title>
+    <script type="module" crossorigin src="./assets/index-d8457028.js"></script>
+    <link rel="modulepreload" crossorigin href="./assets/lazy-193aad77.js">
+    <link rel="modulepreload" crossorigin href="./assets/cesium-22aff917.js">
+  </head>
+  <body>
+    <header>
+      <girafe-theme-select></girafe-theme-select>
+      <img id="logo" alt="geogirafe-logo" src="images/logo_small.webp" />
+      <girafe-search id="search"></girafe-search>
+      <div id="buttonbar">
+        <girafe-theme-icon-location-switcher></girafe-theme-icon-location-switcher>
+        <girafe-theme-location-switcher></girafe-theme-location-switcher>
+        <girafe-button icon-style="fa-2xl fa-solid fa-user"></girafe-button>
+        <girafe-button icon-style="fa-2xl fa-solid fa-circle-question"
+                       onclick="document.state.interface.helpVisible = true">
+        </girafe-button>
+        <girafe-menu-button icon-style="fa-2xl fa-solid fa-ellipsis-vertical">
+          <div slot="menu-content">
+            <girafe-button icon-style="fa-xl fa-regular fa-pen-to-square" text="Draw" 
+                           onclick="document.state.interface.redliningPanelVisible = !document.state.interface.redliningPanelVisible">
+            </girafe-button>
+            <girafe-button icon-style="fa-xl fa-solid fa-print" text="Print"
+                           onclick="document.state.interface.printPanelVisible = !document.state.interface.printPanelVisible">
+            </girafe-button>
+            <girafe-proj-select></girafe-proj-select>
+            <girafe-language-select></girafe-language-select>
+            <girafe-button icon-style="fa-xl fa-solid fa-moon" text="Dark"
+                           onclick="document.state.interface.darkMode = !document.state.interface.darkMode">
+            </girafe-button>
+            <girafe-globe-select></girafe-globe-select>
+            <girafe-button icon-style="fa-xl fa-solid fa-circle-info" class="border-top" text="about"
+                           onclick="document.state.interface.aboutVisible = true">
+            </girafe-button>
+          </div>
+        </girafe-menu-button>
+      </div>
+    </header>
+
+    <div id="content">
+
+      <div id="content-map">
+        <section>
+          <girafe-tree-view dock="left"></girafe-tree-view>
+          <girafe-map></girafe-map>
+          <footer>
+            <girafe-scale></girafe-scale>
+            <girafe-coordinate></girafe-coordinate>
+          </footer>
+        </section>
+        <girafe-redlining dock="right"></girafe-redlining>
+        <girafe-print dock="right"></girafe-print>
+        <girafe-about></girafe-about>
+        <!-- <girafe-selection-window></girafe-selection-window> -->
+        <girafe-help></girafe-help>
+      </div>
+
+      <div id="content-bottom">
+        <girafe-selection-grid dock="bottom"></girafe-selection-grid>
+      </div>
+
+    </div>
+
+    
+
+  </body>
+</html>

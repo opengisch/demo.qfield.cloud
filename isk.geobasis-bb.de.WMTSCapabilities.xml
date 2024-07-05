@@ -1,0 +1,321 @@
+<?xml version="1.0"?>
+<Capabilities xmlns="http://www.opengis.net/wmts/1.0" xmlns:ows="http://www.opengis.net/ows/1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:gml="http://www.opengis.net/gml" xsi:schemaLocation="http://www.opengis.net/wmts/1.0 http://schemas.opengis.net/wmts/1.0/wmtsGetCapabilities_response.xsd" version="1.0.0">
+  <ows:ServiceIdentification>
+    <ows:Title>WMTS BB-BE DOP20c</ows:Title>
+    <ows:Abstract>Dieser Web Map Tile Service stellt die digitalen farbigen Orthophotos (Luftbilder) mit der Bodenauflösung von 20cm vom Gebiet Brandenburg mit Berlin zur Verfügung.</ows:Abstract>
+    <ows:Keywords>
+        <ows:Keyword>AdV</ows:Keyword>
+        <ows:Keyword>AdVMIS</ows:Keyword>
+        <ows:Keyword>AdV-OWS-Basisprofil</ows:Keyword>
+        <ows:Keyword>BB-BE</ows:Keyword>
+        <ows:Keyword>Brandenburg</ows:Keyword>
+        <ows:Keyword>Berlin</ows:Keyword>
+        <ows:Keyword>DOP</ows:Keyword>
+        <ows:Keyword>Digitale Orthophotos</ows:Keyword>
+        <ows:Keyword>GDI</ows:Keyword>
+        <ows:Keyword>Geobasisdaten</ows:Keyword>
+        <ows:Keyword>infoMapAccessService</ows:Keyword>
+        <ows:Keyword>Luftbild</ows:Keyword>
+        <ows:Keyword>Navigation</ows:Keyword>
+        <ows:Keyword>opendata</ows:Keyword>
+        <ows:Keyword>Vermessung</ows:Keyword>
+        <ows:Keyword>WMTS</ows:Keyword>
+        <ows:Keyword>WMTS_BB-BE_DOP20c</ows:Keyword>
+    </ows:Keywords> 
+    <ows:ServiceType>OGC WMTS</ows:ServiceType>
+    <ows:ServiceTypeVersion>1.0.0</ows:ServiceTypeVersion>
+    <ows:Fees>kostenfrei, unter Beachtung der Lizenzbedingungen</ows:Fees>
+    <ows:AccessConstraints>Die Daten können gemäß der „Datenlizenz Deutschland - Namensnennung - Version 2.0“ (https://www.govdata.de/dl-de/by-2-0) genutzt werden. Namensnennung: "GeoBasis-DE/LGB“, Beispiel: „© GeoBasis-DE/LGB, dl-de/by-2-0, (Daten geändert)“, (Klammer = optional) Hinweis: werden auch Daten des Bundeslandes Berlin genutzt, ist der Copyright-Vermerk um den Hinweis “© Geoportal Berlin, dl-de/by-2-0“ zu ergänzen. Beispiel: „© GeoBasis-DE/LGB, dl-de/by-2-0; © Geoportal Berlin, dl-de/by-2-0 (Daten geändert)“, (Klammer = optional)</ows:AccessConstraints>
+  </ows:ServiceIdentification>
+  <ows:ServiceProvider>
+    <ows:ProviderName>Landesvermessung und Geobasisinformation Brandenburg</ows:ProviderName>
+    <ows:ProviderSite xlink:href="https://geobasis-bb.de"/>
+    <ows:ServiceContact>
+      <ows:IndividualName>Kundenservice</ows:IndividualName>
+      <ows:PositionName>Kundenservice</ows:PositionName>
+      <ows:ContactInfo>
+        <ows:Phone>
+          <ows:Voice>+49 331 8844-123</ows:Voice>
+          <ows:Facsimile>+49 331 8844-16123</ows:Facsimile>
+        </ows:Phone>
+        <ows:Address>
+          <ows:DeliveryPoint>Landesvermessung und Geobasisinformation Brandenburg</ows:DeliveryPoint>
+          <ows:City>Potsdam</ows:City>
+          <ows:PostalCode>14473</ows:PostalCode>
+          <ows:Country>Germany</ows:Country>
+          <ows:ElectronicMailAddress>kundenservice@geobasis-bb.de</ows:ElectronicMailAddress>
+        </ows:Address>
+      </ows:ContactInfo>
+    </ows:ServiceContact>
+  </ows:ServiceProvider>
+  <ows:OperationsMetadata>
+    <ows:Operation name="GetCapabilities">
+      <ows:DCP>
+        <ows:HTTP>
+          <ows:Get xlink:href="https://isk.geobasis-bb.de/mapproxy/dop20c_wmts/service?">
+            <ows:Constraint name="GetEncoding">
+              <ows:AllowedValues>
+                <ows:Value>KVP</ows:Value>
+              </ows:AllowedValues>
+            </ows:Constraint>
+          </ows:Get>
+        </ows:HTTP>
+      </ows:DCP>
+    </ows:Operation>
+    <ows:Operation name="GetTile">
+      <ows:DCP>
+        <ows:HTTP>
+          <ows:Get xlink:href="https://isk.geobasis-bb.de/mapproxy/dop20c_wmts/service?">
+            <ows:Constraint name="GetEncoding">
+              <ows:AllowedValues>
+                <ows:Value>KVP</ows:Value>
+              </ows:AllowedValues>
+            </ows:Constraint>
+          </ows:Get>
+        </ows:HTTP>
+      </ows:DCP>
+    </ows:Operation>
+    <ows:Operation name="GetFeatureInfo">
+      <ows:DCP>
+        <ows:HTTP>
+          <ows:Get xlink:href="https://isk.geobasis-bb.de/mapproxy/dop20c_wmts/service?">
+            <ows:Constraint name="GetEncoding">
+              <ows:AllowedValues>
+                <ows:Value>KVP</ows:Value>
+              </ows:AllowedValues>
+            </ows:Constraint>
+          </ows:Get>
+        </ows:HTTP>
+      </ows:DCP>
+    </ows:Operation>
+  </ows:OperationsMetadata>
+  <Contents>
+    <Layer>
+      <ows:Title>Digitale Orthophotos 20cm Bodenauflösung Farbe Brandenburg mit Berlin (WMTS)</ows:Title>
+      <ows:Abstract></ows:Abstract>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>11.152768795679583 51.263517011631606</ows:LowerCorner>
+        <ows:UpperCorner>15.009068839315324 53.61004915755329</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+      <ows:Identifier>bebb_dop20c</ows:Identifier>
+      <Style>
+        <ows:Identifier>default</ows:Identifier>
+      </Style>
+      <Format>image/png</Format>
+      <TileMatrixSetLink>
+        <TileMatrixSet>grid_3857</TileMatrixSet>
+      </TileMatrixSetLink>
+    </Layer>
+    <TileMatrixSet>
+      <ows:Identifier>grid_3857</ows:Identifier>
+      <ows:SupportedCRS>EPSG:3857</ows:SupportedCRS>
+      <TileMatrix>
+        <ows:Identifier>00</ows:Identifier>
+        <ScaleDenominator>8735660.375448713</ScaleDenominator>
+        <TopLeftCorner>1239392.0 7095795.0</TopLeftCorner>
+        <TileWidth>512</TileWidth>
+        <TileHeight>512</TileHeight>
+        <MatrixWidth>1</MatrixWidth>
+        <MatrixHeight>1</MatrixHeight>
+      </TileMatrix>
+      <TileMatrix>
+        <ows:Identifier>01</ows:Identifier>
+        <ScaleDenominator>4367830.187724357</ScaleDenominator>
+        <TopLeftCorner>1239392.0 7095795.0</TopLeftCorner>
+        <TileWidth>512</TileWidth>
+        <TileHeight>512</TileHeight>
+        <MatrixWidth>1</MatrixWidth>
+        <MatrixHeight>1</MatrixHeight>
+      </TileMatrix>
+      <TileMatrix>
+        <ows:Identifier>02</ows:Identifier>
+        <ScaleDenominator>2183915.0938621783</ScaleDenominator>
+        <TopLeftCorner>1239392.0 7095795.0</TopLeftCorner>
+        <TileWidth>512</TileWidth>
+        <TileHeight>512</TileHeight>
+        <MatrixWidth>2</MatrixWidth>
+        <MatrixHeight>2</MatrixHeight>
+      </TileMatrix>
+      <TileMatrix>
+        <ows:Identifier>03</ows:Identifier>
+        <ScaleDenominator>1091957.5469310891</ScaleDenominator>
+        <TopLeftCorner>1239392.0 7095795.0</TopLeftCorner>
+        <TileWidth>512</TileWidth>
+        <TileHeight>512</TileHeight>
+        <MatrixWidth>3</MatrixWidth>
+        <MatrixHeight>3</MatrixHeight>
+      </TileMatrix>
+      <TileMatrix>
+        <ows:Identifier>04</ows:Identifier>
+        <ScaleDenominator>545978.7734655463</ScaleDenominator>
+        <TopLeftCorner>1239392.0 7095795.0</TopLeftCorner>
+        <TileWidth>512</TileWidth>
+        <TileHeight>512</TileHeight>
+        <MatrixWidth>6</MatrixWidth>
+        <MatrixHeight>6</MatrixHeight>
+      </TileMatrix>
+      <TileMatrix>
+        <ows:Identifier>05</ows:Identifier>
+        <ScaleDenominator>272989.38673277246</ScaleDenominator>
+        <TopLeftCorner>1239392.0 7095795.0</TopLeftCorner>
+        <TileWidth>512</TileWidth>
+        <TileHeight>512</TileHeight>
+        <MatrixWidth>11</MatrixWidth>
+        <MatrixHeight>11</MatrixHeight>
+      </TileMatrix>
+      <TileMatrix>
+        <ows:Identifier>06</ows:Identifier>
+        <ScaleDenominator>136494.69336638605</ScaleDenominator>
+        <TopLeftCorner>1239392.0 7095795.0</TopLeftCorner>
+        <TileWidth>512</TileWidth>
+        <TileHeight>512</TileHeight>
+        <MatrixWidth>22</MatrixWidth>
+        <MatrixHeight>22</MatrixHeight>
+      </TileMatrix>
+      <TileMatrix>
+        <ows:Identifier>07</ows:Identifier>
+        <ScaleDenominator>99999.99999999999</ScaleDenominator>
+        <TopLeftCorner>1239392.0 7095795.0</TopLeftCorner>
+        <TileWidth>512</TileWidth>
+        <TileHeight>512</TileHeight>
+        <MatrixWidth>30</MatrixWidth>
+        <MatrixHeight>30</MatrixHeight>
+      </TileMatrix>
+      <TileMatrix>
+        <ows:Identifier>08</ows:Identifier>
+        <ScaleDenominator>68247.3466831932</ScaleDenominator>
+        <TopLeftCorner>1239392.0 7095795.0</TopLeftCorner>
+        <TileWidth>512</TileWidth>
+        <TileHeight>512</TileHeight>
+        <MatrixWidth>43</MatrixWidth>
+        <MatrixHeight>43</MatrixHeight>
+      </TileMatrix>
+      <TileMatrix>
+        <ows:Identifier>09</ows:Identifier>
+        <ScaleDenominator>49999.99999999999</ScaleDenominator>
+        <TopLeftCorner>1239392.0 7095795.0</TopLeftCorner>
+        <TileWidth>512</TileWidth>
+        <TileHeight>512</TileHeight>
+        <MatrixWidth>59</MatrixWidth>
+        <MatrixHeight>59</MatrixHeight>
+      </TileMatrix>
+      <TileMatrix>
+        <ows:Identifier>10</ows:Identifier>
+        <ScaleDenominator>34123.673341596535</ScaleDenominator>
+        <TopLeftCorner>1239392.0 7095795.0</TopLeftCorner>
+        <TileWidth>512</TileWidth>
+        <TileHeight>512</TileHeight>
+        <MatrixWidth>86</MatrixWidth>
+        <MatrixHeight>86</MatrixHeight>
+      </TileMatrix>
+      <TileMatrix>
+        <ows:Identifier>11</ows:Identifier>
+        <ScaleDenominator>24999.999999999996</ScaleDenominator>
+        <TopLeftCorner>1239392.0 7095795.0</TopLeftCorner>
+        <TileWidth>512</TileWidth>
+        <TileHeight>512</TileHeight>
+        <MatrixWidth>117</MatrixWidth>
+        <MatrixHeight>118</MatrixHeight>
+      </TileMatrix>
+      <TileMatrix>
+        <ows:Identifier>12</ows:Identifier>
+        <ScaleDenominator>17061.836670798286</ScaleDenominator>
+        <TopLeftCorner>1239392.0 7095795.0</TopLeftCorner>
+        <TileWidth>512</TileWidth>
+        <TileHeight>512</TileHeight>
+        <MatrixWidth>171</MatrixWidth>
+        <MatrixHeight>172</MatrixHeight>
+      </TileMatrix>
+      <TileMatrix>
+        <ows:Identifier>13</ows:Identifier>
+        <ScaleDenominator>9999.999999999998</ScaleDenominator>
+        <TopLeftCorner>1239392.0 7095795.0</TopLeftCorner>
+        <TileWidth>512</TileWidth>
+        <TileHeight>512</TileHeight>
+        <MatrixWidth>292</MatrixWidth>
+        <MatrixHeight>294</MatrixHeight>
+      </TileMatrix>
+      <TileMatrix>
+        <ows:Identifier>14</ows:Identifier>
+        <ScaleDenominator>8530.918335399143</ScaleDenominator>
+        <TopLeftCorner>1239392.0 7095795.0</TopLeftCorner>
+        <TileWidth>512</TileWidth>
+        <TileHeight>512</TileHeight>
+        <MatrixWidth>342</MatrixWidth>
+        <MatrixHeight>344</MatrixHeight>
+      </TileMatrix>
+      <TileMatrix>
+        <ows:Identifier>15</ows:Identifier>
+        <ScaleDenominator>6999.999999999999</ScaleDenominator>
+        <TopLeftCorner>1239392.0 7095795.0</TopLeftCorner>
+        <TileWidth>512</TileWidth>
+        <TileHeight>512</TileHeight>
+        <MatrixWidth>417</MatrixWidth>
+        <MatrixHeight>419</MatrixHeight>
+      </TileMatrix>
+      <TileMatrix>
+        <ows:Identifier>16</ows:Identifier>
+        <ScaleDenominator>4999.999999999999</ScaleDenominator>
+        <TopLeftCorner>1239392.0 7095795.0</TopLeftCorner>
+        <TileWidth>512</TileWidth>
+        <TileHeight>512</TileHeight>
+        <MatrixWidth>583</MatrixWidth>
+        <MatrixHeight>587</MatrixHeight>
+      </TileMatrix>
+      <TileMatrix>
+        <ows:Identifier>17</ows:Identifier>
+        <ScaleDenominator>4265.4591676995715</ScaleDenominator>
+        <TopLeftCorner>1239392.0 7095795.0</TopLeftCorner>
+        <TileWidth>512</TileWidth>
+        <TileHeight>512</TileHeight>
+        <MatrixWidth>684</MatrixWidth>
+        <MatrixHeight>688</MatrixHeight>
+      </TileMatrix>
+      <TileMatrix>
+        <ows:Identifier>18</ows:Identifier>
+        <ScaleDenominator>2999.9999999999995</ScaleDenominator>
+        <TopLeftCorner>1239392.0 7095795.0</TopLeftCorner>
+        <TileWidth>512</TileWidth>
+        <TileHeight>512</TileHeight>
+        <MatrixWidth>972</MatrixWidth>
+        <MatrixHeight>977</MatrixHeight>
+      </TileMatrix>
+      <TileMatrix>
+        <ows:Identifier>19</ows:Identifier>
+        <ScaleDenominator>2132.729583849782</ScaleDenominator>
+        <TopLeftCorner>1239392.0 7095795.0</TopLeftCorner>
+        <TileWidth>512</TileWidth>
+        <TileHeight>512</TileHeight>
+        <MatrixWidth>1367</MatrixWidth>
+        <MatrixHeight>1375</MatrixHeight>
+      </TileMatrix>
+      <TileMatrix>
+        <ows:Identifier>20</ows:Identifier>
+        <ScaleDenominator>1499.9999999999998</ScaleDenominator>
+        <TopLeftCorner>1239392.0 7095795.0</TopLeftCorner>
+        <TileWidth>512</TileWidth>
+        <TileHeight>512</TileHeight>
+        <MatrixWidth>1944</MatrixWidth>
+        <MatrixHeight>1954</MatrixHeight>
+      </TileMatrix>
+      <TileMatrix>
+        <ows:Identifier>21</ows:Identifier>
+        <ScaleDenominator>1000.0</ScaleDenominator>
+        <TopLeftCorner>1239392.0 7095795.0</TopLeftCorner>
+        <TileWidth>512</TileWidth>
+        <TileHeight>512</TileHeight>
+        <MatrixWidth>2915</MatrixWidth>
+        <MatrixHeight>2931</MatrixHeight>
+      </TileMatrix>
+      <TileMatrix>
+        <ows:Identifier>22</ows:Identifier>
+        <ScaleDenominator>500.0</ScaleDenominator>
+        <TopLeftCorner>1239392.0 7095795.0</TopLeftCorner>
+        <TileWidth>512</TileWidth>
+        <TileHeight>512</TileHeight>
+        <MatrixWidth>5830</MatrixWidth>
+        <MatrixHeight>5862</MatrixHeight>
+      </TileMatrix>
+    </TileMatrixSet>
+  </Contents>
+</Capabilities>
