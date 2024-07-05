@@ -54,6 +54,17 @@
       "isSingleTile": false,
       "namespace": "http://www.qgis.org/gml",
       "attributes": null
+    },
+    "SWISSTOPO server WMS": {
+      "url": "https://wms.geo.admin.ch/?VERSION=1.3.0",
+      "urlWfs": "https://wms.geo.admin.ch/?VERSION=1.3.0",
+      "type": "qgisserver",
+      "credential": true,
+      "imageType": "image/png",
+      "wfsSupport": false,
+      "isSingleTile": false,
+      "namespace": "http://www.qgis.org/gml",
+      "attributes": null
     }
   },
   "themes": [
@@ -186,11 +197,11 @@
                 "isChecked": true
               },
               "type": "WMS",
-              "layers": "Rapid fieldmapper",
+              "layers": "observations",
               "imageType": "image/png",
               "childLayers": [
                 {
-                  "name": "Rapid fieldmapper",
+                  "name": "observations",
                   "minResolutionHint": 0.0,
                   "maxResolutionHint": 56.0,
                   "queryable": true
@@ -437,5 +448,6 @@
       "layer": "ch.swisstopo.pixelkarte-farbe",
       "imageType": "image/png"
     }
+    
   ]
 }
