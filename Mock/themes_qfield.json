@@ -43,6 +43,17 @@
       "isSingleTile": false,
       "namespace": "http://www.qgis.org/gml",
       "attributes": null
+    },
+    "QGIS server rapidmapping": {
+      "url": "https://qgis.demo.opengis.ch/ows/rapidmapping/",
+      "urlWfs": "https://qgis.demo.opengis.ch/ows/rapidmapping/",
+      "type": "qgisserver",
+      "credential": true,
+      "imageType": "image/png",
+      "wfsSupport": true,
+      "isSingleTile": false,
+      "namespace": "http://www.qgis.org/gml",
+      "attributes": null
     }
   },
   "themes": [
@@ -149,6 +160,49 @@
           "metadata": {},
           "mixed": false,
           "ogcServer": "QGIS server bees",
+          "dimensions": {}
+        }
+      ],
+      "functionalities": {},
+      "metadata": {}
+    },
+    {
+      "id": 321,
+      "name": "Rapidmapping",
+      "icon": "/images/laax_bees.png",
+      "location": [2705826, 1115335],
+      "zoom": 5,
+      "favorite": true,
+      "children": [
+        {
+          "id": 335,
+          "name": "Fieldmapper observations",
+          "children": [
+            {
+              "id": 323,
+              "name": "Fieldmapper observations",
+              "metadata": {
+                "legend": true,
+                "isChecked": true
+              },
+              "type": "WMS",
+              "layers": "Rapid fieldmapper",
+              "imageType": "image/png",
+              "childLayers": [
+                {
+                  "name": "Rapid fieldmapper",
+                  "minResolutionHint": 0.0,
+                  "maxResolutionHint": 56.0,
+                  "queryable": true
+                }
+              ],
+              "minResolutionHint": 0.0,
+              "maxResolutionHint": 56.0
+            }
+          ],
+          "metadata": {},
+          "mixed": false,
+          "ogcServer": "QGIS server rapidmapping",
           "dimensions": {}
         }
       ],
