@@ -169,9 +169,9 @@
     {
       "id": 321,
       "name": "Rapidmapping",
-      "icon": "/images/laax_bees.png",
+      "icon": "/images/rapidfieldmapper.png",
       "location": [2705826, 1115335],
-      "zoom": 5,
+      "zoom": 6,
       "favorite": true,
       "children": [
         {
