@@ -18,7 +18,7 @@
     "//url": "Mock/themes.json",
     "url": "Mock/themes_qfield.json",
     "//comment2": "Name of the default theme. It will be automatically loaded when the application starts",
-    "defaultTheme" : "Bees QGIS server"
+    "defaultTheme" : "Rapidmapping"
   },
   "basemaps": {
     "//comment1": "Display the Basemap control or not",
