@@ -187,7 +187,7 @@
       "children": [
         {
           "id": 335,
-          "name": "Fieldmapper observations",
+          "name": "QField rapid Fieldmapper",
           "children": [
             {
               "id": 323,
@@ -214,6 +214,29 @@
           "metadata": {},
           "mixed": false,
           "ogcServer": "QGIS server rapidmapping",
+          "dimensions": {}
+        },
+        {
+          "id": 336,
+          "name": "Rapidmapping.ch",
+          "children": [
+            {
+              "id": 323,
+              "name": "Rapidmapping 20240702",
+              "metadata": {
+                "legend": true,
+                "isChecked": true
+              },
+              "type": "WMS",
+              "layers": "ch.swisstopo.rapidmapping.rgb/2024-009-TICINO",
+              "imageType": "image/png",
+              "minResolutionHint": 0.0,
+              "maxResolutionHint": 56.0
+            }
+          ],
+          "metadata": {},
+          "mixed": false,
+          "ogcServer": "SWISSTOPO server WMS",
           "dimensions": {}
         }
       ],
