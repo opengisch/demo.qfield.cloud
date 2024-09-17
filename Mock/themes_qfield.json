@@ -22,7 +22,7 @@
       "namespace": "http://www.qgis.org/gml",
       "attributes": null
     },
-    "QGIS server berlin ww": {
+    "QGIS server ww": {
       "url": "https://qgis.demo.opengis.ch/ows/qgep_db/",
       "urlWfs": "https://qgis.demo.opengis.ch/ows/qgep_db/",
       "type": "qgisserver",
@@ -372,7 +372,7 @@
           ],
           "metadata": {},
           "mixed": false,
-          "ogcServer": "QGIS server berlin ww",
+          "ogcServer": "QGIS server ww",
           "dimensions": {}
         }
       ],
