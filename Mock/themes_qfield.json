@@ -245,7 +245,7 @@
     },
     {
       "id": 555,
-      "name": "Berlin Bees",
+      "name": "INTERGEO Bees",
       "icon": "/images/berlin_bees.png",
       "location": [2997603, 1833421],
       "zoom": 7,
@@ -253,7 +253,7 @@
       "children": [
         {
           "id": 556,
-          "name": "Berlin Bees",
+          "name": "INTERGEO Bees",
           "children": [
             {
               "id": 557,
@@ -313,7 +313,7 @@
     },
     {
       "id": 560,
-      "name": "Berlin Wastewater",
+      "name": "INTERGEO Wastewater",
       "icon": "/images/berlin_ww.png",
       "location": [2997514, 1833324],
       "zoom": 7,
@@ -321,7 +321,7 @@
       "children": [
         {
           "id": 561,
-          "name": "Berlin Wastewater",
+          "name": "INTERGEO Wastewater",
           "children": [
             {
               "id": 562,
