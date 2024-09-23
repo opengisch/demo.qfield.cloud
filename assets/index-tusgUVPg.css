@@ -291,6 +291,7 @@ girafe-metadata-window {
 }
 
 girafe-prototype-banner {
+  display: none;
   position: absolute;
   bottom: 50px;
   right: -80px;
