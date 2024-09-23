@@ -1,0 +1,305 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  font-size: 0.9rem;
+}
+
+body {
+  --bx-shdw: 0 0 0 1px rgba(0, 0, 0, 0.1), 0 2px 4px 0 rgba(0, 0, 0, 0.16);
+  --t-bkg: #ffffffbb;
+  --text-color: #222;
+  --text-color-grad1: #444;
+  --text-color-grad2: #666;
+  --bkg-color: rgb(255, 255, 255);
+  --bkg-color-grad1: #ddd;
+  --bkg-color-grad2: #bbb;
+  --bkg-color-input: #fff;
+  --lnk: #0000ff;
+  --lnk-visited: #800080;
+  --lnk-hover: #0099ff;
+  --lnk-active: #ff0000;
+  --tst: #ff0000;
+  --error-color: #bb0000;
+  --warning-color: #ffa500;
+  --svg-filter: none;
+  max-width: 100vw;
+  max-height: 100vh;
+  overflow: hidden;
+}
+
+/* Dark theme colors */
+body.dark-theme {
+  --bx-shdw: 0 0 0 1px rgba(255, 255, 255, 0.1), 0 2px 4px 0 rgba(255, 255, 255, 0.16);
+  --t-bkg: #000000bb;
+  --text-color: #eee;
+  --text-color-grad1: #ccc;
+  --text-color-grad2: #aaa;
+  --bkg-color: rgb(34, 34, 34);
+  --bkg-color-grad1: #444;
+  --bkg-color-grad2: #666;
+  --bkg-color-input: #ddd;
+  --lnk: lightskyblue;
+  --lnk-visited: #6d4b8d;
+  --lnk-hover: #ffffff;
+  --lnk-active: #ff4040;
+  --error-color: #ff6347;
+  --svg-filter: invert(1);
+}
+
+/* Styles for users who prefer dark mode at the OS level */
+@media (prefers-color-scheme: dark) {
+  /* defaults to dark theme */
+  body {
+    --bx-shdw: 0 0 0 1px rgba(255, 255, 255, 0.1), 0 2px 4px 0 rgba(255, 255, 255, 0.16);
+    --t-bkg: #000000bb;
+    --text-color: #eee;
+    --text-color-grad1: #ccc;
+    --text-color-grad2: #aaa;
+    --bkg-color: rgb(34, 34, 34);
+    --bkg-color-grad1: #444;
+    --bkg-color-grad2: #666;
+    --bkg-color-input: #ddd;
+    --lnk: lightskyblue;
+    --lnk-visited: #6d4b8d;
+    --lnk-hover: #ffffff;
+    --lnk-active: #ff4040;
+    --svg-filter: invert(1);
+  }
+
+  /* Override dark mode with light mode styles if the user decides to swap */
+  body.light-theme {
+    --bx-shdw: 0 0 0 1px rgba(0, 0, 0, 0.1), 0 2px 4px 0 rgba(0, 0, 0, 0.16);
+    --t-bkg: #ffffffbb;
+    --text-color: #222;
+    --text-color-grad1: #444;
+    --text-color-grad2: #666;
+    --bkg-color: rgb(255, 255, 255);
+    --bkg-color-grad1: #ddd;
+    --bkg-color-grad2: #bbb;
+    --bkg-color-input: #fff;
+    --lnk: #0000ff;
+    --lnk-visited: #800080;
+    --lnk-hover: #0099ff;
+    --lnk-active: #ff0000;
+    --svg-filter: none;
+  }
+}
+
+body a:link {
+  color: var(--lnk);
+}
+
+body a:visited {
+  color: var(--lnk-visited);
+}
+
+body a:hover {
+  color: var(--lnk-hover);
+}
+
+body a:active {
+  color: var(--lnk-active);
+  text-decoration: none;
+  font-weight: normal;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: row;
+  border-bottom: solid 1px var(--bkg-color-grad1);
+  background: var(--bkg-color);
+  height: 4rem;
+  z-index: 100;
+  justify-content: space-between;
+  box-shadow:
+    0 1px 2px rgba(60, 64, 67, 0.3),
+    0 1px 3px 1px rgba(60, 64, 67, 0.15);
+}
+
+img {
+  filter: var(--svg-filter);
+}
+
+girafe-theme-select {
+  width: 4rem;
+  height: 4rem;
+  z-index: 100;
+}
+
+.logo {
+  margin: 0.2rem 1rem;
+}
+
+girafe-search {
+  margin: 1rem auto auto 16rem;
+  width: 36rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#buttonbar {
+  text-align: right;
+  color: var(--text-color);
+  background-color: transparent;
+  font-size: 0;
+  padding: 0;
+  display: flex;
+  height: 4.6rem;
+  overflow: visible;
+}
+
+#content {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  top: 4rem;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+#main {
+  display: flex;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.panel-left,
+.panel-right {
+  z-index: 1;
+  flex: none;
+}
+
+.panel-left {
+  width: 25rem;
+  min-width: 20rem;
+  max-width: 50rem;
+  box-shadow:
+    0 1px 2px rgba(60, 64, 67, 0.3),
+    0 1px 3px 1px rgba(60, 64, 67, 0.15);
+}
+
+.panel-right {
+  width: 20rem;
+  min-width: 20rem;
+  max-width: 40rem;
+  box-shadow:
+    0 -1px 2px rgba(60, 64, 67, 0.3),
+    0 -1px 3px 1px rgba(60, 64, 67, 0.15);
+}
+
+#content-map {
+  display: flex;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+#content-bottom {
+  flex: 0;
+  position: relative;
+}
+
+girafe-lr-panel > * {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+girafe-map {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.info-area {
+  z-index: 10;
+  position: absolute;
+  bottom: 0;
+}
+
+footer {
+  border: none;
+  z-index: 10;
+  display: flex;
+  flex-direction: row;
+}
+
+girafe-selection-grid,
+girafe-lidar-profile {
+  position: relative;
+  display: block;
+}
+
+girafe-selection-window {
+  position: absolute;
+  bottom: 1rem;
+  right: 25rem;
+  z-index: 100;
+  width: 400px;
+  height: 240px;
+  min-width: 200px;
+  min-height: 100px;
+  max-width: 800px;
+  max-height: 400px;
+}
+
+girafe-nav-history {
+  z-index: 10;
+}
+
+girafe-about,
+girafe-share {
+  position: absolute;
+  z-index: 100;
+  background: var(--bkg-color);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+girafe-metadata-window {
+  position: absolute;
+  z-index: 100;
+  background: var(--bkg-color);
+  top: 1rem;
+  left: 2rem;
+}
+
+.border-top {
+  border-top: solid 1px #fff;
+}
+
+.tippy-box {
+  background-color: var(--text-color) !important;
+}
+
+.tippy-content {
+  color: var(--bkg-color) !important;
+}
+
+.tippy-box[data-theme~='error'] {
+  background-color: var(--error-color);
+  white-space: pre-line;
+}
+
+girafe-prototype-banner {
+  position: absolute;
+  bottom: 50px;
+  right: -80px;
+  width: 300px;
+  height: 40px;
+  transform: rotate(-45deg);
+  line-height: 40px;
+  background: #d62f2fcc;
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+}

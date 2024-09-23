@@ -10,8 +10,26 @@
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
     <link rel="manifest" href="site.webmanifest" />
 
-    <link rel="stylesheet" media="screen" href="./assets/index-OUIbMND8.css" />
-    <link rel="stylesheet" media="screen" href="data:text/css;base64,QG1lZGlhIHNjcmVlbiBhbmQgKG1heC13aWR0aDogMTI0MHB4KSB7CiAgZ2lyYWZlLXNlYXJjaCB7CiAgICB3aWR0aDogMjRyZW07CiAgfQp9CgpAbWVkaWEgc2NyZWVuIGFuZCAobWF4LXdpZHRoOiAxMDAwcHgpIHsKICBnaXJhZmUtc2VhcmNoIHsKICAgIHdpZHRoOiAxMDAlOwogICAgbGVmdDogMHB4OwogICAgYm9yZGVyLXJhZGl1czogMDsKICAgIG1hcmdpbjogNC41cmVtIDAgMCAwOwogICAgYmFja2dyb3VuZC1jb2xvcjogdmFyKC0tYmtnLWNvbG9yKTsKICB9CiAgZ2lyYWZlLXRyZWUtdmlldyB7CiAgICB0b3A6IDIuNXJlbTsKICAgIHdpZHRoOiAxOHJlbTsKICB9CgogIGdpcmFmZS1jb29yZGluYXRlIHsKICAgIGRpc3BsYXk6IG5vbmU7CiAgfQp9Cg==" />
+    <!-- To prevent the FOUC effect (flash of unstyled content),
+         the html element is set to invisible when the application starts.
+         When all elements have been declared, the html element is made visible
+         (=> see main.ts) -->
+    <style>
+      html {
+        opacity: 0;
+        transition: opacity 1s;
+      }
+    </style>
+    <noscript>
+      <style>
+        html {
+          opacity: 1;
+        }
+      </style>
+    </noscript>
+
+    <link rel="stylesheet" media="screen" href="./assets/index-tusgUVPg.css" />
+    <link rel="stylesheet" media="screen" href="data:text/css;base64,LyogQ29tbW9uIGdlbmVyYWwgc3R5bGVzICovCi5oaWRkZW4gewogIGRpc3BsYXk6IG5vbmU7Cn0KCi5yb3RhdGU5MCB7CiAgdHJhbnNmb3JtOiByb3RhdGUoOTBkZWcpOwp9Cgoucm90YXRlMTgwIHsKICB0cmFuc2Zvcm06IHJvdGF0ZSgxODBkZWcpOwp9CgpAa2V5ZnJhbWVzIHNwaW4gewogIGZyb20gewogICAgdHJhbnNmb3JtOiByb3RhdGUoMGRlZyk7CiAgfQogIHRvIHsKICAgIHRyYW5zZm9ybTogcm90YXRlKDM2MGRlZyk7CiAgfQp9Cgo6Oi13ZWJraXQtc2Nyb2xsYmFyIHsKICB3aWR0aDogNXB4Owp9Cgo6Oi13ZWJraXQtc2Nyb2xsYmFyLXRodW1iIHsKICBiYWNrZ3JvdW5kOiAjOTk5Owp9CgovKiBDb21tb24gc3R5bGUgKHRvIGFsbCBidXR0b24gb2YgYWxsIHNpemVzKSAqLwouZ2ctYnV0dG9uIHsKICBib3JkZXI6IG5vbmU7CiAgYmFja2dyb3VuZC1jb2xvcjogdHJhbnNwYXJlbnQ7CiAgZGlzcGxheTogZmxleDsKICBmbGV4LWRpcmVjdGlvbjogY29sdW1uOwogIGNvbG9yOiB2YXIoLS10ZXh0LWNvbG9yKTsKfQouZ2ctYnV0dG9uOmhvdmVyIHsKICBiYWNrZ3JvdW5kLWNvbG9yOiB2YXIoLS1ia2ctY29sb3ItZ3JhZDEpOwogIGN1cnNvcjogcG9pbnRlcjsKfQouZ2ctc21hbGwgewogIG1pbi13aWR0aDogMnJlbTsKICBoZWlnaHQ6IDJyZW07CiAgYWxpZ24taXRlbXM6IGNlbnRlcjsKICBwYWRkaW5nOiAwLjVyZW07Cn0KLmdnLXNtYWxsIGltZyB7CiAgb3ZlcmZsb3c6IGhpZGRlbjsKfQouZ2ctc21hbGwgc3BhbiB7CiAgd2lkdGg6IDEwMCU7CiAgdGV4dC1hbGlnbjogbGVmdDsKICBvdmVyZmxvdzogaGlkZGVuOwogIHRleHQtb3ZlcmZsb3c6IGVsbGlwc2lzOwp9Ci5nZy1jaGVjayB7CiAgcGFkZGluZzogMC4ycmVtOwp9Ci5nZy1sYWJlbCB7CiAgdGV4dC1hbGlnbjogbGVmdDsKICBwYWRkaW5nLWxlZnQ6IDA7CiAgd2hpdGUtc3BhY2U6IG5vd3JhcDsKfQouZ2ctZ3JhYjpob3ZlciB7CiAgY3Vyc29yOiBncmFiOwp9Ci5nZy1zcGFjZXIgewogIHBhZGRpbmc6IDA7Cn0KLmdnLW9wYWNpdHkgewogIG9wYWNpdHk6IDAuNTsKfQouZ2ctb3BhY2l0eTpob3ZlciB7CiAgYmFja2dyb3VuZC1jb2xvcjogdHJhbnNwYXJlbnQ7CiAgb3BhY2l0eTogMTsKfQouZ2ctc2VsZWN0ZWQgewogIGZvbnQtd2VpZ2h0OiA3MDA7CiAgb3BhY2l0eTogMTsKfQoKLyogVE9ETyBSRUcgOiBTdXBwcmVzcyBhbGwgdGhlIGZvbGxvd2luZyBzdHlsZXMgd2hlbiB0aGUgbWlncmF0aW9uIGlzIGRvbmUuICovCi5naXJhZmUtYnV0dG9uLWJpZywKLmdpcmFmZS1idXR0b24tbWVkaXVtLAouZ2lyYWZlLWJ1dHRvbi1sYXJnZSwKLmdpcmFmZS1idXR0b24tc21hbGwsCi5naXJhZmUtYnV0dG9uLXRpbnkgewogIGJvcmRlcjogbm9uZTsKICBiYWNrZ3JvdW5kLWNvbG9yOiB0cmFuc3BhcmVudDsKICBkaXNwbGF5OiBmbGV4OwogIGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47CiAgY29sb3I6IHZhcigtLXRleHQtY29sb3IpOwp9Ci5naXJhZmUtYnV0dG9uLWJpZzpob3ZlciwKLmdpcmFmZS1idXR0b24tbWVkaXVtOmhvdmVyLAouZ2lyYWZlLWJ1dHRvbi1sYXJnZTpob3ZlciwKLmdpcmFmZS1idXR0b24tc21hbGw6aG92ZXIsCi5naXJhZmUtYnV0dG9uLXRpbnk6aG92ZXIgewogIGJhY2tncm91bmQtY29sb3I6IHZhcigtLWJrZy1jb2xvci1ncmFkMSk7CiAgY3Vyc29yOiBwb2ludGVyOwp9CgouZ2lyYWZlLWJ1dHRvbi1iaWcuZGFyaywKLmdpcmFmZS1idXR0b24tbWVkaXVtLmRhcmssCi5naXJhZmUtYnV0dG9uLWxhcmdlLmRhcmssCi5naXJhZmUtYnV0dG9uLXNtYWxsLmRhcmssCi5naXJhZmUtYnV0dG9uLXRpbnkuZGFyayB7CiAgYmFja2dyb3VuZC1jb2xvcjogdmFyKC0tYmtnLWNvbG9yKTsKICBmaWx0ZXI6IGludmVydCgxKTsKfQoKaW1nIHsKICBmaWx0ZXI6IHZhcigtLXN2Zy1maWx0ZXIpOwp9CgovKiBCaWcgYnV0dG9uIChpY29uIG9ubHkpICovCi5naXJhZmUtYnV0dG9uLWJpZyB7CiAgd2lkdGg6IDRyZW07CiAgaGVpZ2h0OiA0cmVtOwogIGFsaWduLWl0ZW1zOiBjZW50ZXI7CiAgcGFkZGluZzogMXJlbTsKfQouZ2lyYWZlLWJ1dHRvbi1iaWcgaW1nIHsKICBvdmVyZmxvdzogaGlkZGVuOwp9CgovKiBNZWRpdW0gYnV0dG9uIChpY29uIG9yIGljb24gKyB0ZXh0KSAqLwouZ2lyYWZlLWJ1dHRvbi1tZWRpdW0gewogIGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47CiAgd2lkdGg6IDRyZW07CiAgYWxpZ24taXRlbXM6IGNlbnRlcjsKfQouZ2lyYWZlLWJ1dHRvbi1tZWRpdW0gaW1nIHsKICBtYXJnaW46IDFyZW07CiAgd2lkdGg6IDEuNXJlbTsKfQouZ2lyYWZlLWJ1dHRvbi1tZWRpdW0gc3BhbiB7CiAgZGlzcGxheTogYmxvY2s7CiAgbWFyZ2luLXRvcDogLTAuOHJlbTsKICBtYXJnaW4tYm90dG9tOiAwLjhyZW07Cn0KCi8qIExhcmdlIGJ1dHRvbiAobG9uZyB0ZXh0IG9yIGljb24gKyBsb25nIHRleHQpICovCi5naXJhZmUtYnV0dG9uLWxhcmdlIHsKICBmbGV4LWRpcmVjdGlvbjogcm93Owp9Ci5naXJhZmUtYnV0dG9uLWxhcmdlIGltZyB7CiAgbWFyZ2luOiAwLjNyZW07CiAgaGVpZ2h0OiAycmVtOwp9Ci5naXJhZmUtYnV0dG9uLWxhcmdlIHNwYW4gewogIGxpbmUtaGVpZ2h0OiAycmVtOwogIGhlaWdodDogMnJlbTsKICBtYXJnaW46IDAuM3JlbTsKfQoKLyogU21hbGwgYnV0dG9uIChpY29uIG9ubHkpICovCi5naXJhZmUtYnV0dG9uLXNtYWxsIHsKICBtaW4td2lkdGg6IDJyZW07CiAgaGVpZ2h0OiAycmVtOwogIGFsaWduLWl0ZW1zOiBjZW50ZXI7CiAgcGFkZGluZzogMC41cmVtOwp9Ci5naXJhZmUtYnV0dG9uLXNtYWxsIGltZyB7CiAgb3ZlcmZsb3c6IGhpZGRlbjsKfQouZ2lyYWZlLWJ1dHRvbi1zbWFsbCBzcGFuIHsKICB3aWR0aDogMTAwJTsKICB0ZXh0LWFsaWduOiBsZWZ0OwogIG92ZXJmbG93OiBoaWRkZW47CiAgdGV4dC1vdmVyZmxvdzogZWxsaXBzaXM7Cn0KCi8qIFRpbnkgYnV0dG9uIChpY29uIG9ubHkgd2l0aCBubyBwYWRkaW5nKSAqLwouZ2lyYWZlLWJ1dHRvbi10aW55IHsKICB3aWR0aDogMXJlbTsKICBoZWlnaHQ6IDFyZW07CiAgYWxpZ24taXRlbXM6IGNlbnRlcjsKICBwYWRkaW5nOiAwOwp9Ci5naXJhZmUtYnV0dG9uLXRpbnkgaW1nIHsKICBvdmVyZmxvdzogaGlkZGVuOwp9Cg==" />
 
     <link
       rel="preload"
@@ -56,59 +74,75 @@
       crossorigin="anonymous" />
 
     <title>GeoGirafe</title>
-    <script type="module" crossorigin src="./assets/index-sUC8zklA.js"></script>
-    <link rel="modulepreload" crossorigin href="./assets/lazy-zORy1357.js">
+    <script type="module" crossorigin src="./assets/desktop-5p69HYTv.js"></script>
+    <link rel="modulepreload" crossorigin href="./assets/lazy-CNpw-HpO.js">
+    <link rel="modulepreload" crossorigin href="./assets/component-DmEB9E06.js">
+    <link rel="modulepreload" crossorigin href="./assets/ScreenSpaceEventHandler-BV10dpGX.js">
   </head>
 
   <body>
     <header>
       <girafe-theme-select></girafe-theme-select>
-      <img class="logo logo-light" alt="geogirafe-logo" src="images/logo_gg_qf_light.svg" />
-      <img class="logo logo-dark" alt="geogirafe-logo" src="images/logo_gg_qf_dark.svg" />
+      <img class="logo logo-light" alt="geogirafe-logo" src="images/logo_gg_qf_light.svg">
       <girafe-search id="search"></girafe-search>
       <div id="buttonbar">
         <girafe-video-record></girafe-video-record>
         <girafe-nav-history></girafe-nav-history>
-        <girafe-button icon-style="fa-2xl fa-solid fa-user"></girafe-button>
+        <button class="girafe-button-big login" onclick="throw new Error('Login not implemented')">
+          <img alt="help-icon" src="icons/user.svg" />
+        </button>
         <girafe-colorswitcher></girafe-colorswitcher>
-        <girafe-button
-          icon-style="fa-2xl fa-solid fa-circle-question"
-          onclick="document.geogirafe.state.interface.helpVisible = true">
-        </girafe-button>
-        <girafe-button
-          icon-style="fa-2xl fa-solid fa-share-nodes"
-          onclick="document.geogirafe.state.interface.shareVisible = true">
-        </girafe-button>
-        <girafe-menu-button icon-style="fa-2xl fa-solid fa-ellipsis-vertical">
-          <div slot="menu-content">
-            <girafe-button
-              icon-style="fa-xl fa-regular fa-pen-to-square"
-              text="Draw"
-              onclick="document.geogirafe.state.interface.redliningPanelVisible = !document.geogirafe.state.interface.redliningPanelVisible">
-            </girafe-button>
-            <girafe-button
-              icon-style="fa-xl fa-solid fa-print"
-              text="Print"
-              onclick="document.geogirafe.state.interface.printPanelVisible = !document.geogirafe.state.interface.printPanelVisible">
-            </girafe-button>
-            <girafe-proj-select></girafe-proj-select>
-            <girafe-language-select></girafe-language-select>
-            <girafe-globe-select></girafe-globe-select>
-            <girafe-button
-              icon-style="fa-xl fa-solid fa-circle-info"
-              class="border-top"
-              text="about"
-              onclick="document.geogirafe.state.interface.aboutVisible = true">
-            </girafe-button>
-          </div>
+        <button class="girafe-button-big help" onclick="document.geogirafe.state.interface.helpVisible = true">
+          <img alt="help-icon" src="icons/help.svg" />
+        </button>
+        <button class="girafe-button-big share" onclick="document.geogirafe.state.interface.shareVisible = true">
+          <img alt="help-icon" src="icons/share.svg" />
+        </button>
+        <girafe-menu-button>
+          <button slot="menu-button" class="girafe-button-big">
+            <img alt="menu-icon" src="icons/menu.svg" />
+          </button>
+          <button
+            slot="menu-content"
+            class="girafe-button-medium"
+            onclick="document.geogirafe.state.interface.drawingPanelVisible = !document.geogirafe.state.interface.drawingPanelVisible">
+            <img alt="help-icon" src="icons/draw.svg" />
+            <span>Draw</span>
+          </button>
+          <button
+            slot="menu-content"
+            class="girafe-button-medium"
+            onclick="document.geogirafe.state.interface.printPanelVisible = !document.geogirafe.state.interface.printPanelVisible">
+            <img alt="help-icon" src="icons/print.svg" />
+            <span>Print</span>
+          </button>
+          <button
+            slot="menu-content"
+            class="girafe-button-medium"
+            onclick="document.geogirafe.state.interface.lidarPanelVisible = !document.geogirafe.state.interface.lidarPanelVisible">
+            <img alt="help-icon" src="icons/lidar.svg" />
+            <span>LiDAR</span>
+          </button>
+          <girafe-proj-select slot="menu-content"></girafe-proj-select>
+          <girafe-language-select slot="menu-content"></girafe-language-select>
+          <girafe-globe-select slot="menu-content"></girafe-globe-select>
+          <button
+            slot="menu-content"
+            class="girafe-button-medium"
+            onclick="document.geogirafe.state.interface.aboutVisible = true">
+            <img alt="help-icon" src="icons/info.svg" />
+            <span>About</span>
+          </button>
         </girafe-menu-button>
       </div>
     </header>
 
     <div id="content">
-      <div id="content-map">
-        <section>
-          <girafe-tree-view dock="left"></girafe-tree-view>
+      <div id="main">
+        <girafe-lr-panel class="panel-left" dock="left">
+          <girafe-tree-view slot="main"></girafe-tree-view>
+        </girafe-lr-panel>
+        <div id="content-map">
           <girafe-map></girafe-map>
           <div class="info-area">
             <girafe-infobox></girafe-infobox>
@@ -117,17 +151,22 @@
               <girafe-coordinate></girafe-coordinate>
             </footer>
           </div>
-        </section>
-        <girafe-redlining dock="right"></girafe-redlining>
-        <girafe-print dock="right"></girafe-print>
+          <girafe-prototype-banner></girafe-prototype-banner>
+          <girafe-metadata-window></girafe-metadata-window>
+        </div>
+        <girafe-lr-panel class="panel-right" dock="right">
+          <girafe-drawing slot="main" data-toggle-path="interface.printPanelVisible"></girafe-drawing>
+          <girafe-print slot="main" data-toggle-path="interface.drawingPanelVisible"></girafe-print>
+          <girafe-lidar-panel slot="main" data-toggle-path="interface.lidarPanelVisible"></girafe-lidar-panel>
+        </girafe-lr-panel>
         <girafe-about></girafe-about>
         <girafe-share></girafe-share>
-        <!-- <girafe-selection-window></girafe-selection-window> -->
+        <girafe-selection-window></girafe-selection-window>
         <girafe-help></girafe-help>
       </div>
-
       <div id="content-bottom">
         <girafe-selection-grid dock="bottom"></girafe-selection-grid>
+        <girafe-lidar-profile id="lidar-footer" dock="bottom"></girafe-lidar-profile>
       </div>
     </div>
   </body>

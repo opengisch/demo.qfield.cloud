@@ -1,31 +1,25 @@
 {
-  "//comment1": "This is the whole configuration of the GeoGirafe Viewer.",
-  "//comment2": "Here, you can set the entries according to your environment.",
   "general": {
-    "//comment1": "Will be used when formating numbers or dates",
     "locale": "en-US"
   },
   "languages": {
-    "//comment1": "List of languages with their corresponding translation-file.",
-    "de": "Mock/de.json",
-    "en": "Mock/en.json",
-    "fr": "Mock/fr.json",
-    "//comment2": "Default language",
+    "translations": {
+    "de": ["Mock/de.json"],
+    "en": ["Mock/en.json"],
+    "fr": ["Mock/fr.json"]
+    },
     "defaultLanguage": "en"
   },
+  "interface": {
+    "defaultSelectionComponent": "grid"
+  },
   "themes": {
-    "//comment1": "Link to the GeoMapFish-Compliant Themes.json",
-    "//url": "Mock/themes.json",
     "url": "Mock/themes_qfield.json",
-    "//comment2": "Name of the default theme. It will be automatically loaded when the application starts",
     "defaultTheme" : "Rapidmapping"
   },
   "basemaps": {
-    "//comment1": "Display the Basemap control or not",
     "show" : true,
-    "//comment2": "Name of the default basemap.",
     "defaultBasemap": "OpenStreetMap",
-    "//comment3" : "special basemaps that can be activated or not",
     "OSM": true,
     "SwissTopoVectorTiles": true
   },
@@ -39,15 +33,15 @@
     }
   },
   "search": {
-    "//comment1": "Link to the GeoMapFish-Compliant Search Service",
-    "//comment2": "The muster <###SEARCHTERM###> will be replaced by the search-term",
     "url": "https://geomapfish-demo-2-8.camptocamp.com/search?limit=30&partitionlimit=5&interface=desktop&query=###SEARCHTERM###"
   },
   "print": {
-    "//comment1": "Link to the GeoMapFish-Compliant Print Service",
     "url": "https://geomapfish-demo-2-8.camptocamp.com/printproxy/",
-    "//comment2": "The print layout selected by default",
     "defaultLayout": "1 A4 portrait"
+  },
+  "share": {
+    "service": "lstu",
+    "createUrl": "https://lstu.fr/a"
   },
   "selection": {
     "defaultFillColor": "#ff66667f",
@@ -65,7 +59,6 @@
     "defaultFont": "Arial"
   },
   "projections": {
-    "//comment1": "List of projections with their corresponding abbreviation",
     "EPSG:3857": "W-M",
     "EPSG:4326": "WGS84",
     "EPSG:2056": "LV95",
