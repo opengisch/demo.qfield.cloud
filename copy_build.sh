@@ -4,6 +4,7 @@ srcPath=~/Documents/OpenGIS/geogirafe/gg-viewer/dist/app
 destPath=~/Documents/OpenGIS/geogirafe/demo.qfield.cloud
 
 cp $srcPath/index.html $destPath/index_orig.html
+cp $srcPath/mobile.html $destPath/mobile.html
 
 rm "$destPath"/assets/*
 rm -r "$destPath"/icons/*
