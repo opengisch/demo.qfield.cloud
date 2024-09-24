@@ -70,6 +70,27 @@
           "name": "Laax Bees",
           "children": [
             {
+              "id": 224,
+              "name": "Apiary",
+              "metadata": {
+                "legend": true,
+                "isChecked": true
+              },
+              "type": "WMS",
+              "layers": "Apiary",
+              "imageType": "image/png",
+              "childLayers": [
+                {
+                  "name": "Apiary",
+                  "minResolutionHint": 0.0,
+                  "maxResolutionHint": 56.0,
+                  "queryable": true
+                }
+              ],
+              "minResolutionHint": 0.0,
+              "maxResolutionHint": 56.0
+            },
+            {
               "id": 223,
               "name": "Fields",
               "metadata": {
@@ -82,27 +103,6 @@
               "childLayers": [
                 {
                   "name": "Fields",
-                  "minResolutionHint": 0.0,
-                  "maxResolutionHint": 56.0,
-                  "queryable": true
-                }
-              ],
-              "minResolutionHint": 0.0,
-              "maxResolutionHint": 56.0
-            },
-            {
-              "id": 223,
-              "name": "Apiary",
-              "metadata": {
-                "legend": true,
-                "isChecked": true
-              },
-              "type": "WMS",
-              "layers": "Apiary",
-              "imageType": "image/png",
-              "childLayers": [
-                {
-                  "name": "Apiary",
                   "minResolutionHint": 0.0,
                   "maxResolutionHint": 56.0,
                   "queryable": true
@@ -200,29 +200,6 @@
           "name": "INTERGEO Bees",
           "children": [
             {
-              "id": 557,
-              "name": "Fields",
-              "metadata": {
-                "legend": false,
-                "isChecked": true,
-                "//legendRule": "Fields",
-                "//snappingConfig": {}
-              },
-              "type": "WMS",
-              "layers": "Fields",
-              "imageType": "image/png",
-              "childLayers": [
-                {
-                  "name": "Fields",
-                  "minResolutionHint": 0.0,
-                  "maxResolutionHint": 56.0,
-                  "queryable": true
-                }
-              ],
-              "minResolutionHint": 0.0,
-              "maxResolutionHint": 56.0
-            },
-            {
               "id": 558,
               "name": "Apiary",
               "metadata": {
@@ -237,6 +214,29 @@
               "childLayers": [
                 {
                   "name": "Apiary",
+                  "minResolutionHint": 0.0,
+                  "maxResolutionHint": 56.0,
+                  "queryable": true
+                }
+              ],
+              "minResolutionHint": 0.0,
+              "maxResolutionHint": 56.0
+            },
+            {
+              "id": 557,
+              "name": "Fields",
+              "metadata": {
+                "legend": false,
+                "isChecked": true,
+                "//legendRule": "Fields",
+                "//snappingConfig": {}
+              },
+              "type": "WMS",
+              "layers": "Fields",
+              "imageType": "image/png",
+              "childLayers": [
+                {
+                  "name": "Fields",
                   "minResolutionHint": 0.0,
                   "maxResolutionHint": 56.0,
                   "queryable": true
