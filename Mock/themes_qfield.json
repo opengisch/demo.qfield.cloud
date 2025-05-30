@@ -11,6 +11,17 @@
       "namespace": "http://www.qgis.org/gml",
       "attributes": null
     },
+    "QGIS server uc2025": {
+      "url": "https://qgis.demo.opengis.ch/ows/uc2025/",
+      "urlWfs": "https://qgis.demo.opengis.ch/ows/uc2025/",
+      "type": "qgisserver",
+      "credential": true,
+      "imageType": "image/png",
+      "wfsSupport": true,
+      "isSingleTile": false,
+      "namespace": "http://www.qgis.org/gml",
+      "attributes": null
+    },
     "QGIS server ww": {
       "url": "https://qgis.demo.opengis.ch/ows/qgep_db/",
       "urlWfs": "https://qgis.demo.opengis.ch/ows/qgep_db/",
@@ -57,6 +68,101 @@
     }
   },
   "themes": [
+    {
+      "id": 777,
+      "name": "QGIS User conference 2025",
+      "icon": "/images/uc25_logo_re_color.png",
+      "location": [3118091, 2533504],
+      "zoom": 10,
+      "favorite": true,
+      "children": [
+        {
+          "id": 778,
+          "name": "Memories",
+          "children": [
+            { 
+              "id": 779,
+              "name": "Public Memories",
+              "metadata": {
+                "legend": false,
+                "isChecked": true
+              },
+              "type": "WMS",
+              "layers": "memories",
+              "imageType": "image/png",
+              "childLayers": [
+                {
+                  "name": "memories",
+                  "minResolutionHint": 0.0,
+                  "maxResolutionHint": 56.0,
+                  "queryable": true
+                }
+              ],
+              "minResolutionHint": 0.0,
+              "maxResolutionHint": 56.0
+            }
+          ],
+          "metadata": {},
+          "mixed": false,
+          "ogcServer": "QGIS server uc2025",
+          "dimensions": {}
+        },
+        {
+          "id": 778,
+          "name": "POI",
+          "children": [
+           { 
+              "id": 780,
+              "name": "Conference",
+              "metadata": {
+                "legend": false,
+                "isChecked": true
+              },
+              "type": "WMS",
+              "layers": "Conference",
+              "imageType": "image/png",
+              "queryable": true,
+              "minResolutionHint": 0.0,
+              "maxResolutionHint": 56.0
+            },
+            { 
+              "id": 781,
+              "name": "Hospitality",
+              "metadata": {
+                "legend": false,
+                "isChecked": true
+              },
+              "type": "WMS",
+              "layers": "Hospitality",
+              "imageType": "image/png",
+              "queryable": true,
+              "minResolutionHint": 0.0,
+              "maxResolutionHint": 56.0
+            },
+            { 
+              "id": 782,
+              "name": "Attractions",
+              "metadata": {
+                "legend": false,
+                "isChecked": true
+              },
+              "type": "WMS",
+              "layers": "Attractions",
+              "imageType": "image/png",
+              "queryable": true,
+              "minResolutionHint": 0.0,
+              "maxResolutionHint": 56.0
+            }
+          ],
+          "metadata": {},
+          "mixed": false,
+          "ogcServer": "QGIS server uc2025",
+          "dimensions": {}
+        }
+      ],
+      "functionalities": {},
+      "metadata": {}
+    },
     {
       "id": 221,
       "name": "Bees QGIS server",

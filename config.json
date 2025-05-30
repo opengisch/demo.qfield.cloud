@@ -12,11 +12,12 @@
     "defaultLanguage": "en"
   },
   "interface": {
-    "defaultSelectionComponent": "grid"
+    "defaultSelectionComponent": "grid",
+     "darkFrontendMode": "false"
   },
   "themes": {
     "url": "Mock/themes_qfield.json",
-    "defaultTheme": "Rapidmapping"
+    "defaultTheme": "QGIS User conference 2025"
   },
   "selection": {
     "maxFeature": 100
