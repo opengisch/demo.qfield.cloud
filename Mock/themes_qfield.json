@@ -76,21 +76,37 @@
       "zoom": 10,
       "favorite": true,
       "children": [
-        {"id": 789,
+        {
+          "id": 778,
           "name": "Memories",
-          "metadata": {
-            "legend": false,
-            "isChecked": true
-          },
-          "type": "WMS",
-          "layers": "memories",
-          "imageType": "image/png",
-          "minResolutionHint": 0.0,
-          "maxResolutionHint": 56.0,
+          "children": [
+            { 
+              "id": 779,
+              "name": "Public Memories",
+              "metadata": {
+                "legend": false,
+                "isChecked": true
+              },
+              "type": "WMS",
+              "layers": "memories",
+              "imageType": "image/png",
+              "childLayers": [
+                {
+                  "name": "memories",
+                  "minResolutionHint": 0.0,
+                  "maxResolutionHint": 56.0,
+                  "queryable": true
+                }
+              ],
+              "minResolutionHint": 0.0,
+              "maxResolutionHint": 56.0
+            }
+          ],
+          "metadata": {},
           "mixed": false,
           "ogcServer": "QGIS server uc2025",
           "dimensions": {}
-            },
+        },
         {
           "id": 778,
           "name": "POI",
