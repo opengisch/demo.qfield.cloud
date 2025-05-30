@@ -5,44 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="GeoGirafe is an flexible application to build online geoportals." />
 
-    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="images/logo/apple-touch-icon-black.png"
+      media="(prefers-color-scheme: light)" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="images/logo/apple-touch-icon-white.png"
+      media="(prefers-color-scheme: dark)" />
+    <link href="images/logo/favicon_black.svg" rel="icon" media="(prefers-color-scheme: light)" />
+    <link href="images/logo/favicon_white.svg" rel="icon" media="(prefers-color-scheme: dark)" />
     <link rel="manifest" href="site.webmanifest" />
 
-    <!-- To prevent the FOUC effect (flash of unstyled content),
-         the html element is set to invisible when the application starts.
-         When all elements have been declared, the html element is made visible
-         (=> see main.ts) -->
-    <style>
-      html {
-        opacity: 0;
-        transition: opacity 1s;
-      }
-    </style>
-    <noscript>
-      <style>
-        html {
-          opacity: 1;
-        }
-      </style>
-    </noscript>
+    <link rel="stylesheet" media="screen" href="data:text/css;base64,Ym9keSB7CiAgLS1hcHAtY29sb3ItZ3JleTogI2NiZDVlMTsKICAtLWFwcC1zdGFuZGFyZC1oZWlnaHQ6IDMuMnJlbTsKICAtLWFwcC1mb290ZXItaGVpZ2h0OiBjYWxjKHZhcigtLWFwcC1zdGFuZGFyZC1oZWlnaHQpIC8gMS4yKTsKICAtLWFwcC1zdGFuZGFyZC1ib3JkZXI6IDFweCBzb2xpZCB2YXIoLS1hcHAtY29sb3ItZ3JleSk7CiAgLS1ia2ctY29sb3I6IHJnYigyNTUsIDI1NSwgMjU1KTsKICAtLXRleHQtY29sb3I6ICMyMjI7CiAgLS1saW5rLWNvbG9yOiBncmV5OwoKICAtLWJ4LXNoZHc6IDAgMCAwIDFweCByZ2JhKDAsIDAsIDAsIDAuMSksIDAgMnB4IDRweCAwIHJnYmEoMCwgMCwgMCwgMC4xNik7CiAgLS10LWJrZzogI2ZmZmZmZmJiOwogIC0tbGVnZW5kLWJrZzogcmdiKDI1NSwgMjU1LCAyNTUpOwogIC0tdGV4dC1jb2xvci1ncmFkMTogIzQ0NDsKICAtLXRleHQtY29sb3ItZ3JhZDI6ICM2NjY7CiAgLS1ia2ctY29sb3ItZ3JhZDE6ICNkZGQ7CiAgLS1ia2ctY29sb3ItZ3JhZDI6ICNiYmI7CiAgLS1ia2ctY29sb3ItaW5wdXQ6ICNmZmY7CiAgLS1sbms6ICMwMDAwZmY7CiAgLS1sbmstdmlzaXRlZDogIzgwMDA4MDsKICAtLWxuay1ob3ZlcjogIzAwOTlmZjsKICAtLWxuay1hY3RpdmU6ICNmZjAwMDA7CiAgLS10c3Q6ICNmZjAwMDA7CiAgLS1lcnJvci1jb2xvcjogI2JiMDAwMDsKICAtLXdhcm5pbmctY29sb3I6ICNmZmE1MDA7CiAgLS1zdWNjZXNzLWNvbG9yOiAjYThlOWE4OwogIC0tc3ZnLWZpbHRlcjogbm9uZTsKICAtLXN2Zy1tYXAtZmlsdGVyOiBub25lOwogIC0tc3ZnLWxlZ2VuZC1ia2c6IHZhcigtLWxlZ2VuZC1ia2cpOwp9CgovKiBEYXJrIHRoZW1lIGNvbG9ycyAqLwpib2R5LmRhcmstdGhlbWUgewogIC0tYngtc2hkdzogMCAwIDAgMXB4IHJnYmEoMjU1LCAyNTUsIDI1NSwgMC4xKSwgMCAycHggNHB4IDAgcmdiYSgyNTUsIDI1NSwgMjU1LCAwLjE2KTsKICAtLXQtYmtnOiAjMDAwMDAwYmI7CiAgLS10ZXh0LWNvbG9yOiAjZWVlOwogIC0tdGV4dC1jb2xvci1ncmFkMTogI2NjYzsKICAtLXRleHQtY29sb3ItZ3JhZDI6ICNhYWE7CiAgLS1ia2ctY29sb3I6IHJnYigzNCwgMzQsIDM0KTsKICAtLWJrZy1jb2xvci1ncmFkMTogIzQ0NDsKICAtLWJrZy1jb2xvci1ncmFkMjogIzY2NjsKICAtLWJrZy1jb2xvci1pbnB1dDogI2RkZDsKICAtLWxuazogbGlnaHRza3libHVlOwogIC0tbG5rLXZpc2l0ZWQ6ICM2ZDRiOGQ7CiAgLS1sbmstaG92ZXI6ICNmZmZmZmY7CiAgLS1sbmstYWN0aXZlOiAjZmY0MDQwOwogIC0tZXJyb3ItY29sb3I6ICNmZjYzNDc7CiAgLS1zdWNjZXNzLWNvbG9yOiAjNTI5YzUyOwogIC0tc3ZnLWZpbHRlcjogaW52ZXJ0KDEpOwogIC0tc3ZnLWxlZ2VuZC1ia2c6IHZhcigtLWxlZ2VuZC1ia2cpOwp9CgovKiBMZWdlbmRzIHRoZW1lIGNvbG9ycyBmb3IgdGhlIG1hcCAqLwpib2R5LmxpZ2h0LW1hcCB7CiAgLS1zdmctbWFwLWZpbHRlcjogbm9uZTsKfQpib2R5LmRhcmstbWFwIHsKICAtLXN2Zy1tYXAtZmlsdGVyOiBpbnZlcnQoMSkgaHVlLXJvdGF0ZSgxODBkZWcpOwp9CgovKiBTdHlsZXMgZm9yIHVzZXJzIHdobyBwcmVmZXIgZGFyayBtb2RlIGF0IHRoZSBPUyBsZXZlbCAqLwpAbWVkaWEgKHByZWZlcnMtY29sb3Itc2NoZW1lOiBkYXJrKSB7CiAgLyogZGVmYXVsdHMgdG8gZGFyayB0aGVtZSAqLwogIGJvZHkgewogICAgLS1ieC1zaGR3OiAwIDAgMCAxcHggcmdiYSgyNTUsIDI1NSwgMjU1LCAwLjEpLCAwIDJweCA0cHggMCByZ2JhKDI1NSwgMjU1LCAyNTUsIDAuMTYpOwogICAgLS10LWJrZzogIzAwMDAwMGJiOwogICAgLS1sZWdlbmQtYmtnOiByZ2IoMjU1LCAyNTUsIDI1NSk7CiAgICAtLXRleHQtY29sb3I6ICNlZWU7CiAgICAtLXRleHQtY29sb3ItZ3JhZDE6ICNjY2M7CiAgICAtLXRleHQtY29sb3ItZ3JhZDI6ICNhYWE7CiAgICAtLWJrZy1jb2xvcjogcmdiKDM0LCAzNCwgMzQpOwogICAgLS1ia2ctY29sb3ItZ3JhZDE6ICM0NDQ7CiAgICAtLWJrZy1jb2xvci1ncmFkMjogIzY2NjsKICAgIC0tYmtnLWNvbG9yLWlucHV0OiAjZGRkOwogICAgLS1sbms6IGxpZ2h0c2t5Ymx1ZTsKICAgIC0tbG5rLXZpc2l0ZWQ6ICM2ZDRiOGQ7CiAgICAtLWxuay1ob3ZlcjogI2ZmZmZmZjsKICAgIC0tbG5rLWFjdGl2ZTogI2ZmNDA0MDsKICAgIC0tc3ZnLWZpbHRlcjogaW52ZXJ0KDEpOwogICAgLS1zdmctbWFwLWZpbHRlcjogaW52ZXJ0KDEpIGh1ZS1yb3RhdGUoMTgwZGVnKTsKICAgIC0tc3ZnLWxlZ2VuZC1ia2c6IHZhcigtLWxlZ2VuZC1ia2cpOwogIH0KCiAgLyogT3ZlcnJpZGUgZGFyayBtb2RlIHdpdGggbGlnaHQgbW9kZSBzdHlsZXMgaWYgdGhlIHVzZXIgZGVjaWRlcyB0byBzd2FwICovCiAgYm9keS5saWdodC10aGVtZSB7CiAgICAtLWJ4LXNoZHc6IDAgMCAwIDFweCByZ2JhKDAsIDAsIDAsIDAuMSksIDAgMnB4IDRweCAwIHJnYmEoMCwgMCwgMCwgMC4xNik7CiAgICAtLXQtYmtnOiAjZmZmZmZmYmI7CiAgICAtLWxlZ2VuZC1ia2c6IHJnYigyNTUsIDI1NSwgMjU1KTsKICAgIC0tdGV4dC1jb2xvcjogIzIyMjsKICAgIC0tdGV4dC1jb2xvci1ncmFkMTogIzQ0NDsKICAgIC0tdGV4dC1jb2xvci1ncmFkMjogIzY2NjsKICAgIC0tYmtnLWNvbG9yOiByZ2IoMjU1LCAyNTUsIDI1NSk7CiAgICAtLWJrZy1jb2xvci1ncmFkMTogI2RkZDsKICAgIC0tYmtnLWNvbG9yLWdyYWQyOiAjYmJiOwogICAgLS1ia2ctY29sb3ItaW5wdXQ6ICNmZmY7CiAgICAtLWxuazogIzAwMDBmZjsKICAgIC0tbG5rLXZpc2l0ZWQ6ICM4MDAwODA7CiAgICAtLWxuay1ob3ZlcjogIzAwOTlmZjsKICAgIC0tbG5rLWFjdGl2ZTogI2ZmMDAwMDsKICAgIC0tc3ZnLWZpbHRlcjogbm9uZTsKICAgIC0tc3ZnLWxlZ2VuZC1ia2c6IHZhcigtLWxlZ2VuZC1ia2cpOwogIH0KICBib2R5LmRhcmstdGhlbWUubGlnaHQtbWFwIHsKICAgIC0tc3ZnLW1hcC1maWx0ZXI6IG5vbmU7CiAgfQogIGJvZHkuZGFyay10aGVtZS5kYXJrLW1hcCB7CiAgICAtLXN2Zy1tYXAtZmlsdGVyOiBpbnZlcnQoMSkgaHVlLXJvdGF0ZSgxODBkZWcpOwogIH0KfQo=" />
+    <link rel="stylesheet" media="screen" href="./assets/index-BV6jIcdO.css" />
+    <link rel="stylesheet" media="screen" href="./assets/common-B1VBj0Ei.css" />
 
-    <link rel="stylesheet" media="screen" href="./assets/index-tusgUVPg.css" />
-    <link rel="stylesheet" media="screen" href="data:text/css;base64,LyogQ29tbW9uIGdlbmVyYWwgc3R5bGVzICovCi5oaWRkZW4gewogIGRpc3BsYXk6IG5vbmU7Cn0KCi5yb3RhdGU5MCB7CiAgdHJhbnNmb3JtOiByb3RhdGUoOTBkZWcpOwp9Cgoucm90YXRlMTgwIHsKICB0cmFuc2Zvcm06IHJvdGF0ZSgxODBkZWcpOwp9CgpAa2V5ZnJhbWVzIHNwaW4gewogIGZyb20gewogICAgdHJhbnNmb3JtOiByb3RhdGUoMGRlZyk7CiAgfQogIHRvIHsKICAgIHRyYW5zZm9ybTogcm90YXRlKDM2MGRlZyk7CiAgfQp9Cgo6Oi13ZWJraXQtc2Nyb2xsYmFyIHsKICB3aWR0aDogNXB4Owp9Cgo6Oi13ZWJraXQtc2Nyb2xsYmFyLXRodW1iIHsKICBiYWNrZ3JvdW5kOiAjOTk5Owp9CgovKiBDb21tb24gc3R5bGUgKHRvIGFsbCBidXR0b24gb2YgYWxsIHNpemVzKSAqLwouZ2ctYnV0dG9uIHsKICBib3JkZXI6IG5vbmU7CiAgYmFja2dyb3VuZC1jb2xvcjogdHJhbnNwYXJlbnQ7CiAgZGlzcGxheTogZmxleDsKICBmbGV4LWRpcmVjdGlvbjogY29sdW1uOwogIGNvbG9yOiB2YXIoLS10ZXh0LWNvbG9yKTsKfQouZ2ctYnV0dG9uOmhvdmVyIHsKICBiYWNrZ3JvdW5kLWNvbG9yOiB2YXIoLS1ia2ctY29sb3ItZ3JhZDEpOwogIGN1cnNvcjogcG9pbnRlcjsKfQouZ2ctc21hbGwgewogIG1pbi13aWR0aDogMnJlbTsKICBoZWlnaHQ6IDJyZW07CiAgYWxpZ24taXRlbXM6IGNlbnRlcjsKICBwYWRkaW5nOiAwLjVyZW07Cn0KLmdnLXNtYWxsIGltZyB7CiAgb3ZlcmZsb3c6IGhpZGRlbjsKfQouZ2ctc21hbGwgc3BhbiB7CiAgd2lkdGg6IDEwMCU7CiAgdGV4dC1hbGlnbjogbGVmdDsKICBvdmVyZmxvdzogaGlkZGVuOwogIHRleHQtb3ZlcmZsb3c6IGVsbGlwc2lzOwp9Ci5nZy1jaGVjayB7CiAgcGFkZGluZzogMC4ycmVtOwp9Ci5nZy1sYWJlbCB7CiAgdGV4dC1hbGlnbjogbGVmdDsKICBwYWRkaW5nLWxlZnQ6IDA7CiAgd2hpdGUtc3BhY2U6IG5vd3JhcDsKfQouZ2ctZ3JhYjpob3ZlciB7CiAgY3Vyc29yOiBncmFiOwp9Ci5nZy1zcGFjZXIgewogIHBhZGRpbmc6IDA7Cn0KLmdnLW9wYWNpdHkgewogIG9wYWNpdHk6IDAuNTsKfQouZ2ctb3BhY2l0eTpob3ZlciB7CiAgYmFja2dyb3VuZC1jb2xvcjogdHJhbnNwYXJlbnQ7CiAgb3BhY2l0eTogMTsKfQouZ2ctc2VsZWN0ZWQgewogIGZvbnQtd2VpZ2h0OiA3MDA7CiAgb3BhY2l0eTogMTsKfQoKLyogVE9ETyBSRUcgOiBTdXBwcmVzcyBhbGwgdGhlIGZvbGxvd2luZyBzdHlsZXMgd2hlbiB0aGUgbWlncmF0aW9uIGlzIGRvbmUuICovCi5naXJhZmUtYnV0dG9uLWJpZywKLmdpcmFmZS1idXR0b24tbWVkaXVtLAouZ2lyYWZlLWJ1dHRvbi1sYXJnZSwKLmdpcmFmZS1idXR0b24tc21hbGwsCi5naXJhZmUtYnV0dG9uLXRpbnkgewogIGJvcmRlcjogbm9uZTsKICBiYWNrZ3JvdW5kLWNvbG9yOiB0cmFuc3BhcmVudDsKICBkaXNwbGF5OiBmbGV4OwogIGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47CiAgY29sb3I6IHZhcigtLXRleHQtY29sb3IpOwp9Ci5naXJhZmUtYnV0dG9uLWJpZzpob3ZlciwKLmdpcmFmZS1idXR0b24tbWVkaXVtOmhvdmVyLAouZ2lyYWZlLWJ1dHRvbi1sYXJnZTpob3ZlciwKLmdpcmFmZS1idXR0b24tc21hbGw6aG92ZXIsCi5naXJhZmUtYnV0dG9uLXRpbnk6aG92ZXIgewogIGJhY2tncm91bmQtY29sb3I6IHZhcigtLWJrZy1jb2xvci1ncmFkMSk7CiAgY3Vyc29yOiBwb2ludGVyOwp9CgouZ2lyYWZlLWJ1dHRvbi1iaWcuZGFyaywKLmdpcmFmZS1idXR0b24tbWVkaXVtLmRhcmssCi5naXJhZmUtYnV0dG9uLWxhcmdlLmRhcmssCi5naXJhZmUtYnV0dG9uLXNtYWxsLmRhcmssCi5naXJhZmUtYnV0dG9uLXRpbnkuZGFyayB7CiAgYmFja2dyb3VuZC1jb2xvcjogdmFyKC0tYmtnLWNvbG9yKTsKICBmaWx0ZXI6IGludmVydCgxKTsKfQoKaW1nIHsKICBmaWx0ZXI6IHZhcigtLXN2Zy1maWx0ZXIpOwp9CgovKiBCaWcgYnV0dG9uIChpY29uIG9ubHkpICovCi5naXJhZmUtYnV0dG9uLWJpZyB7CiAgd2lkdGg6IDRyZW07CiAgaGVpZ2h0OiA0cmVtOwogIGFsaWduLWl0ZW1zOiBjZW50ZXI7CiAgcGFkZGluZzogMXJlbTsKfQouZ2lyYWZlLWJ1dHRvbi1iaWcgaW1nIHsKICBvdmVyZmxvdzogaGlkZGVuOwp9CgovKiBNZWRpdW0gYnV0dG9uIChpY29uIG9yIGljb24gKyB0ZXh0KSAqLwouZ2lyYWZlLWJ1dHRvbi1tZWRpdW0gewogIGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47CiAgd2lkdGg6IDRyZW07CiAgYWxpZ24taXRlbXM6IGNlbnRlcjsKfQouZ2lyYWZlLWJ1dHRvbi1tZWRpdW0gaW1nIHsKICBtYXJnaW46IDFyZW07CiAgd2lkdGg6IDEuNXJlbTsKfQouZ2lyYWZlLWJ1dHRvbi1tZWRpdW0gc3BhbiB7CiAgZGlzcGxheTogYmxvY2s7CiAgbWFyZ2luLXRvcDogLTAuOHJlbTsKICBtYXJnaW4tYm90dG9tOiAwLjhyZW07Cn0KCi8qIExhcmdlIGJ1dHRvbiAobG9uZyB0ZXh0IG9yIGljb24gKyBsb25nIHRleHQpICovCi5naXJhZmUtYnV0dG9uLWxhcmdlIHsKICBmbGV4LWRpcmVjdGlvbjogcm93Owp9Ci5naXJhZmUtYnV0dG9uLWxhcmdlIGltZyB7CiAgbWFyZ2luOiAwLjNyZW07CiAgaGVpZ2h0OiAycmVtOwp9Ci5naXJhZmUtYnV0dG9uLWxhcmdlIHNwYW4gewogIGxpbmUtaGVpZ2h0OiAycmVtOwogIGhlaWdodDogMnJlbTsKICBtYXJnaW46IDAuM3JlbTsKfQoKLyogU21hbGwgYnV0dG9uIChpY29uIG9ubHkpICovCi5naXJhZmUtYnV0dG9uLXNtYWxsIHsKICBtaW4td2lkdGg6IDJyZW07CiAgaGVpZ2h0OiAycmVtOwogIGFsaWduLWl0ZW1zOiBjZW50ZXI7CiAgcGFkZGluZzogMC41cmVtOwp9Ci5naXJhZmUtYnV0dG9uLXNtYWxsIGltZyB7CiAgb3ZlcmZsb3c6IGhpZGRlbjsKfQouZ2lyYWZlLWJ1dHRvbi1zbWFsbCBzcGFuIHsKICB3aWR0aDogMTAwJTsKICB0ZXh0LWFsaWduOiBsZWZ0OwogIG92ZXJmbG93OiBoaWRkZW47CiAgdGV4dC1vdmVyZmxvdzogZWxsaXBzaXM7Cn0KCi8qIFRpbnkgYnV0dG9uIChpY29uIG9ubHkgd2l0aCBubyBwYWRkaW5nKSAqLwouZ2lyYWZlLWJ1dHRvbi10aW55IHsKICB3aWR0aDogMXJlbTsKICBoZWlnaHQ6IDFyZW07CiAgYWxpZ24taXRlbXM6IGNlbnRlcjsKICBwYWRkaW5nOiAwOwp9Ci5naXJhZmUtYnV0dG9uLXRpbnkgaW1nIHsKICBvdmVyZmxvdzogaGlkZGVuOwp9Cg==" />
-
-    <link
-      rel="preload"
-      as="style"
-      onload="this.onload=null;this.rel='stylesheet'"
-      href="lib/fontawesome/css/all.min.css" />
-    <noscript>
-      <link rel="stylesheet" href="lib/fontawesome/css/all.min.css" />
-    </noscript>
-    <link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="lib/font-gis/font-gis.css" />
-    <noscript>
-      <link rel="stylesheet" href="lib/font-gis/font-gis.css" />
-    </noscript>
     <link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="lib/tippy.js/tippy.css" />
     <link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="lib/tippy.js/backdrop.css" />
     <link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="lib/tippy.js/border.css" />
@@ -54,88 +34,33 @@
       <link rel="stylesheet" href="lib/tippy.js/svg-arrow.css" />
     </noscript>
 
-    <link
-      rel="preload"
-      as="font"
-      type="font/woff2"
-      href="lib/fontawesome/webfonts/fa-solid-900.woff2"
-      crossorigin="anonymous" />
-    <link
-      rel="preload"
-      as="font"
-      type="font/woff2"
-      href="lib/fontawesome/webfonts/fa-regular-400.woff2"
-      crossorigin="anonymous" />
-    <link
-      rel="preload"
-      as="font"
-      type="font/woff2"
-      href="lib/font-gis/font-gis.woff2?t=1634903189298"
-      crossorigin="anonymous" />
-
     <title>GeoGirafe</title>
-    <script type="module" crossorigin src="./assets/desktop-5p69HYTv.js"></script>
-    <link rel="modulepreload" crossorigin href="./assets/lazy-CNpw-HpO.js">
-    <link rel="modulepreload" crossorigin href="./assets/component-DmEB9E06.js">
-    <link rel="modulepreload" crossorigin href="./assets/ScreenSpaceEventHandler-BV10dpGX.js">
+    <script type="module" crossorigin src="./assets/desktop-DIfQ3feF.js"></script>
+    <link rel="modulepreload" crossorigin href="./assets/lazy-CXj0l6bG.js">
+    <link rel="modulepreload" crossorigin href="./assets/initialize-6doIkexO.js">
+    <link rel="modulepreload" crossorigin href="./assets/component-DXCLPdaI.js">
+    <link rel="modulepreload" crossorigin href="./assets/component-Boz-e6Z0.js">
+    <link rel="modulepreload" crossorigin href="./assets/exportKml-B8RxacOT.js">
   </head>
 
   <body>
+    <div id="splash-screen">
+      <img alt="geogirafe-splash-logo" src="images/logo/vertical_black.svg" />
+      <div class="loader"></div>
+      <span lang="en">Loading...</span>
+    </div>
     <header>
       <girafe-theme-select></girafe-theme-select>
-      <img class="logo logo-light" alt="geogirafe-logo" src="images/logo_gg_qf_light.svg">
+      <img class="logo" alt="geogirafe-logo" src="images/logo_gg_qf_light.svg" />
       <girafe-search id="search"></girafe-search>
-      <div id="buttonbar">
-        <girafe-video-record></girafe-video-record>
-        <girafe-nav-history></girafe-nav-history>
-        <button class="girafe-button-big login" onclick="throw new Error('Login not implemented')">
-          <img alt="help-icon" src="icons/user.svg" />
-        </button>
-        <girafe-colorswitcher></girafe-colorswitcher>
-        <button class="girafe-button-big help" onclick="document.geogirafe.state.interface.helpVisible = true">
-          <img alt="help-icon" src="icons/help.svg" />
-        </button>
-        <button class="girafe-button-big share" onclick="document.geogirafe.state.interface.shareVisible = true">
-          <img alt="help-icon" src="icons/share.svg" />
-        </button>
-        <girafe-menu-button>
-          <button slot="menu-button" class="girafe-button-big">
-            <img alt="menu-icon" src="icons/menu.svg" />
-          </button>
-          <button
-            slot="menu-content"
-            class="girafe-button-medium"
-            onclick="document.geogirafe.state.interface.drawingPanelVisible = !document.geogirafe.state.interface.drawingPanelVisible">
-            <img alt="help-icon" src="icons/draw.svg" />
-            <span>Draw</span>
-          </button>
-          <button
-            slot="menu-content"
-            class="girafe-button-medium"
-            onclick="document.geogirafe.state.interface.printPanelVisible = !document.geogirafe.state.interface.printPanelVisible">
-            <img alt="help-icon" src="icons/print.svg" />
-            <span>Print</span>
-          </button>
-          <button
-            slot="menu-content"
-            class="girafe-button-medium"
-            onclick="document.geogirafe.state.interface.lidarPanelVisible = !document.geogirafe.state.interface.lidarPanelVisible">
-            <img alt="help-icon" src="icons/lidar.svg" />
-            <span>LiDAR</span>
-          </button>
-          <girafe-proj-select slot="menu-content"></girafe-proj-select>
-          <girafe-language-select slot="menu-content"></girafe-language-select>
-          <girafe-globe-select slot="menu-content"></girafe-globe-select>
-          <button
-            slot="menu-content"
-            class="girafe-button-medium"
-            onclick="document.geogirafe.state.interface.aboutVisible = true">
-            <img alt="help-icon" src="icons/info.svg" />
-            <span>About</span>
-          </button>
-        </girafe-menu-button>
-      </div>
+      <girafe-oauth></girafe-oauth>
+      <girafe-nav-history></girafe-nav-history>
+      <girafe-video-record></girafe-video-record>
     </header>
+
+    <girafe-help></girafe-help>
+    <girafe-modals></girafe-modals>
+    <girafe-context-menu></girafe-context-menu>
 
     <div id="content">
       <div id="main">
@@ -145,29 +70,110 @@
         <div id="content-map">
           <girafe-map></girafe-map>
           <div class="info-area">
+            <girafe-basemap></girafe-basemap>
             <girafe-infobox></girafe-infobox>
-            <footer>
-              <girafe-scale></girafe-scale>
-              <girafe-coordinate></girafe-coordinate>
-            </footer>
           </div>
           <girafe-prototype-banner></girafe-prototype-banner>
-          <girafe-metadata-window></girafe-metadata-window>
+          <footer>
+            <girafe-scale></girafe-scale>
+            <girafe-coordinate></girafe-coordinate>
+            <span class="copyright">
+              <span>Information without public faith</span>
+              <span>
+                ©
+                <a href="https://doc.geomapfish.dev" target="_blank">GeoGirafe</a>,
+                <a href="https://www.swisstopo.admin.ch/fr/bases-legales" target="_blank">swisstopo</a>,
+                <a href="http://www.openstreetmap.org/copyright" target="_blank">OSM</a>
+              </span>
+            </span>
+          </footer>
         </div>
         <girafe-lr-panel class="panel-right" dock="right">
-          <girafe-drawing slot="main" data-toggle-path="interface.printPanelVisible"></girafe-drawing>
-          <girafe-print slot="main" data-toggle-path="interface.drawingPanelVisible"></girafe-print>
-          <girafe-lidar-panel slot="main" data-toggle-path="interface.lidarPanelVisible"></girafe-lidar-panel>
+          <girafe-drawing
+            slot="main"
+            data-toggle-path="interface.drawingPanelVisible"
+            data-title="drawing-panel"></girafe-drawing>
+          <girafe-print
+            slot="main"
+            data-toggle-path="interface.printPanelVisible"
+            data-title="print-panel"></girafe-print>
+          <girafe-cross-section-settings
+            slot="main"
+            data-toggle-path="interface.crossSectionPanelVisible"
+            data-title="cross-section-settings"></girafe-cross-section-settings>
+          <girafe-layout
+            slot="main"
+            data-toggle-path="interface.layoutPanelVisible"
+            data-title="layout-panel"></girafe-layout>
+          <girafe-about
+            slot="main"
+            data-toggle-path="interface.aboutPanelVisible"
+            data-title="about-panel"></girafe-about>
+          <girafe-user-preferences
+            slot="main"
+            data-toggle-path="interface.userPreferencesPanelVisible"
+            data-title="user-preferences-panel"></girafe-user-preferences>
+          <girafe-share
+            slot="main"
+            data-toggle-path="interface.sharePanelVisible"
+            data-title="share-panel"></girafe-share>
         </girafe-lr-panel>
-        <girafe-about></girafe-about>
-        <girafe-share></girafe-share>
+
+        <girafe-info-window></girafe-info-window>
         <girafe-selection-window></girafe-selection-window>
-        <girafe-help></girafe-help>
       </div>
       <div id="content-bottom">
         <girafe-selection-grid dock="bottom"></girafe-selection-grid>
-        <girafe-lidar-profile id="lidar-footer" dock="bottom"></girafe-lidar-profile>
+        <girafe-cross-section-view id="cross-section-footer" dock="bottom"></girafe-cross-section-view>
       </div>
+    </div>
+
+    <div id="buttonbar">
+      <button
+        slot="menu-content"
+        class="gg-icon-button gg-big"
+        onclick="document.geogirafe.state.interface.drawingPanelVisible = !document.geogirafe.state.interface.drawingPanelVisible">
+        <img alt="help-icon" src="icons/draw.svg" />
+      </button>
+      <button
+        slot="menu-content"
+        class="gg-icon-button gg-big"
+        onclick="document.geogirafe.state.interface.printPanelVisible = !document.geogirafe.state.interface.printPanelVisible">
+        <img alt="help-icon" src="icons/print.svg" />
+      </button>
+      <button
+        slot="menu-content"
+        class="gg-icon-button gg-big"
+        onclick="document.geogirafe.state.interface.crossSectionPanelVisible = !document.geogirafe.state.interface.crossSectionPanelVisible">
+        <img alt="cross-section-icon" src="icons/cross-section.svg" />
+      </button>
+      <button
+        slot="menu-content"
+        class="gg-icon-button gg-big"
+        onclick="document.geogirafe.state.interface.sharePanelVisible = !document.geogirafe.state.interface.sharePanelVisible">
+        <img alt="help-icon" src="icons/share.svg" />
+      </button>
+      <button
+        class="gg-icon-button gg-big"
+        onclick="document.geogirafe.state.interface.layoutPanelVisible = !document.geogirafe.state.interface.layoutPanelVisible">
+        <img alt="help-icon" src="icons/layout.svg" />
+      </button>
+
+      <div class="filler"></div>
+
+      <button class="gg-icon-button gg-big" onclick="document.geogirafe.state.interface.helpVisible = true">
+        <img alt="help-icon" src="icons/help.svg" />
+      </button>
+      <button
+        class="gg-icon-button gg-big"
+        onclick="document.geogirafe.state.interface.aboutPanelVisible = !document.geogirafe.state.interface.aboutPanelVisible">
+        <img alt="help-icon" src="icons/info.svg" />
+      </button>
+      <button
+        class="gg-icon-button gg-big"
+        onclick="document.geogirafe.state.interface.userPreferencesPanelVisible = !document.geogirafe.state.interface.userPreferencesPanelVisible">
+        <img alt="user-preferences-icon" src="icons/config.svg" />
+      </button>
     </div>
   </body>
 </html>
