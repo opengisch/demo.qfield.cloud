@@ -1,0 +1,2 @@
+import{ac as e,r as o}from"./initialize-6doIkexO.js";import{b5 as t}from"./lazy-CXj0l6bG.js";import{B as m,I as a}from"./component-DXCLPdaI.js";e().then(()=>{t.setDefaultProps({maxWidth:""}),customElements.define("girafe-basemap",m),customElements.define("girafe-infobox",a),customElements.define("girafe-map",o),document.documentElement.style.opacity="1"});
+//# sourceMappingURL=iframe-xcqnjPny.js.map

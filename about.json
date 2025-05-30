@@ -1,6 +1,6 @@
 {
   "//Comment": "This file will be automatically overwritten during the build process in the GitLab Pipeline",
-  "version": "0.4",
+  "version": "0.9",
   "build": "DEV",
-  "date": "03/04/2024"
+  "date": "30/05/2025"
 }
