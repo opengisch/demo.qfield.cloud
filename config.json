@@ -13,7 +13,7 @@
   },
   "interface": {
     "defaultSelectionComponent": "grid",
-     "darkFrontendMode": "false"
+     "darkFrontendMode": false
   },
   "themes": {
     "url": "Mock/themes_qfield.json",
