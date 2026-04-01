@@ -17,7 +17,7 @@
   },
   "themes": {
     "url": "Mock/themes_qfield.json",
-    "defaultTheme": "QGIS User conference 2025"
+    "defaultTheme": "Rapidmapping"
   },
   "selection": {
     "maxFeature": 100
