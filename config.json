@@ -16,7 +16,7 @@
      "darkFrontendMode": false
   },
   "themes": {
-    "url": "Mock/themes_qfield.json",
+    "url": "themes.json",
     "defaultTheme": "Rapidmapping"
   },
   "selection": {

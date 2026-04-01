@@ -1,3 +1,4 @@
+/* SPDX-License-Identifier: Apache-2.0 */
 /* Common general styles */
 * {
   font-family: Arial, sans-serif;
@@ -89,7 +90,8 @@ a:visited {
   background-color: var(--bkg-color);
   color: var(--text-color);
   border: none;
-  display: inline-block;
+  display: flex;
+  align-items: center;
   padding: 0;
   margin: 0;
 }
@@ -98,12 +100,13 @@ a:visited {
 .gg-input,
 .gg-label {
   min-height: calc(var(--app-standard-height) / 1.5);
-  max-height: calc(var(--app-standard-height) / 1.5);
-  line-height: calc(var(--app-standard-height) / 1.5);
 }
 .gg-textarea {
+  max-height: initial;
   padding: 0.5rem;
   height: 6rem;
+  resize: vertical;
+  line-height: 1.3rem;
 }
 .gg-input {
   cursor: text;
@@ -130,6 +133,18 @@ a:visited {
   cursor: not-allowed;
 }
 
+.gg-input:disabled,
+.gg-select:disabled,
+.gg-textarea:disabled {
+  background-color: lightgrey;
+  color: grey;
+  cursor: not-allowed;
+}
+
+.gg-button > img {
+  vertical-align: middle;
+}
+
 /* Icon buttons */
 .gg-icon-button {
   border: none;
@@ -141,6 +156,12 @@ a:visited {
   align-items: center;
   justify-content: center;
   cursor: pointer;
+}
+/* Icon */
+.gg-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 /* Big style */
 .gg-big,
@@ -222,26 +243,24 @@ a:visited {
 
 /* Tabs */
 .gg-tabs {
-  display: flex;
-  justify-content: left;
-  margin: 0.5rem auto 0;
-  border-bottom: 1px solid grey;
+  display: grid;
+  grid-auto-flow: column;
+  font-size: 1rem;
+  padding-bottom: 1rem;
   cursor: pointer;
-  height: 2rem;
-  align-items: end;
-  gap: 1rem;
-  margin-bottom: 1rem;
 }
+
 .gg-tab {
   border: none;
+  border-bottom: var(--app-standard-border);
   background: transparent;
   cursor: pointer;
   padding: 0.5rem;
   color: var(--text-color);
 }
+
 .gg-tab.active {
-  border-bottom: solid 2px var(--text-color-grad2);
-  font-weight: 600;
+  border-bottom: solid 1px var(--text-color);
 }
 
 /* TODO REG : Suppress all the following styles. */
@@ -322,4 +341,19 @@ a:visited {
 }
 .girafe-button-tiny img {
   overflow: hidden;
+}
+
+.girafe-onboarding-theme {
+  background-color: var(--bkg-color) !important;
+  color: var(--text-color) !important;
+}
+
+.girafe-onboarding-theme button {
+  background-color: var(--bkg-color) !important;
+  color: var(--text-color) !important;
+  text-shadow: none !important;
+}
+
+.girafe-onboarding-theme button.driver-popover-close-btn {
+  z-index: 10000;
 }

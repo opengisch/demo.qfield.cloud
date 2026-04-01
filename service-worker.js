@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: Apache-2.0
 /**
  * To allow offline mode, the first 100 queries made by the application will be cached.
  * We could have implemented a more specific cache with file extensions for example
@@ -18,8 +19,12 @@ let logLevel; // Current log level. Value is defined by OfflineManager.
 let audience; // List of domains for which the Authorization Token and cookies should be sent
 let audienceExcludedPaths; // List of regex paths at audience where Authorization Token and cookies should not be sent
 let accessToken; // The current access token
+let loginState; // The current login status
 let authMode; // How the authentication should be sent to the audience
 let refererPolicy; // RefererPolicy used for the queries. Default strict-origin-when-cross-origin
+function isLoggedIn() {
+    return loginState === 'loggedIn' || loginState === 'issuer.loggedIn';
+}
 const offlineTimeout = 3000; // Timeout in case of not reachable IndexedDB. (3 sec.)
 const appCacheName = 'pages'; // Name of the cache for application pages
 const maxCacheCount = 300; // Number of queries that should be cached by the service-worker for offline usage.
@@ -55,8 +60,9 @@ function handleMessage(event) {
         audience = data.audience ?? [];
         log(`audience changed: ${audience}`);
     }
+    audienceExcludedPaths = [];
     if (data.audienceExcludedPaths) {
-        audienceExcludedPaths = data.audienceExcludedPaths ? data.audienceExcludedPaths.map((str) => new RegExp(str)) : [];
+        audienceExcludedPaths = data.audienceExcludedPaths.map((str) => new RegExp(str));
         log(`audienceExcludedPaths changed: ${audienceExcludedPaths}`);
     }
     if (data.access_token) {
@@ -74,6 +80,17 @@ function handleMessage(event) {
     if (data.refererPolicy) {
         refererPolicy = data.refererPolicy;
         log(`refererPolicy changed: ${refererPolicy}`);
+    }
+    if (data.loginState) {
+        loginState = data.loginState;
+        log(`loginState changed: ${loginState}`);
+    }
+    if (data.messageId) {
+        // Reply to the message with the same messageId
+        const source = event.source;
+        if (source) {
+            source.postMessage({ messageId: data.messageId, status: 'ServiceWorker updated' });
+        }
     }
 }
 function handleInstall() {
@@ -149,13 +166,13 @@ function getRequest(request) {
         if (audience?.includes(hostname) && !shouldExclude) {
             // Prepare headers
             const headers = new Headers(request.headers);
-            if (authMode == 'token' && accessToken) {
+            if (authMode == 'token' && isLoggedIn() && accessToken) {
                 headers.set('Authorization', `Bearer ${accessToken}`);
             }
             // Prepare options
             const fetchOptions = {
                 headers: headers,
-                credentials: authMode === 'cookie' ? 'include' : 'omit',
+                credentials: isLoggedIn() && authMode === 'cookie' ? 'include' : 'omit',
                 referrer: request.referrer,
                 referrerPolicy: refererPolicy
             };
@@ -206,7 +223,7 @@ async function loadFromIndexedDB(request) {
             };
         });
     }
-    catch (error) {
+    catch {
         return null;
     }
 }
@@ -237,6 +254,6 @@ async function openIndexedDB() {
 }
 function log(str, error) {
     if (logLevel === 'debug') {
-        console.debug(`SW: ${str}`, error);
+        console.debug(`SW: ${str}`, error ?? '');
     }
 }
