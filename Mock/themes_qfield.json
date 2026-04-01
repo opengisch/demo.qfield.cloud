@@ -1,5 +1,5 @@
 {
-    "ogcServers": {
+  "ogcServers": {
     "QGIS server bees": {
       "url": "https://qgis.demo.opengis.ch/ows/bees/",
       "urlWfs": "https://qgis.demo.opengis.ch/ows/bees/",
@@ -80,7 +80,7 @@
           "id": 778,
           "name": "Memories",
           "children": [
-            { 
+            {
               "id": 779,
               "name": "Public Memories",
               "metadata": {
@@ -111,7 +111,7 @@
           "id": 778,
           "name": "POI",
           "children": [
-           { 
+            {
               "id": 780,
               "name": "Conference",
               "metadata": {
@@ -125,7 +125,7 @@
               "minResolutionHint": 0.0,
               "maxResolutionHint": 56.0
             },
-            { 
+            {
               "id": 781,
               "name": "Hospitality",
               "metadata": {
@@ -139,7 +139,7 @@
               "minResolutionHint": 0.0,
               "maxResolutionHint": 56.0
             },
-            { 
+            {
               "id": 782,
               "name": "Attractions",
               "metadata": {
@@ -271,11 +271,46 @@
           "name": "Rapidmapping.ch",
           "children": [
             {
-              "id": 337,
-              "name": "Rapidmapping 20240702",
+              "id": 779,
+              "name": "Misox 20240622",
               "metadata": {
-                "legend": true,
                 "isChecked": true
+              },
+              "type": "COG",
+              "url": "https://data.geo.admin.ch/ch.swisstopo.rapidmapping/data/2024-002-MISOX/2024_RM_Flood_Misox_GR_Quickmosaic_20240622_RGB8BIT_LV95.tif"
+            },
+            {
+              "id": 780,
+              "name": "Peccia 20240630",
+              "metadata": {
+                "isChecked": true
+              },
+              "type": "COG",
+              "url": "https://data.geo.admin.ch/ch.swisstopo.rapidmapping/data/2024-007-TICINO/2024_RM_Flood_Ticino_Peccia_Quickmosaic_20240630_RGB8BIT_LV95.tif"
+            },
+            {
+              "id": 781,
+              "name": "Cevio 20240630",
+              "metadata": {
+                "isChecked": true
+              },
+              "type": "COG",
+              "url": "https://data.geo.admin.ch/ch.swisstopo.rapidmapping/data/2024-007-TICINO/2024_RM_Flood_Ticino_Cevio_Quickmosaic_20240630_RGB8BIT_LV95.tif"
+            },
+            {
+              "id": 782,
+              "name": "Bavona 20240630",
+              "metadata": {
+                "isChecked": true
+              },
+              "type": "COG",
+              "url": "https://data.geo.admin.ch/ch.swisstopo.rapidmapping/data/2024-007-TICINO/2024_RM_Flood_Ticino_Bavona_Quickmosaic_20240630_RGB8BIT_LV95.tif"
+            },
+            {
+              "id": 337,
+              "name": "Maggia 20240702",
+              "metadata": {
+                "isChecked": false
               },
               "type": "WMS",
               "layers": "ch.swisstopo.rapidmapping.rgb/2024-009-TICINO",
@@ -521,6 +556,5 @@
       "layer": "ch.swisstopo.pixelkarte-farbe",
       "imageType": "image/png"
     }
-    
   ]
 }
