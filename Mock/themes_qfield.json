@@ -319,7 +319,9 @@
               "maxResolutionHint": 56.0
             }
           ],
-          "metadata": {},
+          "metadata": {
+            "isExpanded": true
+          },
           "mixed": false,
           "ogcServer": "SWISSTOPO server WMS",
           "dimensions": {}
