@@ -274,7 +274,7 @@
               "id": 779,
               "name": "Misox 20240622",
               "metadata": {
-                "isChecked": true
+                "isChecked": false
               },
               "type": "COG",
               "url": "https://data.geo.admin.ch/ch.swisstopo.rapidmapping/data/2024-002-MISOX/2024_RM_Flood_Misox_GR_Quickmosaic_20240622_RGB8BIT_LV95.tif"
@@ -292,7 +292,7 @@
               "id": 781,
               "name": "Cevio 20240630",
               "metadata": {
-                "isChecked": true
+                "isChecked": false
               },
               "type": "COG",
               "url": "https://data.geo.admin.ch/ch.swisstopo.rapidmapping/data/2024-006-TICINO/2024_RM_Flood_Ticino_Cevio_Quickmosaic_20240630_RGB8BIT_LV95.tif"
@@ -301,7 +301,7 @@
               "id": 782,
               "name": "Bavona 20240630",
               "metadata": {
-                "isChecked": true
+                "isChecked": false
               },
               "type": "COG",
               "url": "https://data.geo.admin.ch/ch.swisstopo.rapidmapping/data/2024-004-TICINO/2024_RM_Flood_Ticino_Bavona_Quickmosaic_20240630_RGB8BIT_LV95.tif"
